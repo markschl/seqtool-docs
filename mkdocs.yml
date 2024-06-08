@@ -1,0 +1,67 @@
+site_name: seqtool documentation
+
+theme:
+  name: material
+  font:
+    text: Inter
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - header.autohide
+    - content.code.copy
+    - search.suggest
+    - search.highlight    
+    - toc.follow
+  palette: 
+    - primary: blue grey
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+repo_url: https://github.com/markschl/seqtool
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  version: 0.4.0-beta.1
+  #   provider: mike
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 2
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences  
+  - pymdownx.details
+  - admonition
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - Download: https://github.com/markschl/seqtool/releases/latest
+  - Commands:
+    - 'Basic conversion/editing': cmds_basic.md
+    - 'Information about sequences': cmds_info.md
+    - 'Subset/shuffle': cmds_sub_shuffle.md
+    - 'Search and replace': cmds_search_rep.md
+    - 'Modifying commands': cmds_mod.md
+  - 'Commandline options': opts.md
+  - 'Variables/functions': variables.md
+  - 'Header attributes': attributes.md
+  - 'Metadata': meta.md
+  - 'Other topics':
+    - 'Ranges': ranges.md
