@@ -4,10 +4,19 @@ It provides different subcommands for *converting*, *inspecting* and *modifying*
 sequences.
 The standalone binary (~6 MB) is simply named `st` to save some typing.
 
-**[Download the latest version](https://github.com/markschl/seqtool/releases/latest)**
+> **Note:** this page describes the development version 0.4-beta.
+> **The older stable version (v0.3.0) is [documented here](https://github.com/markschl/seqtool/wiki).**
 
-<!-- [![crates.io](https://img.shields.io/crates/v/seqtool.svg)](https://crates.io/crates/seq_io) -->
+> ⚠ Also note that **there are some bugs in v0.3.0**,
+> see [CHANGELOG](https://github.com/markschl/seqtool/blob/main/CHANGELOG.md#important-bugfixes-).
+> Alternatively, v0.4.0-beta should be pretty safe to use already.
+
+**[📥 download stable release (v0.3.0)](https://github.com/markschl/seqtool/releases/latest)**
+
+**[📥 download beta release (v0.4.0-beta)](https://github.com/markschl/seqtool/releases/tag/v0.4.0-beta.2)**
+
 [![CI](https://github.com/markschl/seqtool/actions/workflows/ci.yaml/badge.svg)](https://github.com/markschl/seqtool/actions/workflows/ci.yaml)
+
 
 ## Feature overview
 

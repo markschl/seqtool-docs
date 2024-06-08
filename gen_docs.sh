@@ -5,9 +5,10 @@ set -euo pipefail
 # cargo build
 
 seqtool=../seqtool/target/debug/st
+st_readme=../seqtool/README.md
 templates=_template
 outdir=docs
-main=docs/index.md #_README.md
+main=docs/index.md
 config=mkdocs.yml
 
 (cd ../seqtool && cargo build)
@@ -129,3 +130,12 @@ cp _template/ranges.md $outdir
 echo "    - 'Ranges': ranges.md" >> $config
 
 # TODO: _template/expressions.md
+
+# finally, copy the content of the landing page to seqtool/README.md,
+# inserting a link to the gh-page and adjusting the URLs
+
+doc_link="\n## Detailed documentation\n\n**See [this page](https://markschl.github.io/seqtool-docs)**\n\n"
+cat $main |
+  awk -v doc=$"$doc_link" '/## / && !x {print doc; x=1} 1' |
+  sed -E 's|\(([^.)]+)\.md\)|(https://markschl.github.io/seqtool-docs/\1)|g' \
+  > $st_readme
