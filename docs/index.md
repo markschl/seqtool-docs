@@ -266,7 +266,7 @@ st find file:primers.fasta -a primer='{pattern_name}' -a end='{match_end}' seque
   st split -o '{attr(primer)}'
 ```
 
-<table>
+<table markdown>
 <tr><th>prA.fasta </th><th>prB.fasta</th><th>undefined.fasta</th></tr>
 <tr>
 <td>
