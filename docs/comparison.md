@@ -38,16 +38,16 @@ table.cmd td:last-child {
 }
 </style>
 ## pass
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Do nothing, just read and write FASTA
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st pass input.fasta > output.fasta
@@ -56,12 +56,12 @@ st pass input.fasta > output.fasta
 
 <details markdown><summary><b>SeqKit</b> 🕓 <b>2.2 s</b> 🏆 (1.2x)</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit seq  input.fasta > output.fasta
@@ -69,7 +69,7 @@ seqkit seq  input.fasta > output.fasta
 
 </td>
 
-<td>🕓 <b>2.2 s</b> 🏆 (1.2x) 106% CPU<br/>📈 18.0 MiB</td>
+<td markdown>🕓 <b>2.2 s</b> 🏆 (1.2x) 106% CPU<br/>📈 18.0 MiB</td>
 
 </tr>
 
@@ -83,14 +83,14 @@ seqkit seq  input.fasta > output.fasta
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Convert FASTQ to FASTA
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st pass --to-fa input.fastq > output.fasta
@@ -99,12 +99,12 @@ st pass --to-fa input.fastq > output.fasta
 
 <details markdown><summary><b>FASTX-Toolkit</b> 🕓 287.9 s  ❙  <b>Seqtk</b> 🕓 4.3 s  ❙  <b>SeqKit</b> 🕓 3.1 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>FASTX-Toolkit</td>
+<tr markdown>
+<td markdown>FASTX-Toolkit</td>
 
-<td>
+<td markdown>
 
 ```bash
 fastq_to_fasta -Q33 -i input.fastq > output.fasta
@@ -112,15 +112,15 @@ fastq_to_fasta -Q33 -i input.fastq > output.fasta
 
 </td>
 
-<td>🕓 287.9 s<br/>📈 <b>3.5 MiB</b> 🏆 (1.00x)</td>
+<td markdown>🕓 287.9 s<br/>📈 <b>3.5 MiB</b> 🏆 (1.00x)</td>
 
 </tr>
 
 
-<tr>
-<td>Seqtk</td>
+<tr markdown>
+<td markdown>Seqtk</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqtk seq -A input.fastq > output.fasta
@@ -128,15 +128,15 @@ seqtk seq -A input.fastq > output.fasta
 
 </td>
 
-<td>🕓 4.3 s<br/>📈 3.5 MiB</td>
+<td markdown>🕓 4.3 s<br/>📈 3.5 MiB</td>
 
 </tr>
 
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit fq2fa input.fastq > output.fasta
@@ -144,7 +144,7 @@ seqkit fq2fa input.fastq > output.fasta
 
 </td>
 
-<td>🕓 3.1 s<br/>📈 18.4 MiB</td>
+<td markdown>🕓 3.1 s<br/>📈 18.4 MiB</td>
 
 </tr>
 
@@ -158,14 +158,14 @@ seqkit fq2fa input.fastq > output.fasta
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Convert FASTQ quality scores
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st pass --to fastq-illumina input.fastq > output.fastq
@@ -174,12 +174,12 @@ st pass --to fastq-illumina input.fastq > output.fastq
 
 <details markdown><summary><b>VSEARCH</b> 🕓 12.9 s  ❙  <b>SeqKit</b> 🕓 48.8 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>VSEARCH</td>
+<tr markdown>
+<td markdown>VSEARCH</td>
 
-<td>
+<td markdown>
 
 ```bash
 vsearch --fastq_convert input.fastq --fastq_asciiout 64 --fastqout output.fastq
@@ -196,15 +196,15 @@ Reading FASTQ file 100%
 </details>
 </td>
 
-<td>🕓 12.9 s<br/>📈 <b>4.2 MiB</b> 🏆 (1.65x)</td>
+<td markdown>🕓 12.9 s<br/>📈 <b>4.2 MiB</b> 🏆 (1.65x)</td>
 
 </tr>
 
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit convert --from 'Sanger' --to 'Illumina-1.3+' input.fastq > output.fastq
@@ -219,7 +219,7 @@ seqkit convert --from 'Sanger' --to 'Illumina-1.3+' input.fastq > output.fastq
 </details>
 </td>
 
-<td>🕓 48.8 s<br/>📈 47.9 MiB</td>
+<td markdown>🕓 48.8 s<br/>📈 47.9 MiB</td>
 
 </tr>
 
@@ -233,14 +233,14 @@ seqkit convert --from 'Sanger' --to 'Illumina-1.3+' input.fastq > output.fastq
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Write compressed FASTQ files in GZIP format
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st pass input.fastq -o output.fastq.gz
@@ -249,12 +249,12 @@ st pass input.fastq -o output.fastq.gz
 
 <details markdown><summary><b>SeqKit</b> 🕓 <b>30.3 s</b> 🏆 (1.3x)  ❙  <b>seqtool | gzip</b> 🕓 159.1 s  ❙  <b>gzip directly</b> 🕓 158.6 s  ❙  <b>pigz directly (4 threads)</b> 🕓 39.0 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit seq input.fastq -o output.fastq.gz
@@ -262,15 +262,15 @@ seqkit seq input.fastq -o output.fastq.gz
 
 </td>
 
-<td>🕓 <b>30.3 s</b> 🏆 (1.3x)<br/>📈 37.5 MiB</td>
+<td markdown>🕓 <b>30.3 s</b> 🏆 (1.3x)<br/>📈 37.5 MiB</td>
 
 </tr>
 
 
-<tr>
-<td>seqtool | gzip</td>
+<tr markdown>
+<td markdown>seqtool | gzip</td>
 
-<td>
+<td markdown>
 
 ```bash
 st pass input.fastq | gzip -c > output.fastq.gz
@@ -278,15 +278,15 @@ st pass input.fastq | gzip -c > output.fastq.gz
 
 </td>
 
-<td>🕓 159.1 s<br/>📈 7.2 MiB</td>
+<td markdown>🕓 159.1 s<br/>📈 7.2 MiB</td>
 
 </tr>
 
 
-<tr>
-<td>gzip directly</td>
+<tr markdown>
+<td markdown>gzip directly</td>
 
-<td>
+<td markdown>
 
 ```bash
 gzip -kf input.fastq
@@ -294,15 +294,15 @@ gzip -kf input.fastq
 
 </td>
 
-<td>🕓 158.6 s<br/>📈 <b>3.5 MiB</b> 🏆 (1.21x)</td>
+<td markdown>🕓 158.6 s<br/>📈 <b>3.5 MiB</b> 🏆 (1.21x)</td>
 
 </tr>
 
 
-<tr>
-<td>pigz directly (4 threads)</td>
+<tr markdown>
+<td markdown>pigz directly (4 threads)</td>
 
-<td>
+<td markdown>
 
 ```bash
 pigz -p4 -kf input.fastq
@@ -310,7 +310,7 @@ pigz -p4 -kf input.fastq
 
 </td>
 
-<td>🕓 39.0 s 405% CPU<br/>📈 4.2 MiB</td>
+<td markdown>🕓 39.0 s 405% CPU<br/>📈 4.2 MiB</td>
 
 </tr>
 
@@ -324,14 +324,14 @@ pigz -p4 -kf input.fastq
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Write compressed FASTQ files in Zstandard format
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st pass input.fastq -o output.fastq.zst
@@ -340,12 +340,12 @@ st pass input.fastq -o output.fastq.zst
 
 <details markdown><summary><b>seqtool | zstd piped</b> 🕓 <b>12.8 s</b> 🏆 (1.2x)</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>seqtool | zstd piped</td>
+<tr markdown>
+<td markdown>seqtool | zstd piped</td>
 
-<td>
+<td markdown>
 
 ```bash
 st pass input.fastq | zstd -c > output.fastq.zst
@@ -353,7 +353,7 @@ st pass input.fastq | zstd -c > output.fastq.zst
 
 </td>
 
-<td>🕓 <b>12.8 s</b> 🏆 (1.2x) 147% CPU<br/>📈 38.8 MiB</td>
+<td markdown>🕓 <b>12.8 s</b> 🏆 (1.2x) 147% CPU<br/>📈 38.8 MiB</td>
 
 </tr>
 
@@ -367,14 +367,14 @@ st pass input.fastq | zstd -c > output.fastq.zst
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Write compressed FASTQ files in Lz4 format
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st pass input.fastq -o output.fastq.lz4
@@ -383,12 +383,12 @@ st pass input.fastq -o output.fastq.lz4
 
 <details markdown><summary><b>seqtool | lz4 piped</b> 🕓 9.9 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>seqtool | lz4 piped</td>
+<tr markdown>
+<td markdown>seqtool | lz4 piped</td>
 
-<td>
+<td markdown>
 
 ```bash
 st pass input.fastq | lz4 -c > output.fastq.lz4
@@ -396,7 +396,7 @@ st pass input.fastq | lz4 -c > output.fastq.lz4
 
 </td>
 
-<td>🕓 9.9 s 116% CPU<br/>📈 <b>7.4 MiB</b> 🏆 (3.75x)</td>
+<td markdown>🕓 9.9 s 116% CPU<br/>📈 <b>7.4 MiB</b> 🏆 (3.75x)</td>
 
 </tr>
 
@@ -413,16 +413,16 @@ st pass input.fastq | lz4 -c > output.fastq.lz4
 </table>
 
 ## count
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Count the number of FASTQ sequences in the input
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st count input.fastq
@@ -438,12 +438,12 @@ st count input.fastq
 
 <details markdown><summary><b>Seqtk</b> 🕓 0.7 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>Seqtk</td>
+<tr markdown>
+<td markdown>Seqtk</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqtk size input.fasta
@@ -458,7 +458,7 @@ seqtk size input.fasta
 </details>
 </td>
 
-<td>🕓 0.7 s<br/>📈 <b>3.4 MiB</b> 🏆 (2.11x)</td>
+<td markdown>🕓 0.7 s<br/>📈 <b>3.4 MiB</b> 🏆 (2.11x)</td>
 
 </tr>
 
@@ -472,14 +472,14 @@ seqtk size input.fasta
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Count the number of FASTQ sequences, grouped by GC content (in 10% intervals)
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st count -k 'bin(gc_percent, 10)' input.fastq
@@ -505,12 +505,12 @@ st count -k 'bin(gc_percent, 10)' input.fastq
 
 <details markdown><summary><b>st with math expression</b> 🕓 7.0 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>st with math expression</td>
+<tr markdown>
+<td markdown>st with math expression</td>
 
-<td>
+<td markdown>
 
 ```bash
 st count -k '{bin(gc_percent/100*100, 10)}' input.fastq
@@ -535,7 +535,7 @@ st count -k '{bin(gc_percent/100*100, 10)}' input.fastq
 </details>
 </td>
 
-<td>🕓 7.0 s<br/>📈 86.0 MiB</td>
+<td markdown>🕓 7.0 s<br/>📈 86.0 MiB</td>
 
 </tr>
 
@@ -552,16 +552,16 @@ st count -k '{bin(gc_percent/100*100, 10)}' input.fastq
 </table>
 
 ## sort
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Sort by sequence
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st sort seq input.fasta > output.fasta
@@ -570,12 +570,12 @@ st sort seq input.fasta > output.fasta
 
 <details markdown><summary><b>SeqKit</b> 🕓 42.3 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit sort -s  input.fasta > output.fasta
@@ -593,7 +593,7 @@ seqkit sort -s  input.fasta > output.fasta
 </details>
 </td>
 
-<td>🕓 42.3 s<br/>📈 4595.1 MiB</td>
+<td markdown>🕓 42.3 s<br/>📈 4595.1 MiB</td>
 
 </tr>
 
@@ -607,14 +607,14 @@ seqkit sort -s  input.fasta > output.fasta
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Sort by sequence with ~ 50 MiB memory limit
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st sort seq input.fasta -M 50M > output.fasta
@@ -630,12 +630,12 @@ Memory limit reached after 78050 records, writing to temporary file(s). Consider
 
 <details markdown><summary><b>100 MiB memory limit</b> 🕓 20.6 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>100 MiB memory limit</td>
+<tr markdown>
+<td markdown>100 MiB memory limit</td>
 
-<td>
+<td markdown>
 
 ```bash
 st sort seq input.fasta -M 100M > output.fasta
@@ -650,7 +650,7 @@ Memory limit reached after 155392 records, writing to temporary file(s). Conside
 </details>
 </td>
 
-<td>🕓 20.6 s<br/>📈 108.7 MiB</td>
+<td markdown>🕓 20.6 s<br/>📈 108.7 MiB</td>
 
 </tr>
 
@@ -664,14 +664,14 @@ Memory limit reached after 155392 records, writing to temporary file(s). Conside
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Sort by record ID
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st sort id input.fasta > output.fasta
@@ -680,12 +680,12 @@ st sort id input.fasta > output.fasta
 
 <details markdown><summary><b>SeqKit</b> 🕓 34.2 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit sort  input.fasta > output.fasta
@@ -703,7 +703,7 @@ seqkit sort  input.fasta > output.fasta
 </details>
 </td>
 
-<td>🕓 34.2 s<br/>📈 4436.4 MiB</td>
+<td markdown>🕓 34.2 s<br/>📈 4436.4 MiB</td>
 
 </tr>
 
@@ -717,14 +717,14 @@ seqkit sort  input.fasta > output.fasta
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Sort by sequence length
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st sort seqlen input.fasta > output.fasta
@@ -733,12 +733,12 @@ st sort seqlen input.fasta > output.fasta
 
 <details markdown><summary><b>SeqKit</b> 🕓 33.7 s  ❙  <b>VSEARCH</b> 🕓 9.4 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit sort -l  input.fasta > output.fasta
@@ -756,15 +756,15 @@ seqkit sort -l  input.fasta > output.fasta
 </details>
 </td>
 
-<td>🕓 33.7 s<br/>📈 4153.5 MiB</td>
+<td markdown>🕓 33.7 s<br/>📈 4153.5 MiB</td>
 
 </tr>
 
 
-<tr>
-<td>VSEARCH</td>
+<tr markdown>
+<td markdown>VSEARCH</td>
 
-<td>
+<td markdown>
 
 ```bash
 vsearch --sortbylength input.fasta --output output.fasta 
@@ -786,7 +786,7 @@ Writing output 100%
 </details>
 </td>
 
-<td>🕓 9.4 s<br/>📈 <b>891.4 MiB</b> 🏆 (1.17x)</td>
+<td markdown>🕓 9.4 s<br/>📈 <b>891.4 MiB</b> 🏆 (1.17x)</td>
 
 </tr>
 
@@ -800,14 +800,14 @@ Writing output 100%
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Sort sequences by USEARCH/VSEARCH-style abundance annotations
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 ST_ATTR_FMT=';key=value' st unique seq -a size={n_duplicates} input.fasta |
@@ -818,12 +818,12 @@ ST_ATTR_FMT=';key=value' st unique seq -a size={n_duplicates} input.fasta |
 
 <details markdown><summary><b>VSEARCH</b> 🕓 20.4 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>VSEARCH</td>
+<tr markdown>
+<td markdown>VSEARCH</td>
 
-<td>
+<td markdown>
 
 ```bash
 vsearch --derep_fulllength input.fasta --output - --sizeout |   vsearch --sortbysize - --output output.fasta  
@@ -852,7 +852,7 @@ Writing output 100%
 </details>
 </td>
 
-<td>🕓 20.4 s 113% CPU<br/>📈 <b>1345.8 MiB</b> 🏆 (1.19x)</td>
+<td markdown>🕓 20.4 s 113% CPU<br/>📈 <b>1345.8 MiB</b> 🏆 (1.19x)</td>
 
 </tr>
 
@@ -869,17 +869,17 @@ Writing output 100%
 </table>
 
 ## unique
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Remove duplicate sequences using sequence hashes. This is more memory efficient and usually faster than keeping the whole  sequence around.
 
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st unique seqhash input.fasta > output.fasta
@@ -888,12 +888,12 @@ st unique seqhash input.fasta > output.fasta
 
 <details markdown><summary><b>SeqKit</b> 🕓 <b>3.3 s</b> 🏆 (1.2x)</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit rmdup -sP  input.fasta > output.fasta
@@ -908,7 +908,7 @@ seqkit rmdup -sP  input.fasta > output.fasta
 </details>
 </td>
 
-<td>🕓 <b>3.3 s</b> 🏆 (1.2x)<br/>📈 180.1 MiB</td>
+<td markdown>🕓 <b>3.3 s</b> 🏆 (1.2x)<br/>📈 180.1 MiB</td>
 
 </tr>
 
@@ -922,15 +922,15 @@ seqkit rmdup -sP  input.fasta > output.fasta
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Remove duplicate sequences using sequence hashes (case-insensitive).
 
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st unique 'seqhash(true)' input.fasta > output.fasta
@@ -939,12 +939,12 @@ st unique 'seqhash(true)' input.fasta > output.fasta
 
 <details markdown><summary><b>VSEARCH</b> 🕓 12.1 s  ❙  <b>SeqKit</b> 🕓 6.2 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>VSEARCH</td>
+<tr markdown>
+<td markdown>VSEARCH</td>
 
-<td>
+<td markdown>
 
 ```bash
 vsearch --derep_smallmem input.fasta --fastaout output.fasta 
@@ -964,15 +964,15 @@ Writing FASTA output file 100%
 </details>
 </td>
 
-<td>🕓 12.1 s<br/>📈 <b>90.7 MiB</b> 🏆 (1.29x)</td>
+<td markdown>🕓 12.1 s<br/>📈 <b>90.7 MiB</b> 🏆 (1.29x)</td>
 
 </tr>
 
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit rmdup -sPi  input.fasta > output.fasta
@@ -987,7 +987,7 @@ seqkit rmdup -sPi  input.fasta > output.fasta
 </details>
 </td>
 
-<td>🕓 6.2 s<br/>📈 289.8 MiB</td>
+<td markdown>🕓 6.2 s<br/>📈 289.8 MiB</td>
 
 </tr>
 
@@ -1001,15 +1001,15 @@ seqkit rmdup -sPi  input.fasta > output.fasta
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Remove duplicate sequences that are exactly identical (case-insensitive); comparing full sequences instead of not hashes (requires more memory). VSEARCH additionally treats &#x27;T&#x27; and &#x27;U&#x27; in the same way (seqtool doesn&#x27;t).
 
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st unique upper_seq input.fasta > output.fasta
@@ -1018,12 +1018,12 @@ st unique upper_seq input.fasta > output.fasta
 
 <details markdown><summary><b>seqtool (sorted by sequence)</b> 🕓 13.5 s  ❙  <b>VSEARCH</b> 🕓 15.8 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>seqtool (sorted by sequence)</td>
+<tr markdown>
+<td markdown>seqtool (sorted by sequence)</td>
 
-<td>
+<td markdown>
 
 ```bash
 st unique -s upper_seq input.fasta > output.fasta
@@ -1031,15 +1031,15 @@ st unique -s upper_seq input.fasta > output.fasta
 
 </td>
 
-<td>🕓 13.5 s<br/>📈 1640.7 MiB</td>
+<td markdown>🕓 13.5 s<br/>📈 1640.7 MiB</td>
 
 </tr>
 
 
-<tr>
-<td>VSEARCH</td>
+<tr markdown>
+<td markdown>VSEARCH</td>
 
-<td>
+<td markdown>
 
 ```bash
 vsearch --derep_fulllength input.fasta --output output.fasta 
@@ -1060,7 +1060,7 @@ Writing FASTA output file 100%
 </details>
 </td>
 
-<td>🕓 15.8 s<br/>📈 1345.7 MiB</td>
+<td markdown>🕓 15.8 s<br/>📈 1345.7 MiB</td>
 
 </tr>
 
@@ -1074,14 +1074,14 @@ Writing FASTA output file 100%
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Remove duplicate sequences (exact mode) with a memory limit of ~50 MiB
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st unique seq -M 50M input.fasta > output.fasta
@@ -1101,14 +1101,14 @@ Memory limit reached after 151512 records, writing to temporary file(s). Conside
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Remove duplicate sequences, checking both strands
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st unique seqhash_both input.fasta > output.fasta
@@ -1117,12 +1117,12 @@ st unique seqhash_both input.fasta > output.fasta
 
 <details markdown><summary><b>SeqKit</b> 🕓 14.8 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit rmdup -s  input.fasta > output.fasta
@@ -1137,7 +1137,7 @@ seqkit rmdup -s  input.fasta > output.fasta
 </details>
 </td>
 
-<td>🕓 14.8 s<br/>📈 293.6 MiB</td>
+<td markdown>🕓 14.8 s<br/>📈 293.6 MiB</td>
 
 </tr>
 
@@ -1151,15 +1151,15 @@ seqkit rmdup -s  input.fasta > output.fasta
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Remove duplicate sequences, appending USEARCH/VSEARCH-style abundance annotations to the headers: *&gt;id;size=NN*
 
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st unique seq -a size={n_duplicates} --attr-fmt ';key=value' input.fasta > output.fasta
@@ -1168,12 +1168,12 @@ st unique seq -a size={n_duplicates} --attr-fmt ';key=value' input.fasta > outpu
 
 <details markdown><summary><b>VSEARCH</b> 🕓 16.1 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>VSEARCH</td>
+<tr markdown>
+<td markdown>VSEARCH</td>
 
-<td>
+<td markdown>
 
 ```bash
 vsearch --derep_fulllength input.fasta --sizeout --output output.fasta 
@@ -1194,7 +1194,7 @@ Writing FASTA output file 100%
 </details>
 </td>
 
-<td>🕓 16.1 s<br/>📈 <b>1345.9 MiB</b> 🏆 (1.19x)</td>
+<td markdown>🕓 16.1 s<br/>📈 <b>1345.9 MiB</b> 🏆 (1.19x)</td>
 
 </tr>
 
@@ -1208,15 +1208,15 @@ Writing FASTA output file 100%
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 De-replicate both by sequence *and* record ID (the part before the first space in the header). The given benchmark actually has unique sequence IDs, so the result is the same as de-replication by sequence.
 
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st unique id,seq input.fasta > output.fasta
@@ -1225,12 +1225,12 @@ st unique id,seq input.fasta > output.fasta
 
 <details markdown><summary><b>VSEARCH</b> 🕓 17.7 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>VSEARCH</td>
+<tr markdown>
+<td markdown>VSEARCH</td>
 
-<td>
+<td markdown>
 
 ```bash
 vsearch --derep_id input.fasta --output output.fasta
@@ -1251,7 +1251,7 @@ Writing FASTA output file 100%
 </details>
 </td>
 
-<td>🕓 17.7 s<br/>📈 1364.4 MiB</td>
+<td markdown>🕓 17.7 s<br/>📈 1364.4 MiB</td>
 
 </tr>
 
@@ -1268,16 +1268,16 @@ Writing FASTA output file 100%
 </table>
 
 ## filter
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Filter sequences by length
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st filter 'seqlen >= 100' input.fastq > output.fastq
@@ -1286,12 +1286,12 @@ st filter 'seqlen >= 100' input.fastq > output.fastq
 
 <details markdown><summary><b>Seqtk</b> 🕓 6.5 s  ❙  <b>SeqKit</b> 🕓 <b>4.1 s</b> 🏆 (1.3x)</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>Seqtk</td>
+<tr markdown>
+<td markdown>Seqtk</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqtk seq -L 100 input.fastq > output.fastq
@@ -1299,15 +1299,15 @@ seqtk seq -L 100 input.fastq > output.fastq
 
 </td>
 
-<td>🕓 6.5 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.07x)</td>
+<td markdown>🕓 6.5 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.07x)</td>
 
 </tr>
 
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit seq -m 100 input.fastq > output.fastq
@@ -1322,7 +1322,7 @@ seqkit seq -m 100 input.fastq > output.fastq
 </details>
 </td>
 
-<td>🕓 <b>4.1 s</b> 🏆 (1.3x)<br/>📈 28.1 MiB</td>
+<td markdown>🕓 <b>4.1 s</b> 🏆 (1.3x)<br/>📈 28.1 MiB</td>
 
 </tr>
 
@@ -1336,15 +1336,15 @@ seqkit seq -m 100 input.fastq > output.fastq
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Filter sequences by the total expected error as calculated from the quality scores
 
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st filter 'exp_err <= 1' input.fastq --to-fa > output.fastq
@@ -1353,12 +1353,12 @@ st filter 'exp_err <= 1' input.fastq --to-fa > output.fastq
 
 <details markdown><summary><b>VSEARCH</b> 🕓 32.9 s  ❙  <b>USEARCH</b> 🕓 <b>16.0 s</b> 🏆 (1.7x)</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>VSEARCH</td>
+<tr markdown>
+<td markdown>VSEARCH</td>
 
-<td>
+<td markdown>
 
 ```bash
 vsearch --fastq_filter input.fastq --fastq_maxee 1 --fastaout output.fasta 
@@ -1376,15 +1376,15 @@ Reading input file 100%
 </details>
 </td>
 
-<td>🕓 32.9 s<br/>📈 <b>4.4 MiB</b> 🏆 (1.66x)</td>
+<td markdown>🕓 32.9 s<br/>📈 <b>4.4 MiB</b> 🏆 (1.66x)</td>
 
 </tr>
 
 
-<tr>
-<td>USEARCH</td>
+<tr markdown>
+<td markdown>USEARCH</td>
 
-<td>
+<td markdown>
 
 ```bash
 usearch -fastq_filter input.fastq -fastq_maxee 1 -fastaout output.fasta
@@ -1414,7 +1414,7 @@ License: personal use only
 </details>
 </td>
 
-<td>🕓 <b>16.0 s</b> 🏆 (1.7x) 997% CPU<br/>📈 34.9 MiB</td>
+<td markdown>🕓 <b>16.0 s</b> 🏆 (1.7x) 997% CPU<br/>📈 34.9 MiB</td>
 
 </tr>
 
@@ -1428,14 +1428,14 @@ License: personal use only
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Select records from a large set of sequences given a list of 1000 sequence IDs
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st filter -m ids_list.txt 'has_meta()' input.fasta > output.fasta
@@ -1444,12 +1444,12 @@ st filter -m ids_list.txt 'has_meta()' input.fasta > output.fasta
 
 <details markdown><summary><b>VSEARCH</b> 🕓 28.1 s  ❙  <b>SeqKit</b> 🕓 <b>1.0 s</b> 🏆 (1.6x)</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>VSEARCH</td>
+<tr markdown>
+<td markdown>VSEARCH</td>
 
-<td>
+<td markdown>
 
 ```bash
 vsearch --fastx_getseqs input.fasta --labels ids_list.txt --fastaout output.fasta
@@ -1468,15 +1468,15 @@ Extracting sequences 100%
 </details>
 </td>
 
-<td>🕓 28.1 s<br/>📈 <b>4.2 MiB</b> 🏆 (1.85x)</td>
+<td markdown>🕓 28.1 s<br/>📈 <b>4.2 MiB</b> 🏆 (1.85x)</td>
 
 </tr>
 
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit grep -f ids_list.txt input.fasta > output.fasta
@@ -1491,7 +1491,7 @@ seqkit grep -f ids_list.txt input.fasta > output.fasta
 </details>
 </td>
 
-<td>🕓 <b>1.0 s</b> 🏆 (1.6x)<br/>📈 21.8 MiB</td>
+<td markdown>🕓 <b>1.0 s</b> 🏆 (1.6x)<br/>📈 21.8 MiB</td>
 
 </tr>
 
@@ -1508,16 +1508,16 @@ seqkit grep -f ids_list.txt input.fasta > output.fasta
 </table>
 
 ## sample
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Random subsampling to 1000 of sequences
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st sample -n 1000 input.fasta > output.fasta
@@ -1526,12 +1526,12 @@ st sample -n 1000 input.fasta > output.fasta
 
 <details markdown><summary><b>VSEARCH</b> 🕓 4.3 s  ❙  <b>Seqtk</b> 🕓 0.8 s  ❙  <b>SeqKit</b> 🕓 11.5 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>VSEARCH</td>
+<tr markdown>
+<td markdown>VSEARCH</td>
 
-<td>
+<td markdown>
 
 ```bash
 vsearch --fastx_subsample input.fasta --sample_size 1000 --fastaout output.fasta
@@ -1553,15 +1553,15 @@ Subsampled 1000 reads from 1000 amplicons
 </details>
 </td>
 
-<td>🕓 4.3 s<br/>📈 841.5 MiB</td>
+<td markdown>🕓 4.3 s<br/>📈 841.5 MiB</td>
 
 </tr>
 
 
-<tr>
-<td>Seqtk</td>
+<tr markdown>
+<td markdown>Seqtk</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqtk sample input.fasta 1000 > output.fasta
@@ -1569,15 +1569,15 @@ seqtk sample input.fasta 1000 > output.fasta
 
 </td>
 
-<td>🕓 0.8 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.07x)</td>
+<td markdown>🕓 0.8 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.07x)</td>
 
 </tr>
 
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit sample -n 1000 input.fasta > output.fasta
@@ -1594,7 +1594,7 @@ seqkit sample -n 1000 input.fasta > output.fasta
 </details>
 </td>
 
-<td>🕓 11.5 s<br/>📈 3112.7 MiB</td>
+<td markdown>🕓 11.5 s<br/>📈 3112.7 MiB</td>
 
 </tr>
 
@@ -1608,14 +1608,14 @@ seqkit sample -n 1000 input.fasta > output.fasta
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Random subsampling to ~10% of sequences
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st sample -p 0.1 input.fasta > output.fasta
@@ -1624,12 +1624,12 @@ st sample -p 0.1 input.fasta > output.fasta
 
 <details markdown><summary><b>Seqtk</b> 🕓 1.7 s  ❙  <b>SeqKit</b> 🕓 2.0 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>Seqtk</td>
+<tr markdown>
+<td markdown>Seqtk</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqtk sample input.fastq 0.1 > output.fasta
@@ -1637,15 +1637,15 @@ seqtk sample input.fastq 0.1 > output.fasta
 
 </td>
 
-<td>🕓 1.7 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.04x)</td>
+<td markdown>🕓 1.7 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.04x)</td>
 
 </tr>
 
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit sample -p 0.1 input.fastq > output.fasta
@@ -1661,7 +1661,7 @@ seqkit sample -p 0.1 input.fastq > output.fasta
 </details>
 </td>
 
-<td>🕓 2.0 s<br/>📈 27.6 MiB</td>
+<td markdown>🕓 2.0 s<br/>📈 27.6 MiB</td>
 
 </tr>
 
@@ -1678,16 +1678,16 @@ seqkit sample -p 0.1 input.fastq > output.fasta
 </table>
 
 ## find
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Find the forward primer location in the input reads with up to 4 mismatches
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st find -D4 file:primers.fasta input.fastq -a primer={pattern_name} -a rng={match_range} > output.fastq
@@ -1703,12 +1703,12 @@ Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorr
 
 <details markdown><summary><b>st (4 threads)</b> 🕓 <b>6.0 s</b> 🏆 (3.5x)  ❙  <b>st (max. mismatches = 2)</b> 🕓 21.1 s  ❙  <b>st (max. mismatches = 8)</b> 🕓 26.7 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>st (4 threads)</td>
+<tr markdown>
+<td markdown>st (4 threads)</td>
 
-<td>
+<td markdown>
 
 ```bash
 st find -t4 -D4 file:primers.fasta input.fastq -a primer={pattern_name} -a rng={match_range} > output.fastq
@@ -1723,15 +1723,15 @@ Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorr
 </details>
 </td>
 
-<td>🕓 <b>6.0 s</b> 🏆 (3.5x) 402% CPU<br/>📈 17.6 MiB</td>
+<td markdown>🕓 <b>6.0 s</b> 🏆 (3.5x) 402% CPU<br/>📈 17.6 MiB</td>
 
 </tr>
 
 
-<tr>
-<td>st (max. mismatches = 2)</td>
+<tr markdown>
+<td markdown>st (max. mismatches = 2)</td>
 
-<td>
+<td markdown>
 
 ```bash
 st find -D2 file:primers.fasta input.fastq -a primer={pattern_name} -a rng={match_range} > output.fastq
@@ -1746,15 +1746,15 @@ Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorr
 </details>
 </td>
 
-<td>🕓 21.1 s<br/>📈 7.5 MiB</td>
+<td markdown>🕓 21.1 s<br/>📈 7.5 MiB</td>
 
 </tr>
 
 
-<tr>
-<td>st (max. mismatches = 8)</td>
+<tr markdown>
+<td markdown>st (max. mismatches = 8)</td>
 
-<td>
+<td markdown>
 
 ```bash
 st find -D8 file:primers.fasta input.fastq -a primer={pattern_name} -a rng={match_range} > output.fastq
@@ -1769,7 +1769,7 @@ Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorr
 </details>
 </td>
 
-<td>🕓 26.7 s<br/>📈 7.4 MiB</td>
+<td markdown>🕓 26.7 s<br/>📈 7.4 MiB</td>
 
 </tr>
 
@@ -1783,15 +1783,15 @@ Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorr
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Find and trim the forward primer up to an error rate (edit distance) of 20%, discarding unmatched reads. *Note:* Unlike Cutadapt, seqtool currently does not offer ungapped alignments (`--no-indels`).
 
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st find -f file:primers.fasta -R 0.2 input.fastq -a primer={pattern_name} -a end={match_end} |
@@ -1809,12 +1809,12 @@ Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorr
 
 <details markdown><summary><b>Cutadapt</b> 🕓 67.1 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>Cutadapt</td>
+<tr markdown>
+<td markdown>Cutadapt</td>
 
-<td>
+<td markdown>
 
 ```bash
 cutadapt -g 'file:primers.fasta;min_overlap=15' input.fastq -e 0.2 --rename '{id} primer={adapter_name}' --discard-untrimmed > output.fastq 
@@ -1904,7 +1904,7 @@ length	count	expect	max.err	error counts
 </details>
 </td>
 
-<td>🕓 67.1 s<br/>📈 20.9 MiB</td>
+<td markdown>🕓 67.1 s<br/>📈 20.9 MiB</td>
 
 </tr>
 
@@ -1918,15 +1918,15 @@ length	count	expect	max.err	error counts
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Find and trim the forward primer in parallel using 4 threads (cores).
 
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st find -f file:primers.fasta -R 0.2 -t4 input.fastq -a primer={pattern_name} -a end={match_end} |
@@ -1944,12 +1944,12 @@ Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorr
 
 <details markdown><summary><b>Cutadapt</b> 🕓 18.1 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>Cutadapt</td>
+<tr markdown>
+<td markdown>Cutadapt</td>
 
-<td>
+<td markdown>
 
 ```bash
 cutadapt -j4 -g 'file:primers.fasta;min_overlap=15' input.fastq -e 0.2 --rename '{id} primer={adapter_name}' --discard-untrimmed > output.fastq 
@@ -2039,7 +2039,7 @@ length	count	expect	max.err	error counts
 </details>
 </td>
 
-<td>🕓 18.1 s 413% CPU<br/>📈 39.4 MiB</td>
+<td markdown>🕓 18.1 s 413% CPU<br/>📈 39.4 MiB</td>
 
 </tr>
 
@@ -2056,16 +2056,16 @@ length	count	expect	max.err	error counts
 </table>
 
 ## replace
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Convert DNA to RNA using the replace command
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st replace T U input.fasta > output.fasta
@@ -2074,12 +2074,12 @@ st replace T U input.fasta > output.fasta
 
 <details markdown><summary><b>st find</b> 🕓 14.3 s  ❙  <b>SeqKit</b> 🕓 <b>4.8 s</b> 🏆 (2.1x)  ❙  <b>FASTX-Toolkit</b> 🕓 283.5 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>st find</td>
+<tr markdown>
+<td markdown>st find</td>
 
-<td>
+<td markdown>
 
 ```bash
 st find T --rep U input.fasta > output.fasta
@@ -2094,15 +2094,15 @@ Note: the sequence type of the pattern was determined as 'dna'. If incorrect, pl
 </details>
 </td>
 
-<td>🕓 14.3 s<br/>📈 7.2 MiB</td>
+<td markdown>🕓 14.3 s<br/>📈 7.2 MiB</td>
 
 </tr>
 
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit seq --dna2rna  input.fasta > output.fasta
@@ -2110,15 +2110,15 @@ seqkit seq --dna2rna  input.fasta > output.fasta
 
 </td>
 
-<td>🕓 <b>4.8 s</b> 🏆 (2.1x)<br/>📈 27.3 MiB</td>
+<td markdown>🕓 <b>4.8 s</b> 🏆 (2.1x)<br/>📈 27.3 MiB</td>
 
 </tr>
 
 
-<tr>
-<td>FASTX-Toolkit</td>
+<tr markdown>
+<td markdown>FASTX-Toolkit</td>
 
-<td>
+<td markdown>
 
 ```bash
 fasta_nucleotide_changer -r -i input.fasta > output.fasta
@@ -2126,7 +2126,7 @@ fasta_nucleotide_changer -r -i input.fasta > output.fasta
 
 </td>
 
-<td>🕓 283.5 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.07x)</td>
+<td markdown>🕓 283.5 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.07x)</td>
 
 </tr>
 
@@ -2140,14 +2140,14 @@ fasta_nucleotide_changer -r -i input.fasta > output.fasta
 
 </tr>
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Convert DNA to RNA using 4 threads
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st replace -t4 T U input.fasta > output.fasta
@@ -2156,12 +2156,12 @@ st replace -t4 T U input.fasta > output.fasta
 
 <details markdown><summary><b>st find</b> 🕓 8.4 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>st find</td>
+<tr markdown>
+<td markdown>st find</td>
 
-<td>
+<td markdown>
 
 ```bash
 st find -t4 T --rep U input.fasta > output.fasta
@@ -2176,7 +2176,7 @@ Note: the sequence type of the pattern was determined as 'dna'. If incorrect, pl
 </details>
 </td>
 
-<td>🕓 8.4 s 282% CPU<br/>📈 24.6 MiB</td>
+<td markdown>🕓 8.4 s 282% CPU<br/>📈 24.6 MiB</td>
 
 </tr>
 
@@ -2193,16 +2193,16 @@ Note: the sequence type of the pattern was determined as 'dna'. If incorrect, pl
 </table>
 
 ## trim
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Trim the leading 99 bp from the sequences
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st trim 100: input.fasta > output.fasta
@@ -2211,12 +2211,12 @@ st trim 100: input.fasta > output.fasta
 
 <details markdown><summary><b>SeqKit (creates FASTA index)</b> 🕓 44.8 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>SeqKit (creates FASTA index)</td>
+<tr markdown>
+<td markdown>SeqKit (creates FASTA index)</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit subseq -r '100:-1'  input.fasta > output.fasta
@@ -2233,7 +2233,7 @@ seqkit subseq -r '100:-1'  input.fasta > output.fasta
 </details>
 </td>
 
-<td>🕓 44.8 s<br/>📈 1254.5 MiB</td>
+<td markdown>🕓 44.8 s<br/>📈 1254.5 MiB</td>
 
 </tr>
 
@@ -2250,16 +2250,16 @@ seqkit subseq -r '100:-1'  input.fasta > output.fasta
 </table>
 
 ## upper
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Convert sequences to uppercase
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st upper input.fasta > output.fasta
@@ -2268,12 +2268,12 @@ st upper input.fasta > output.fasta
 
 <details markdown><summary><b>Seqtk</b> 🕓 5.2 s  ❙  <b>SeqKit</b> 🕓 4.2 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>Seqtk</td>
+<tr markdown>
+<td markdown>Seqtk</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqtk seq -U input.fasta > output.fasta
@@ -2281,15 +2281,15 @@ seqtk seq -U input.fasta > output.fasta
 
 </td>
 
-<td>🕓 5.2 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.11x)</td>
+<td markdown>🕓 5.2 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.11x)</td>
 
 </tr>
 
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit seq -u  input.fasta > output.fasta
@@ -2297,7 +2297,7 @@ seqkit seq -u  input.fasta > output.fasta
 
 </td>
 
-<td>🕓 4.2 s<br/>📈 62.2 MiB</td>
+<td markdown>🕓 4.2 s<br/>📈 62.2 MiB</td>
 
 </tr>
 
@@ -2314,16 +2314,16 @@ seqkit seq -u  input.fasta > output.fasta
 </table>
 
 ## revcomp
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Reverse complement sequences
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st revcomp input.fasta > output.fasta
@@ -2332,12 +2332,12 @@ st revcomp input.fasta > output.fasta
 
 <details markdown><summary><b>Seqtk</b> 🕓 <b>5.3 s</b> 🏆 (1.1x)  ❙  <b>VSEARCH</b> 🕓 7.7 s  ❙  <b>SeqKit</b> 🕓 7.8 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>Seqtk</td>
+<tr markdown>
+<td markdown>Seqtk</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqtk seq -r input.fasta > output.fasta
@@ -2345,15 +2345,15 @@ seqtk seq -r input.fasta > output.fasta
 
 </td>
 
-<td>🕓 <b>5.3 s</b> 🏆 (1.1x)<br/>📈 <b>3.5 MiB</b> 🏆 (1.21x)</td>
+<td markdown>🕓 <b>5.3 s</b> 🏆 (1.1x)<br/>📈 <b>3.5 MiB</b> 🏆 (1.21x)</td>
 
 </tr>
 
 
-<tr>
-<td>VSEARCH</td>
+<tr markdown>
+<td markdown>VSEARCH</td>
 
-<td>
+<td markdown>
 
 ```bash
 vsearch --fastx_revcomp input.fasta --fastaout output.fasta 
@@ -2370,15 +2370,15 @@ Reading FASTA file 100%
 </details>
 </td>
 
-<td>🕓 7.7 s<br/>📈 4.2 MiB</td>
+<td markdown>🕓 7.7 s<br/>📈 4.2 MiB</td>
 
 </tr>
 
 
-<tr>
-<td>SeqKit</td>
+<tr markdown>
+<td markdown>SeqKit</td>
 
-<td>
+<td markdown>
 
 ```bash
 seqkit seq -rp  input.fasta > output.fasta
@@ -2393,7 +2393,7 @@ seqkit seq -rp  input.fasta > output.fasta
 </details>
 </td>
 
-<td>🕓 7.8 s<br/>📈 28.1 MiB</td>
+<td markdown>🕓 7.8 s<br/>📈 28.1 MiB</td>
 
 </tr>
 
@@ -2410,16 +2410,16 @@ seqkit seq -rp  input.fasta > output.fasta
 </table>
 
 ## concat
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>
+<tr markdown>
+<td markdown>
 
 Concatenate sequences, adding an `NNNNN` spacer inbetween
 
 </td>
 
-<td>
+<td markdown>
 
 ```bash
 st concat -s 5 -c N file1.fastq file2.fastq > output.fastq
@@ -2428,12 +2428,12 @@ st concat -s 5 -c N file1.fastq file2.fastq > output.fastq
 
 <details markdown><summary><b>VSEARCH</b> 🕓 20.5 s</summary>
 
-<table class="cmd">
+<table markdown class="cmd">
 
-<tr>
-<td>VSEARCH</td>
+<tr markdown>
+<td markdown>VSEARCH</td>
 
-<td>
+<td markdown>
 
 ```bash
 vsearch --fastq_join file1.fastq --reverse file2.fastq --join_padgap NNNNN --fastqout output.fastq
@@ -2451,7 +2451,7 @@ Joining reads 100%
 </details>
 </td>
 
-<td>🕓 20.5 s<br/>📈 <b>4.2 MiB</b> 🏆 (1.74x)</td>
+<td markdown>🕓 20.5 s<br/>📈 <b>4.2 MiB</b> 🏆 (1.74x)</td>
 
 </tr>
 
