@@ -266,9 +266,9 @@ st find file:primers.fasta -a primer='{pattern_name}' -a end='{match_end}' seque
   st split -o '{attr(primer)}'
 ```
 
-<table>
+<table markdown>
 <tr><th>prA.fasta </th><th>prB.fasta</th><th>undefined.fasta</th></tr>
-<tr>
+<tr markdown>
 <td markdown>
 
 ```
@@ -317,9 +317,9 @@ Integration of [**sequence metadata sources**](meta.md) in the form of delimited
 Example: Add Genus names from a separate tab-separated list
 </summary>
 
-<table>
+<table markdown>
 <tr><th>input.fasta</th><th>genus.tsv</th></tr>
-<tr>
+<tr markdown>
 <td markdown>
 
 ```
@@ -350,9 +350,9 @@ Using `-m/--meta` to include `genus.tsv` as metadata source:
 st set -m genus.tsv --desc '{meta(genus)}' input.fasta > with_genus.fasta
 ```
 
-<table>
+<table markdown>
 <tr><th>with_genus.fasta</th></tr>
-<tr>
+<tr markdown>
 <td markdown>
 
 ```
@@ -373,9 +373,9 @@ SEQUENCE
 Example: Choose specific sequences given a separate file with an ID list
 </summary>
 
-<table>
+<table markdown>
 <tr><th>input.fasta</th><th>id_list.txt</th></tr>
-<tr>
+<tr markdown>
 <td markdown>
 
 ```
@@ -406,9 +406,9 @@ id4
 st filter -m id_list.txt 'has_meta()' input.fasta > subset.fasta
 ```
 
-<table>
+<table markdown>
 <tr><th>subset.fasta</th></tr>
-<tr>
+<tr markdown>
 <td markdown>
 
 ```

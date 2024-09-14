@@ -112,13 +112,13 @@ The following example de-multiplexes sequences amplified with different forward
 primers and then uses [trim](trim.md) to remove the primers, and finally distributes
 the sequences into different files named by the forward primer ([split](split.md)).
 
-<table>
+<table markdown>
 <tr><th>
 
 primers.fasta
 
 </th></tr>
-<tr><td markdown>
+<tr markdown><td markdown>
 
 ```
 >prA
@@ -137,9 +137,9 @@ st find file:primers.fasta -a primer='{pattern_name}' -a end='{match_end}' seque
     st split -o '{attr(primer)}'
 ```
 
-<table>
+<table markdown>
 <tr><th>prA.fasta </th><th>prB.fasta</th><th>undefined.fasta</th></tr>
-<tr>
+<tr markdown>
 <td>
 
 ```
