@@ -113,7 +113,7 @@ primers and then uses [trim](trim.md) to remove the primers, and finally distrib
 the sequences into different files named by the forward primer ([split](split.md)).
 
 <table>
-<tr><th markdown>
+<tr><th>
 
 primers.fasta
 
@@ -137,7 +137,7 @@ st find file:primers.fasta -a primer='{pattern_name}' -a end='{match_end}' seque
     st split -o '{attr(primer)}'
 ```
 
-<table markdown>
+<table>
 <tr><th>prA.fasta </th><th>prB.fasta</th><th>undefined.fasta</th></tr>
 <tr>
 <td>
@@ -162,7 +162,7 @@ SEQUENCE
 ```
 
 </td>
-<td>
+<td markdown>
 
 ```
 >id5 primer=undefined end=undefined

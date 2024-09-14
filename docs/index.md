@@ -266,10 +266,10 @@ st find file:primers.fasta -a primer='{pattern_name}' -a end='{match_end}' seque
   st split -o '{attr(primer)}'
 ```
 
-<table markdown>
+<table>
 <tr><th>prA.fasta </th><th>prB.fasta</th><th>undefined.fasta</th></tr>
 <tr>
-<td>
+<td markdown>
 
 ```
 >id1 primer=prA end=22
@@ -280,7 +280,7 @@ SEQUENCE
 ```
 
 </td>
-<td>
+<td markdown>
 
 ```
 >id2 primer=prB end=20
@@ -291,7 +291,7 @@ SEQUENCE
 ```
 
 </td>
-<td>
+<td markdown>
 
 ```
 >id5 primer=undefined end=undefined
@@ -320,7 +320,7 @@ Example: Add Genus names from a separate tab-separated list
 <table>
 <tr><th>input.fasta</th><th>genus.tsv</th></tr>
 <tr>
-<td>
+<td markdown>
 
 ```
 >id1
@@ -331,7 +331,7 @@ SEQUENCE
 ```
 
 </td>
-<td>
+<td markdown>
 
 ```
 id  genus
@@ -353,7 +353,7 @@ st set -m genus.tsv --desc '{meta(genus)}' input.fasta > with_genus.fasta
 <table>
 <tr><th>with_genus.fasta</th></tr>
 <tr>
-<td>
+<td markdown>
 
 ```
 >seq1 Actinomyces
@@ -376,7 +376,7 @@ Example: Choose specific sequences given a separate file with an ID list
 <table>
 <tr><th>input.fasta</th><th>id_list.txt</th></tr>
 <tr>
-<td>
+<td markdown>
 
 ```
 >id1
@@ -409,7 +409,7 @@ st filter -m id_list.txt 'has_meta()' input.fasta > subset.fasta
 <table>
 <tr><th>subset.fasta</th></tr>
 <tr>
-<td>
+<td markdown>
 
 ```
 >id1
