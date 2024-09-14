@@ -27,10 +27,21 @@ table.cmd {
     table-layout: fixed;
     width: 100%;
 }
+table.cmd td {
+    padding: 0.2rem 0.5rem;
+}
 table.cmd td:first-child {
-    width: 30%;
+    width: 25%;
 }
 table.cmd td:last-child {
-    width: 20%;
+    width: 15%;
+}
+.md-typeset pre {
+    background: #575757;
+    color: #f2f2f2;
+    padding: 0.8rem 1rem;
+    border-radius: 0.5em;
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 </style>
