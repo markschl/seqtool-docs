@@ -36,12 +36,4 @@ table.cmd td:first-child {
 table.cmd td:last-child {
     width: 15%;
 }
-.md-typeset pre {
-    background: #575757;
-    color: #f2f2f2;
-    padding: 0.8rem 1rem;
-    border-radius: 0.5em;
-    word-wrap: break-word;
-    white-space: pre-wrap;
-}
 </style>
