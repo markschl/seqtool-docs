@@ -9,7 +9,7 @@ SEQUENCE
 SEQUENCE
 ```
 
-```sh
+```bash
 st split -o "group_{attr(group)}.fa" input.fasta
 ```
 

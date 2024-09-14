@@ -54,14 +54,14 @@ A peculiarity of seqtool functions are *unquoted string arguments*.
 These are allowed in in a non-expression context in order to prevent users from
 having to use *both* single and double quotes. Example:
 
-```sh
+```bash
 st sort 'attr(a)' input.fasta
 ```
 
 As soon as an expression is used, arguments need to be quoted, otherwise the `a`
 is interpreted as a variable:
 
-```sh
+```bash
 st sort 'num(attr("a")) + num(attr("b"))' input.fasta
 ```
 

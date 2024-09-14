@@ -35,7 +35,7 @@ Example: compressed FASTQ to FASTA
 
 Combine multiple compressed FASTQ files, converting them to FASTA, using [pass](pass.md).
 
-```sh
+```bash
 st pass file1.fastq.gz file2.fastq.gz -o output.fasta
 ```
 
@@ -52,7 +52,7 @@ Example: FASTA to tab-separated list
 Aside from ID and sequence, any [variable/function](variables.md) such as
 the sequence length (`seqlen`) can be written to  delimited text.
 
-```sh
+```bash
 st pass input.fasta --to-tsv id,seq,seqlen
 ``` 
 
@@ -74,7 +74,7 @@ See also **[variables/functions](variables.md)** for more details.
 Example: count sequences in a large set of FASTQ files
 </summary>
 
-```sh
+```bash
 st count -k path data/*.fastq.gz
 ```
 
@@ -100,7 +100,7 @@ Example: summarize the GC content in 10% intervals
 The function `bin(variable, interval)` groups continuous numeric values
 into intervals
 
-```sh
+```bash
 st count -k 'bin(gc_percent, 10)' sequences.fasta
 ```
 
@@ -119,7 +119,7 @@ st count -k 'bin(gc_percent, 10)' sequences.fasta
 Example: Assign new sequence IDs
 </summary>
 
-```sh
+```bash
 st set -i 'seq_{num}' seqs.fasta > renamed.fasta
 ```
 
@@ -155,7 +155,7 @@ SEQUENCE1
 SEQUENCE1
 ```
 
-```sh
+```bash
 st unique 'desc,seq' seqs.fasta > grouped_uniques.fasta
 ```
 
@@ -185,7 +185,7 @@ This [filter](filter.md) command removes sequencing reads with more than one exp
 sequencing error (like [USEARCH](https://www.drive5.com/usearch/manual/exp_errs.html) can do)
 or sequence length of <100 bp.
 
-```sh
+```bash
 st filter 'exp_err < 1 && seqlen >= 100' reads.fastq > filtered.fastq
 ```
 
@@ -205,7 +205,7 @@ Example: De-replicate by sequence (seq variable) and/or other properties
 The [unique](unique.md) command returns all unique sequences and annotates
 the number of records with the same sequence in the header:
 
-```sh
+```bash
 st unique seq -a abund={n_duplicates} input.fasta > uniques.fasta
 ```
 
@@ -220,7 +220,7 @@ GGAGGATCCGAGCG
 It is also possible to de-replicate by multiple keys, e.g. by sequence,
 but grouped by a `sample` attribute in the header:
 
-```sh
+```bash
 st unique 'seq,attr(sample)' input.fasta > uniques.fasta
 ```
 
@@ -260,7 +260,7 @@ PRIMER
 
 **Command for searching/trimming**
 
-```sh
+```bash
 st find file:primers.fasta -a primer='{pattern_name}' -a end='{match_end}' sequences.fasta |
   st trim -e '{attr(end)}..' | 
   st split -o '{attr(primer)}'
@@ -346,7 +346,7 @@ seq2  Amycolatopsis
 
 Using `-m/--meta` to include `genus.tsv` as metadata source:
 
-```sh
+```bash
 st set -m genus.tsv --desc '{meta(genus)}' input.fasta > with_genus.fasta
 ```
 
@@ -402,7 +402,7 @@ id4
 </table>
 
 
-```sh
+```bash
 st filter -m id_list.txt 'has_meta()' input.fasta > subset.fasta
 ```
 

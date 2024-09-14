@@ -43,7 +43,7 @@ Options:
 [See this page](opts.md) for the options common to all commands.
 ## Example
 
-```sh
+```bash
 st sample -n 100 input.fasta > subset.fasta
 ```
 

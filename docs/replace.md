@@ -24,7 +24,7 @@ Options:
 
 Simple RNA to DNA conversion by replacing all occurrences of `U` with `T`:
 
-```sh
+```bash
 st replace U T rna.fasta > dna.fasta
 ```
 
@@ -33,7 +33,7 @@ st replace U T rna.fasta > dna.fasta
 The following command extracts Genbank accessions from sequence headers that follow
 the old-style Genbank format, e.g. `gi|1031916024|gb|KU317675.1|`:
 
-```sh
+```bash
 st replace -ir "gi\|\d+\|[a-z]+\|(?<acc>.+?)\|.*" seqs.fasta '$acc' > seqs_accession.fasta
 ```
 

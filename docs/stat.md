@@ -22,7 +22,7 @@ Options:
 
 Example:
 
-```sh
+```bash
 st stat seqlen,gc seqs.fasta
 ```
 

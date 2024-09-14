@@ -37,7 +37,7 @@ is relative to the sequence end (see [the explanation of ranges](ranges.md)).
 
 Assuming the length of a primer is 20bp, we can remove it like this:
 
-```sh
+```bash
 st trim ":20" input.fasta > output.fasta
 ```
 
@@ -48,7 +48,7 @@ trimming with [trim](trim.md).
 The following example trims forward and reverse primers, storing the positions
 as [attributes](attributes.md) in sequence headers:
 
-```sh
+```bash
 st find FWDPRIMER -f -R 0.1 -a fwd_end={match_end} input.fasta |
   st find REVPRIMER -f -R 0.1 -a rev_start={match_start} |
   st trim --exclusive '{attr(fwd_end)}:{attr(rev_start)}' > primer_trimmed.fasta
@@ -78,14 +78,14 @@ The following is equivalent to
 [bedtools getfasta](http://bedtools.readthedocs.io/en/latest/content/tools/getfasta.html)
 (note that the BED format is 0-based, thus the `-0` option):
 
-```sh
+```bash
 st trim -l coordinates.bed -0 '{meta(2)}:{meta(3)}' input.fasta > output.fasta
 ```
 
 Instead of `-0` we could also use an expression to calculate `start + 1`,
 matching the standard [range coordinate system](ranges.md) used by *seqtool*.
 
-```sh
+```bash
 st trim -l coordinates.bed '{meta(2)+1}:{meta(3)}' input.fasta > output.fasta
 ```
 
@@ -93,7 +93,7 @@ st trim -l coordinates.bed '{meta(2)+1}:{meta(3)}' input.fasta > output.fasta
 
 The trim command can also concatenate multiple parts of the sequence:
 
-```sh
+```bash
 st trim '2:5,10:1' input.fasta > output.fasta
 ```
 

@@ -35,7 +35,7 @@ SEQUENCE
 SEQUENCE
 ```
 
-```sh
+```bash
 st split -o "group_{attr(group)}.fa" input.fasta
 ```
 
@@ -54,7 +54,7 @@ documetation of the [find](find.md#multiple-patterns) command.
 
 ### Example
 Split input into chunks of 1000 sequences, which will be named outdir/file_1.fq, outdir/file_2.fq, etc.:
-```sh
+```bash
 st split -n 1000 -po 'outdir/out_{chunk}.fq' input.fastq
 ```
 ```

@@ -6,7 +6,7 @@ to a different sequence and/or compression format is also possible
 
 If nothing else than conversion should be done, use [pass](pass.md):
 
-```sh
+```bash
 st pass input.fastq.gz -o output.fasta
 # or
 st . input.fastq.gz -o output.fasta
@@ -17,7 +17,7 @@ extensions, assuming GZIP compressed FASTQ input and FASTA output.
 If receiving from STDIN or writing to STDOUT, the format has to be
 specified unless it is FASTA (which is the default):
 
-```sh
+```bash
 cat input.fastq.gz | st . --fmt fastq.gz --to fasta > output.fasta
 ```
 
@@ -64,19 +64,19 @@ Comma / tab / ... delimited input and output can be configured providing the
 `--fields` / `--outfields` argument, or directly using `--csv`/`--to-csv`
 or `--tsv`/`--to-tsv`. The delimiter is configured with `--delim <delim>`
 
-```sh
+```bash
 st . --outfields id,seq -o output.tsv input.fasta
 ```
 
 equivalent shortcut:
 
-```sh
+```bash
 st . --to-tsv id,seq > output.tsv
 ```
 
 [Variables](variables.md) can also be included:
 
-```sh
+```bash
 st . --to-tsv "id,seq,length: {s:seqlen}" input.fasta
 ```
 
@@ -93,7 +93,7 @@ The `ST_FORMAT` environment variable can be used to set a default format other
 than FASTA. This is especially useful if connecting many commands via pipe,
 saving the need to specify `--fq` / `--tsv <fields>` / ... repeatedly. Example:
 
-```sh
+```bash
 export ST_FORMAT=fastq
 
 st trim :10 input.fastq | st revcomp > trimmed_revcomp.fastq
@@ -102,7 +102,7 @@ st trim :10 input.fastq | st revcomp > trimmed_revcomp.fastq
 For delimited files (CSV or TSV), the input fields can be configured
 additionally after a colon (':'):
 
-```sh
+```bash
 export ST_FORMAT=tsv:id,seq
 
 ## Input file:
@@ -134,7 +134,7 @@ Quality scores can be visualized using the [view command](view.md).
 The following example converts a legacy Illumina 1.3+ file to the Sanger /
 Illumina 1.8+ format:
 
-```sh
+```bash
 st . --fmt fq-illumina --to.fastq illumina_1_3.fastq > sanger.fastq
 ```
 

@@ -6,7 +6,7 @@ or `-d/--desc` to search in the description part (everything *after* the space).
 Example: selectively return sequences that have `label` in their description
 (filtering with the `-f/--filter` flag):
 
-```sh
+```bash
 st find -df 'label' gb_seqs.fasta
 ```
 
@@ -17,7 +17,7 @@ Often, searching in headers requires a regular expression (`-r/--regex`).
 The following example extracts Genbank accessions from sequence headers that follow
 the old-style Genbank format:
 
-```sh
+```bash
 st find -ir "gi\|\d+\|[a-z]+\|(?<acc>.+?)\|.*" gb_seqs.fasta -a 'acc={match_group(acc)}'
 ```
 
@@ -40,7 +40,7 @@ Without the `-i` or `-d` flag, the default mode is to search in the sequence.
 The pattern type is automatically recognized and usually reported to avoid
 problems:
 
-```sh
+```bash
 st find -f AATGRAAT seqs.fasta > filtered.fasta
 ```
 
@@ -71,7 +71,7 @@ specify a distance limit relative to the length of the pattern
 In this example, the edit distance and range of the best match are saved
 into [header attributes](attributes.md) (or `undefined` if not found):
 
-```sh
+```bash
 st find -D 2 AATGRAAT seqs.fasta -a d='{match_diffs}' -a rng='{match_range}'
 ```
 
@@ -131,7 +131,7 @@ PRIMER
 </table>
 
 
-```sh
+```bash
 st find file:primers.fasta -a primer='{pattern_name}' -a end='{match_end}' sequences.fasta |
     st trim -e '{attr(end)}:' | 
     st split -o '{attr(primer)}'

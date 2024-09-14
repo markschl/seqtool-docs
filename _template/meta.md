@@ -25,7 +25,7 @@ seq2  Amycolatopsis
 
 The genus name can be added to the FASTA header using this command:
 
-```sh
+```bash
 st set --meta genus.tsv --desc '{meta(genus)}' input.fasta > with_genus.fasta
 # short:
 st set -m genus.tsv -d '{meta(genus)}' input.fasta > with_genus.fasta
@@ -43,7 +43,7 @@ If any of the sequence IDs is not found in the metadata, there will be an error.
 If missing data is expected, use `opt_meta` instead.
 Missing entries are `undefined`:
 
-```sh
+```bash
 st set -m genus.tsv --desc '{opt_meta(genus)}' input.fasta > with_genus.fasta
 ```
 
@@ -62,7 +62,7 @@ SEQUENCE
 Sometimes it is necessary to select all sequence records present in a list of
 sequence IDs. This can easily be achieved using this command:
 
-```sh
+```bash
 st filter -m id_list.txt 'has_meta()' seqs.fasta > in_list.fasta
 ```
 
@@ -71,7 +71,7 @@ st filter -m id_list.txt 'has_meta()' seqs.fasta > in_list.fasta
 Several sources can be simultaneously used in the same command with
 `-m file1 -m file2 -m file3...`:
 
-```sh
+```bash
 st filter -m source1.txt -m source2.txt 'meta("column", 1) == "value" && has_meta(2)' seqs.fasta > in_list.fasta
 ```
 

@@ -112,7 +112,7 @@ or `-d/--desc` to search in the description part (everything *after* the space).
 Example: selectively return sequences that have `label` in their description
 (filtering with the `-f/--filter` flag):
 
-```sh
+```bash
 st find -df 'label' gb_seqs.fasta
 ```
 
@@ -123,7 +123,7 @@ Often, searching in headers requires a regular expression (`-r/--regex`).
 The following example extracts Genbank accessions from sequence headers that follow
 the old-style Genbank format:
 
-```sh
+```bash
 st find -ir "gi\|\d+\|[a-z]+\|(?<acc>.+?)\|.*" gb_seqs.fasta -a 'acc={match_group(acc)}'
 ```
 
@@ -146,7 +146,7 @@ Without the `-i` or `-d` flag, the default mode is to search in the sequence.
 The pattern type is automatically recognized and usually reported to avoid
 problems:
 
-```sh
+```bash
 st find -f AATGRAAT seqs.fasta > filtered.fasta
 ```
 
@@ -177,7 +177,7 @@ specify a distance limit relative to the length of the pattern
 In this example, the edit distance and range of the best match are saved
 into [header attributes](attributes.md) (or `undefined` if not found):
 
-```sh
+```bash
 st find -D 2 AATGRAAT seqs.fasta -a d='{match_diffs}' -a rng='{match_range}'
 ```
 
@@ -237,7 +237,7 @@ PRIMER
 </table>
 
 
-```sh
+```bash
 st find file:primers.fasta -a primer='{pattern_name}' -a end='{match_end}' sequences.fasta |
     st trim -e '{attr(end)}:' | 
     st split -o '{attr(primer)}'
@@ -342,7 +342,7 @@ The find command provides many variables/functions to obtain information about t
 
 ### Examples
 Find a primer sequence with up to 2 mismatches (`-d/--dist`) and write the match range and the mismatches ('dist') to the header as attributes. The result will be 'undefined' (=undefined in JavaScript) if there are > 2 mismatches:
-```sh
+```bash
 st find -d 2 CTTGGTCATTTAGAGGAAGTAA -a rng={match_range} -a dist={match_diffs} reads.fasta
 ```
 ```
@@ -355,12 +355,12 @@ SEQUENCE
 (...)
 ```
 Find a primer sequence and if found, remove it using the 'trim' command, while non-matching sequences are written to 'no_primer.fasta':
-```sh
+```bash
 st find -f -d 2 CTTGGTCATTTAGAGGAAGTAA --dropped no_primer.fasta -a end={match_end} reads.fasta |
    st trim -e '{attr(match_end)}:' > primer_trimmed.fasta
 ```
 Search for several primers with up to 2 mismatches and write the name and mismatches of the best-matching primer to the header:
-```sh
+```bash
 st find -d 2 file:primers.fasta -a primer={pattern_name} -a dist={match_diffs} reads.fasta
 ```
 ```

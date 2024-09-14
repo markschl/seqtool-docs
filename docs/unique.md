@@ -69,7 +69,7 @@ to other tools.
 
 ### Examples
 De-replicate sequences using the sequence hash (faster than using the sequence `seq` itself), and also storing the number of duplicates (including the unique sequence itself) in the sequence header:
-```sh
+```bash
 st unique seqhash -a abund={n_duplicates} input.fasta > uniques.fasta
 ```
 ```
@@ -80,7 +80,7 @@ GGAGGATCCGAGCG
 (...)
 ```
 Store the complete list of duplicate IDs in the sequence header:
-```sh
+```bash
 st unique seqhash -a duplicates={duplicate_list} input.fasta > uniques.fasta
 ```
 ```

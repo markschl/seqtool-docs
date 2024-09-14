@@ -33,7 +33,7 @@ from end:      -8  <span style="color:blue">-7  -6  -5  -4  -3</span>  -2  -1
 The following commands all trim sequences to the <span style="color:blue">blue</span> range,
 resulting in the same output:
 
-```sh
+```bash
 st trim '2:6' input.fasta
 st trim '-7:-3' input.fasta
 st trim '2:-3' input.fasta
@@ -59,7 +59,7 @@ up or from a certain position being included in the range.
 
 The following retains all positions from `5` to the end:
 
-```sh
+```bash
 st trim '5:' input.fasta
 st trim '-4:' input.fasta
 ```
@@ -91,7 +91,7 @@ include the whole sequence end.
 It is also possible to omit the **start** position to return all positions up to
 a given position:
 
-```sh
+```bash
 st trim ':3' input.fasta
 ```
 
@@ -107,7 +107,7 @@ st trim ':3' input.fasta
 
 The following will retain the whole sequence, resulting in *no trimming* at all:
 
-```sh
+```bash
 st trim ":" input.fasta
 ```
 
@@ -131,7 +131,7 @@ that excludes start and end coordinates from the range.
 The following commands trim to positions 3-5 (<span style="color:blue">blue</span>)
 without the range bounds `2` and `6` themselves (<span style="color:red">red</span>).
 
-```sh
+```bash
 st trim -e '2:6' input.fasta
 st trim -e '-7:-3' input.fasta
 ```
@@ -148,7 +148,7 @@ In case of missing bounds, the ranges are not trimmed or masked on that side, th
 still extends to the start or end as if it would without `-e/--exclusive`:
 
 
-```sh
+```bash
 st trim -e '5:' input.fasta
 st trim -e '-4:' input.fasta
 ```
@@ -178,7 +178,7 @@ base number:    1  <span style="color:blue"> 2   3   4   5   6</span>   7   8
 from end:      -8  <span style="color:blue">-7  -6  -5  -4  -3</span>  <span style="color:green">-2</span>  -1
 </pre>
 
-```sh
+```bash
 st trim -0 '1:6' input.fasta
 st trim -0 '-7:-2' input.fasta
 ```

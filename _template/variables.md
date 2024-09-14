@@ -28,7 +28,7 @@ although the braces can be omitted in some cases (see [below](#use-of-braces)).
 
 The following command recodes IDs to `seq_1`, `seq_2`, `seq_3`, etc.:
 
-```sh
+```bash
 st set -i seq_{num} seqs.fasta > renamed.fasta
 ```
 
@@ -37,7 +37,7 @@ for categorization.
 
 Example:
 
-```sh
+```bash
 st sort seqlen input.fasta > length_sorted.fasta
 ```
 
@@ -50,7 +50,7 @@ in the form of variables.
 
 Variables/functions are needed for composing new [header attributes](attributes.md).
 
-```sh
+```bash
 st find PATTERN -a '{match_range}' input.fasta > with_range.fasta
 ```
 
@@ -69,7 +69,7 @@ be in `{braces}`, except for the [filter command](filter.md).
 
 Example: calculating the fraction of ambiguous bases for each sequence:
 
-```sh
+```bash
 st stat '{ 1 - charcount("ATGC")/seqlen }'
 ```
 
@@ -88,7 +88,7 @@ Variables/functions are used to define the content of [delimited text files](pas
 This example searches a sequence ID for a string preceding the dot `.`
 using a regular expression, and returns the matched text as TSV:
 
-```sh
+```bash
 st find -ir '[^.]+' seqs.fasta --to-tsv 'id,match,seq' > out.tsv
 ```
 

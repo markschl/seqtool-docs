@@ -19,13 +19,13 @@ directly to the output. Still, this is an useful command for the following:
 
 ### Convert GZIP-compressed FASTQ to FASTA:
 
-```sh
+```bash
 st pass input.fastq.gz -o output.fasta
 ```
 
 equivalent, shorter notation:
 
-```sh
+```bash
 st . input.fastq.gz -o output.fasta
 ```
 

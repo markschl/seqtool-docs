@@ -48,7 +48,7 @@ comparisons with other tools.
 
 ### Example
 Sort by part of the sequence ID, which is obtained using a JavaScript expression. We additionally keep this substring by writing the sort key to a header attribute::
-```sh
+```bash
 st sort -n '{ id.slice(2, 5) }' -a id_num='{num(key)}' input.fasta
 ```
 ```

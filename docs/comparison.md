@@ -49,7 +49,7 @@ Do nothing, just read and write FASTA
 
 <td>
 
-```sh
+```bash
 st pass input.fasta > output.fasta
 ```
 
@@ -63,7 +63,7 @@ st pass input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 seqkit seq  input.fasta > output.fasta
 ```
 
@@ -92,7 +92,7 @@ Convert FASTQ to FASTA
 
 <td>
 
-```sh
+```bash
 st pass --to-fa input.fastq > output.fasta
 ```
 
@@ -106,7 +106,7 @@ st pass --to-fa input.fastq > output.fasta
 
 <td>
 
-```sh
+```bash
 fastq_to_fasta -Q33 -i input.fastq > output.fasta
 ```
 
@@ -122,7 +122,7 @@ fastq_to_fasta -Q33 -i input.fastq > output.fasta
 
 <td>
 
-```sh
+```bash
 seqtk seq -A input.fastq > output.fasta
 ```
 
@@ -138,7 +138,7 @@ seqtk seq -A input.fastq > output.fasta
 
 <td>
 
-```sh
+```bash
 seqkit fq2fa input.fastq > output.fasta
 ```
 
@@ -167,7 +167,7 @@ Convert FASTQ quality scores
 
 <td>
 
-```sh
+```bash
 st pass --to fastq-illumina input.fastq > output.fastq
 ```
 
@@ -181,7 +181,7 @@ st pass --to fastq-illumina input.fastq > output.fastq
 
 <td>
 
-```sh
+```bash
 vsearch --fastq_convert input.fastq --fastq_asciiout 64 --fastqout output.fastq
 ```
 
@@ -206,7 +206,7 @@ Reading FASTQ file 100%
 
 <td>
 
-```sh
+```bash
 seqkit convert --from 'Sanger' --to 'Illumina-1.3+' input.fastq > output.fastq
 ```
 
@@ -242,7 +242,7 @@ Write compressed FASTQ files in GZIP format
 
 <td>
 
-```sh
+```bash
 st pass input.fastq -o output.fastq.gz
 ```
 
@@ -256,7 +256,7 @@ st pass input.fastq -o output.fastq.gz
 
 <td>
 
-```sh
+```bash
 seqkit seq input.fastq -o output.fastq.gz
 ```
 
@@ -272,7 +272,7 @@ seqkit seq input.fastq -o output.fastq.gz
 
 <td>
 
-```sh
+```bash
 st pass input.fastq | gzip -c > output.fastq.gz
 ```
 
@@ -288,7 +288,7 @@ st pass input.fastq | gzip -c > output.fastq.gz
 
 <td>
 
-```sh
+```bash
 gzip -kf input.fastq
 ```
 
@@ -304,7 +304,7 @@ gzip -kf input.fastq
 
 <td>
 
-```sh
+```bash
 pigz -p4 -kf input.fastq
 ```
 
@@ -333,7 +333,7 @@ Write compressed FASTQ files in Zstandard format
 
 <td>
 
-```sh
+```bash
 st pass input.fastq -o output.fastq.zst
 ```
 
@@ -347,7 +347,7 @@ st pass input.fastq -o output.fastq.zst
 
 <td>
 
-```sh
+```bash
 st pass input.fastq | zstd -c > output.fastq.zst
 ```
 
@@ -376,7 +376,7 @@ Write compressed FASTQ files in Lz4 format
 
 <td>
 
-```sh
+```bash
 st pass input.fastq -o output.fastq.lz4
 ```
 
@@ -390,7 +390,7 @@ st pass input.fastq -o output.fastq.lz4
 
 <td>
 
-```sh
+```bash
 st pass input.fastq | lz4 -c > output.fastq.lz4
 ```
 
@@ -424,7 +424,7 @@ Count the number of FASTQ sequences in the input
 
 <td>
 
-```sh
+```bash
 st count input.fastq
 ```
 
@@ -445,7 +445,7 @@ st count input.fastq
 
 <td>
 
-```sh
+```bash
 seqtk size input.fasta
 ```
 
@@ -481,7 +481,7 @@ Count the number of FASTQ sequences, grouped by GC content (in 10% intervals)
 
 <td>
 
-```sh
+```bash
 st count -k 'bin(gc_percent, 10)' input.fastq
 ```
 
@@ -512,7 +512,7 @@ st count -k 'bin(gc_percent, 10)' input.fastq
 
 <td>
 
-```sh
+```bash
 st count -k '{bin(gc_percent/100*100, 10)}' input.fastq
 ```
 
@@ -563,7 +563,7 @@ Sort by sequence
 
 <td>
 
-```sh
+```bash
 st sort seq input.fasta > output.fasta
 ```
 
@@ -577,7 +577,7 @@ st sort seq input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 seqkit sort -s  input.fasta > output.fasta
 ```
 
@@ -616,7 +616,7 @@ Sort by sequence with ~ 50 MiB memory limit
 
 <td>
 
-```sh
+```bash
 st sort seq input.fasta -M 50M > output.fasta
 ```
 
@@ -637,7 +637,7 @@ Memory limit reached after 78050 records, writing to temporary file(s). Consider
 
 <td>
 
-```sh
+```bash
 st sort seq input.fasta -M 100M > output.fasta
 ```
 
@@ -673,7 +673,7 @@ Sort by record ID
 
 <td>
 
-```sh
+```bash
 st sort id input.fasta > output.fasta
 ```
 
@@ -687,7 +687,7 @@ st sort id input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 seqkit sort  input.fasta > output.fasta
 ```
 
@@ -726,7 +726,7 @@ Sort by sequence length
 
 <td>
 
-```sh
+```bash
 st sort seqlen input.fasta > output.fasta
 ```
 
@@ -740,7 +740,7 @@ st sort seqlen input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 seqkit sort -l  input.fasta > output.fasta
 ```
 
@@ -766,7 +766,7 @@ seqkit sort -l  input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 vsearch --sortbylength input.fasta --output output.fasta 
 ```
 
@@ -809,7 +809,7 @@ Sort sequences by USEARCH/VSEARCH-style abundance annotations
 
 <td>
 
-```sh
+```bash
 ST_ATTR_FMT=';key=value' st unique seq -a size={n_duplicates} input.fasta |
   st sort '{-attr("size")}' > output.fasta
 
@@ -825,7 +825,7 @@ ST_ATTR_FMT=';key=value' st unique seq -a size={n_duplicates} input.fasta |
 
 <td>
 
-```sh
+```bash
 vsearch --derep_fulllength input.fasta --output - --sizeout |   vsearch --sortbysize - --output output.fasta  
 ```
 
@@ -881,7 +881,7 @@ Remove duplicate sequences using sequence hashes. This is more memory efficient 
 
 <td>
 
-```sh
+```bash
 st unique seqhash input.fasta > output.fasta
 ```
 
@@ -895,7 +895,7 @@ st unique seqhash input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 seqkit rmdup -sP  input.fasta > output.fasta
 ```
 
@@ -932,7 +932,7 @@ Remove duplicate sequences using sequence hashes (case-insensitive).
 
 <td>
 
-```sh
+```bash
 st unique 'seqhash(true)' input.fasta > output.fasta
 ```
 
@@ -946,7 +946,7 @@ st unique 'seqhash(true)' input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 vsearch --derep_smallmem input.fasta --fastaout output.fasta 
 ```
 
@@ -974,7 +974,7 @@ Writing FASTA output file 100%
 
 <td>
 
-```sh
+```bash
 seqkit rmdup -sPi  input.fasta > output.fasta
 ```
 
@@ -1011,7 +1011,7 @@ Remove duplicate sequences that are exactly identical (case-insensitive); compar
 
 <td>
 
-```sh
+```bash
 st unique upper_seq input.fasta > output.fasta
 ```
 
@@ -1025,7 +1025,7 @@ st unique upper_seq input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 st unique -s upper_seq input.fasta > output.fasta
 ```
 
@@ -1041,7 +1041,7 @@ st unique -s upper_seq input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 vsearch --derep_fulllength input.fasta --output output.fasta 
 ```
 
@@ -1083,7 +1083,7 @@ Remove duplicate sequences (exact mode) with a memory limit of ~50 MiB
 
 <td>
 
-```sh
+```bash
 st unique seq -M 50M input.fasta > output.fasta
 ```
 
@@ -1110,7 +1110,7 @@ Remove duplicate sequences, checking both strands
 
 <td>
 
-```sh
+```bash
 st unique seqhash_both input.fasta > output.fasta
 ```
 
@@ -1124,7 +1124,7 @@ st unique seqhash_both input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 seqkit rmdup -s  input.fasta > output.fasta
 ```
 
@@ -1161,7 +1161,7 @@ Remove duplicate sequences, appending USEARCH/VSEARCH-style abundance annotation
 
 <td>
 
-```sh
+```bash
 st unique seq -a size={n_duplicates} --attr-fmt ';key=value' input.fasta > output.fasta
 ```
 
@@ -1175,7 +1175,7 @@ st unique seq -a size={n_duplicates} --attr-fmt ';key=value' input.fasta > outpu
 
 <td>
 
-```sh
+```bash
 vsearch --derep_fulllength input.fasta --sizeout --output output.fasta 
 ```
 
@@ -1218,7 +1218,7 @@ De-replicate both by sequence *and* record ID (the part before the first space i
 
 <td>
 
-```sh
+```bash
 st unique id,seq input.fasta > output.fasta
 ```
 
@@ -1232,7 +1232,7 @@ st unique id,seq input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 vsearch --derep_id input.fasta --output output.fasta
 ```
 
@@ -1279,7 +1279,7 @@ Filter sequences by length
 
 <td>
 
-```sh
+```bash
 st filter 'seqlen >= 100' input.fastq > output.fastq
 ```
 
@@ -1293,7 +1293,7 @@ st filter 'seqlen >= 100' input.fastq > output.fastq
 
 <td>
 
-```sh
+```bash
 seqtk seq -L 100 input.fastq > output.fastq
 ```
 
@@ -1309,7 +1309,7 @@ seqtk seq -L 100 input.fastq > output.fastq
 
 <td>
 
-```sh
+```bash
 seqkit seq -m 100 input.fastq > output.fastq
 ```
 
@@ -1346,7 +1346,7 @@ Filter sequences by the total expected error as calculated from the quality scor
 
 <td>
 
-```sh
+```bash
 st filter 'exp_err <= 1' input.fastq --to-fa > output.fastq
 ```
 
@@ -1360,7 +1360,7 @@ st filter 'exp_err <= 1' input.fastq --to-fa > output.fastq
 
 <td>
 
-```sh
+```bash
 vsearch --fastq_filter input.fastq --fastq_maxee 1 --fastaout output.fasta 
 ```
 
@@ -1386,7 +1386,7 @@ Reading input file 100%
 
 <td>
 
-```sh
+```bash
 usearch -fastq_filter input.fastq -fastq_maxee 1 -fastaout output.fasta
 ```
 
@@ -1437,7 +1437,7 @@ Select records from a large set of sequences given a list of 1000 sequence IDs
 
 <td>
 
-```sh
+```bash
 st filter -m ids_list.txt 'has_meta()' input.fasta > output.fasta
 ```
 
@@ -1451,7 +1451,7 @@ st filter -m ids_list.txt 'has_meta()' input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 vsearch --fastx_getseqs input.fasta --labels ids_list.txt --fastaout output.fasta
 ```
 
@@ -1478,7 +1478,7 @@ Extracting sequences 100%
 
 <td>
 
-```sh
+```bash
 seqkit grep -f ids_list.txt input.fasta > output.fasta
 ```
 
@@ -1519,7 +1519,7 @@ Random subsampling to 1000 of sequences
 
 <td>
 
-```sh
+```bash
 st sample -n 1000 input.fasta > output.fasta
 ```
 
@@ -1533,7 +1533,7 @@ st sample -n 1000 input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 vsearch --fastx_subsample input.fasta --sample_size 1000 --fastaout output.fasta
 ```
 
@@ -1563,7 +1563,7 @@ Subsampled 1000 reads from 1000 amplicons
 
 <td>
 
-```sh
+```bash
 seqtk sample input.fasta 1000 > output.fasta
 ```
 
@@ -1579,7 +1579,7 @@ seqtk sample input.fasta 1000 > output.fasta
 
 <td>
 
-```sh
+```bash
 seqkit sample -n 1000 input.fasta > output.fasta
 ```
 
@@ -1617,7 +1617,7 @@ Random subsampling to ~10% of sequences
 
 <td>
 
-```sh
+```bash
 st sample -p 0.1 input.fasta > output.fasta
 ```
 
@@ -1631,7 +1631,7 @@ st sample -p 0.1 input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 seqtk sample input.fastq 0.1 > output.fasta
 ```
 
@@ -1647,7 +1647,7 @@ seqtk sample input.fastq 0.1 > output.fasta
 
 <td>
 
-```sh
+```bash
 seqkit sample -p 0.1 input.fastq > output.fasta
 ```
 
@@ -1689,7 +1689,7 @@ Find the forward primer location in the input reads with up to 4 mismatches
 
 <td>
 
-```sh
+```bash
 st find -D4 file:primers.fasta input.fastq -a primer={pattern_name} -a rng={match_range} > output.fastq
 ```
 
@@ -1710,7 +1710,7 @@ Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorr
 
 <td>
 
-```sh
+```bash
 st find -t4 -D4 file:primers.fasta input.fastq -a primer={pattern_name} -a rng={match_range} > output.fastq
 ```
 
@@ -1733,7 +1733,7 @@ Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorr
 
 <td>
 
-```sh
+```bash
 st find -D2 file:primers.fasta input.fastq -a primer={pattern_name} -a rng={match_range} > output.fastq
 ```
 
@@ -1756,7 +1756,7 @@ Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorr
 
 <td>
 
-```sh
+```bash
 st find -D8 file:primers.fasta input.fastq -a primer={pattern_name} -a rng={match_range} > output.fastq
 ```
 
@@ -1793,7 +1793,7 @@ Find and trim the forward primer up to an error rate (edit distance) of 20%, dis
 
 <td>
 
-```sh
+```bash
 st find -f file:primers.fasta -R 0.2 input.fastq -a primer={pattern_name} -a end={match_end} |
   st trim -e '{attr(end)}:' --fq > output.fastq
 
@@ -1816,7 +1816,7 @@ Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorr
 
 <td>
 
-```sh
+```bash
 cutadapt -g 'file:primers.fasta;min_overlap=15' input.fastq -e 0.2 --rename '{id} primer={adapter_name}' --discard-untrimmed > output.fastq 
 ```
 
@@ -1928,7 +1928,7 @@ Find and trim the forward primer in parallel using 4 threads (cores).
 
 <td>
 
-```sh
+```bash
 st find -f file:primers.fasta -R 0.2 -t4 input.fastq -a primer={pattern_name} -a end={match_end} |
   st trim -e '{attr(end)}:' --fq > output.fastq
 
@@ -1951,7 +1951,7 @@ Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorr
 
 <td>
 
-```sh
+```bash
 cutadapt -j4 -g 'file:primers.fasta;min_overlap=15' input.fastq -e 0.2 --rename '{id} primer={adapter_name}' --discard-untrimmed > output.fastq 
 ```
 
@@ -2067,7 +2067,7 @@ Convert DNA to RNA using the replace command
 
 <td>
 
-```sh
+```bash
 st replace T U input.fasta > output.fasta
 ```
 
@@ -2081,7 +2081,7 @@ st replace T U input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 st find T --rep U input.fasta > output.fasta
 ```
 
@@ -2104,7 +2104,7 @@ Note: the sequence type of the pattern was determined as 'dna'. If incorrect, pl
 
 <td>
 
-```sh
+```bash
 seqkit seq --dna2rna  input.fasta > output.fasta
 ```
 
@@ -2120,7 +2120,7 @@ seqkit seq --dna2rna  input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 fasta_nucleotide_changer -r -i input.fasta > output.fasta
 ```
 
@@ -2149,7 +2149,7 @@ Convert DNA to RNA using 4 threads
 
 <td>
 
-```sh
+```bash
 st replace -t4 T U input.fasta > output.fasta
 ```
 
@@ -2163,7 +2163,7 @@ st replace -t4 T U input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 st find -t4 T --rep U input.fasta > output.fasta
 ```
 
@@ -2204,7 +2204,7 @@ Trim the leading 99 bp from the sequences
 
 <td>
 
-```sh
+```bash
 st trim 100: input.fasta > output.fasta
 ```
 
@@ -2218,7 +2218,7 @@ st trim 100: input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 seqkit subseq -r '100:-1'  input.fasta > output.fasta
 ```
 
@@ -2261,7 +2261,7 @@ Convert sequences to uppercase
 
 <td>
 
-```sh
+```bash
 st upper input.fasta > output.fasta
 ```
 
@@ -2275,7 +2275,7 @@ st upper input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 seqtk seq -U input.fasta > output.fasta
 ```
 
@@ -2291,7 +2291,7 @@ seqtk seq -U input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 seqkit seq -u  input.fasta > output.fasta
 ```
 
@@ -2325,7 +2325,7 @@ Reverse complement sequences
 
 <td>
 
-```sh
+```bash
 st revcomp input.fasta > output.fasta
 ```
 
@@ -2339,7 +2339,7 @@ st revcomp input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 seqtk seq -r input.fasta > output.fasta
 ```
 
@@ -2355,7 +2355,7 @@ seqtk seq -r input.fasta > output.fasta
 
 <td>
 
-```sh
+```bash
 vsearch --fastx_revcomp input.fasta --fastaout output.fasta 
 ```
 
@@ -2380,7 +2380,7 @@ Reading FASTA file 100%
 
 <td>
 
-```sh
+```bash
 seqkit seq -rp  input.fasta > output.fasta
 ```
 
@@ -2421,7 +2421,7 @@ Concatenate sequences, adding an `NNNNN` spacer inbetween
 
 <td>
 
-```sh
+```bash
 st concat -s 5 -c N file1.fastq file2.fastq > output.fastq
 ```
 
@@ -2435,7 +2435,7 @@ st concat -s 5 -c N file1.fastq file2.fastq > output.fastq
 
 <td>
 
-```sh
+```bash
 vsearch --fastq_join file1.fastq --reverse file2.fastq --join_padgap NNNNN --fastqout output.fastq
 ```
 

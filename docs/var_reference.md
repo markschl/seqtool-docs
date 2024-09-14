@@ -25,7 +25,7 @@ This list can also be viewed in the terminal by running `st command --help-vars`
 
 ### Examples
 Add the sequence number to the ID:
-```sh
+```bash
 st set -i {id}_{seq_num}
 ```
 ```
@@ -38,7 +38,7 @@ SEQUENCE
 (...)
 ```
 Count the number of records per file in the input:
-```sh
+```bash
 st count -k path *.fasta
 ```
 ```
@@ -48,11 +48,11 @@ file3.fasta	99186
 (...)
 ```
 Remove records with duplicate sequences from the input:
-```sh
+```bash
 st unique seq input.fasta
 ```
 Remove duplicate records irrespective of the sequence orientation and whether letters are uppercase or lowercase:
-```sh
+```bash
 st unique 'seqhash_both(true)' input.fasta
 ```
 ## Sequence statistics
@@ -69,7 +69,7 @@ st unique 'seqhash_both(true)' input.fasta
 
 ### Examples
 List the GC content (in %) for every sequence:
-```sh
+```bash
 st stat gc_percent input.fa
 ```
 ```
@@ -78,7 +78,7 @@ seq2	47.2652
 seq3	47.3684
 ```
 Remove DNA sequences with more than 1% ambiguous bases:
-```sh
+```bash
 st filter 'charcount("ACGT") / seqlen >= 0.99' input.fa
 ```
 ## Header attributes
@@ -94,7 +94,7 @@ Attributes stored in FASTA/FASTQ headers. The expected pattern is ' key=value', 
 
 ### Examples
 Count the number of sequences for each unique value of an 'abund' attribute in the FASTA headers (.e.g. `>id abund=3`), which could be the number of duplicates obtained by the *unique* command (see `st unique --help-vars`):
-```sh
+```bash
 st count -k 'attr(abund)' seqs.fa
 ```
 ```
@@ -104,11 +104,11 @@ st count -k 'attr(abund)' seqs.fa
 (...)
 ```
 Summarize over a 'abund' attribute directly appended to the sequence ID like this `>id;abund=3`:
-```sh
+```bash
 st count -k 'attr(abund)' --attr-fmt ';key=value' seqs.fa
 ```
 Summarize over an attribute 'a', which may be 'undefined' (=missing) in some headers:
-```sh
+```bash
 st count -k 'opt_attr(a)' seqs.fa
 ```
 ```
@@ -133,7 +133,7 @@ Multiple metadata files can be supplied (`-m file1 -m file2 -m file3 ...`) and a
 
 ### Examples
 Add taxonomic lineages to the FASTA headers (after a space). The taxonomy is stored in a GZIP-compressed TSV file (column no. 2) to the FASTA headers:
-```sh
+```bash
 st set -m taxonomy.tsv.gz -d '{meta(2)}' input.fa > output.fa
 ```
 ```
@@ -144,7 +144,7 @@ SEQUENCE
 (...)
 ```
 Add metadata from an Excel-generated CSV file (semicolon delimiter) to sequence headers as attributes (`-a/--attr`):
-```sh
+```bash
 st pass -m metadata.csv --meta-sep ';' -a 'info={meta("column name")}' input.fa > output.fa
 ```
 ```
@@ -155,11 +155,11 @@ SEQUENCE
 (...)
 ```
 Extract subsequences given a set of coordinates stored in a BED file (equivalent to `bedtools getfasta`):
-```sh
+```bash
 st trim -m coordinates.bed -0 {meta(2)}..{meta(3)} input.fa > output.fa
 ```
 Filter sequences by ID, retaining only those present in the given text file:
-```sh
+```bash
 st filter -m selected_ids.txt 'has_meta()' input.fa > output.fa
 ```
 ## Expressions (JavaScript)
@@ -173,7 +173,7 @@ Instead of JavaScript code, it is possible to refer to a source file using 'file
 
 ### Examples
 Calculate the number of ambiguous bases in a set of DNA sequences and add the result as an attribute (ambig=...) to the header:
-```sh
+```bash
 st pass -a ambig='{seqlen - charcount("ACGT")}' seqs.fasta
 ```
 ```
@@ -184,11 +184,11 @@ GGAGGATCCGAGCG
 (...)
 ```
 Discard sequences with >1% ambiguous bases or sequences shorter than 100bp:
-```sh
+```bash
 st filter 'charcount("ACGT") / seqlen >= 0.99 && seqlen >= 100' seqs.fasta
 ```
 Distribute sequences into different files by a slightly complicated condition. Note the 'return' statments are are necessary here, since this is not a simple expression. With even longer code, consider using an extra script and supplying -o "outdir/{file:code.js}.fasta" instead:
-```sh
+```bash
 st split -po "outdir/{ if (id.startsWith('some_prefix_')) { return 'file_1' } return 'file_2' }.fasta" input.fasta
 ```
 ```
@@ -206,7 +206,7 @@ file_2.fasta
 
 ### Examples
 Summarize by a numeric header attribute in the form '>id n=3':
-```sh
+```bash
 st count -k 'num(attr("n"))' seqs.fa
 ```
 ```
@@ -216,7 +216,7 @@ st count -k 'num(attr("n"))' seqs.fa
 (...)
 ```
 Summarize the distribution of the GC content in a set of DNA sequences in 5% intervals:
-```sh
+```bash
 st count -k 'bin(gc_percent, 5)' seqs.fa
 ```
 ```

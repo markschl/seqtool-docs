@@ -22,7 +22,7 @@ line.
 
 Attributes are added in *any command* by using the `-a/--attr` option:
 
-```sh
+```bash
 st pass --attr key=value input.fasta
 # shorter:
 st . -a key=value input.fasta
@@ -40,7 +40,7 @@ SEQUENCE
 
 The `-a/--attr` can be used **multiple times**:
 
-```sh
+```bash
 st . -a a=1 -a b=2 input.fasta
 ```
 
@@ -54,7 +54,7 @@ SEQUENCE
 
 Attributes become useful when using **[variables/functions](variables.md)**:
 
-```sh
+```bash
 st pass -a num='{num}' -a gc_content='{gc_percent}' input.fasta
 ```
 
@@ -84,7 +84,7 @@ Attributes in the sequence headers are accessed using the internal function `att
 
 *[count](count.md)*, *[stat](stat.md)*, *[sort](sort.md)*, *[unique](unique.md)*, *[filter](filter.md)*, *[split](split.md)*, *[set](set.md)*, *[trim](trim.md)*, *[mask](mask.md)*, *[find](find.md)*, *[replace](replace.md)*. Examples assuming `attribute` in headers, e.g. `>id1 attribute=value1`
 
-```sh
+```bash
 st sort 'attr(attribute)' seqs.fasta
 st split seqs.fasta -o '{attr(attribute)}.fasta'  # -> value1.fasta, value2.fasta, etc.
 st find PRRIMERSEQUENCE -a pos='{match_start}' seqs.fasta |   # e.g. >id1 pos=2
@@ -93,7 +93,7 @@ st find PRRIMERSEQUENCE -a pos='{match_start}' seqs.fasta |   # e.g. >id1 pos=2
 
 **When setting new attributes**:
 
-```sh
+```bash
 # seqs.fasta: >id1 key=value
 st pass -a new_key='{attr(key)}_with_suffix' seqs.fasta
 # output: >id1 key=value new_key=value_with_suffix
@@ -101,7 +101,7 @@ st pass -a new_key='{attr(key)}_with_suffix' seqs.fasta
 
 **In delimited text output:**
 
-```sh
+```bash
 # seqs.fasta: >id1 key=value
 st pass seqs.fasta --to-tsv 'id,attr(key)'
 # id1   value
@@ -114,7 +114,7 @@ st pass seqs.fasta --to-tsv 'id,attr(key)'
 Some programs use some form of `key=value` attributes in headers, too. For instance, [USEARCH](https://drive5.com/usearch/) and [VSEARCH](https://github.com/torognes/vsearch) indicate the size (number of sequences) of clusters like this:
 
 
-```sh
+```bash
 usearch -cluster_fast seqs.fasta -id 0.97 -sizeout -centroids clusters.fasta
 ```
 ```
@@ -128,7 +128,7 @@ In this case, the `size` attribute is appended to the sequence ID (without space
 
 Extract cluster ids and sizes into a tab delimited output
 
-```sh
+```bash
 st . --to-tsv 'id,attr(size)' --attr-fmt ";key=value" clusters.fasta
 ```
 ```
@@ -138,7 +138,7 @@ seq_1 	343
 
 Instead writing `attr-fmt` in every command, we can also define the format as environment variable (assuming it does not change too often):
 
-```sh
+```bash
 export ST_ATTR_FORMAT=";key=value"
 st . --to-tsv 'id,attr(size)' clusters.fasta
 # to override just once given headers like this: >id;size=5 another_attr=somevalue
@@ -166,7 +166,7 @@ SEQUENCE
 SEQUENCE
 ```
 
-```sh
+```bash
 st count -k 'attr(a)' seqs.fasta
 ```
 
@@ -177,7 +177,7 @@ Set the correct attribute format with --attr-format.
 
 Instead, use `opt_attr()` to avoid the error:
 
-```sh
+```bash
 st count -k 'opt_attr(a)' seqs.fasta
 ```
 
@@ -192,7 +192,7 @@ undefined	2
 The `has_attr()` function is useful for filtering or other checks:
 
 
-```sh
+```bash
 st filter 'has_attr(a)' seqs.fasta
 ```
 ```
@@ -204,13 +204,13 @@ SEQUENCE
 
 Attributes can be deleted using `attr_del()` and `opt_attr_del()`, if they should only serve for transient message passing between commands. In this case, the intermediate output has `pos=start:end` annotations in the headers:
 
-```sh
+```bash
 st find SUBSEQ -a pos='{match_range}' seqs.fasta |
     st mask 'attr_del(pos)' > masked.fasta
 ```
 
 Alternatively, use the [del](del.md) command:
 
-```sh
+```bash
 st del --attrs attr1,attr2 seqs.fasta > clean.fasta
 ```

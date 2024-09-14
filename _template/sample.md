@@ -1,6 +1,6 @@
 ## Example
 
-```sh
+```bash
 st sample -n 100 input.fasta > subset.fasta
 ```
 

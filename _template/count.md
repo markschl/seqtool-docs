@@ -3,7 +3,7 @@
 By default, the count command returns the overall number of records in all
 of the input (even if multiple files are provided):
 
-```sh
+```bash
 st count *.fastq
 ```
 
@@ -16,7 +16,7 @@ st count *.fastq
 
 Print record counts per input file:
 
-```sh
+```bash
 st count -k path input.fasta input2.fasta input3.fasta
 ```
 
@@ -29,7 +29,7 @@ input3.fasta  99186
 If the record number is required for each file, use the `path` or `filename`
 variable:
 
-```sh
+```bash
 st count -k path *.fasta
 ```
 ```
@@ -40,7 +40,7 @@ file3.fasta    1771678
 
 Print the sequence length distribution:
 
-```sh
+```bash
 st count -k seqlen input.fasta
 ```
 ```
@@ -55,7 +55,7 @@ It is possible to use multiple keys. Consider the
 and number of mismatches are annotated as attributes.
 Now, the mismatch distribution for each primer can be analysed:
 
-```sh
+```bash
 st count -k 'attr(f_primer)' -k 'attr(f_dist)' seqs.fasta
 ```
 ```
@@ -78,7 +78,7 @@ undefined	5029
 If primers on both ends were searched, it might make sense to use an
 [expression](expressions.md) to get the sum of edit distances for both primers.
 
-```sh
+```bash
 st count -k 'attr(f_primer)' -k 'attr(r_primer)' \
   -k '{ num(attr("f_dist")) + num(attr("r_dist")) }' primer_trimmed.fq.gz
 ```
@@ -107,7 +107,7 @@ f_primer1	r_primer1	4	10
 With numeric keys, it is possible to summarize over intervals using the 
 `bin(number, interval)` function. Example summarizing the GC content:
 
-```sh
+```bash
 st count -k '{bin(gc_percent, 10)}' seqs.fasta
 ```
 ```
@@ -133,7 +133,7 @@ an associated list `meta(column)`, these are always interpreted
 as text by default, unless the `num(...)` function is used,
 which makes sure that the categories are correctly sorted:
 
-```sh
+```bash
 st count -k 'num(attr(numeric_attr))' input.fasta
 ```
 

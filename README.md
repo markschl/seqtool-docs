@@ -4,6 +4,6 @@ Documentation for https://github.com/markschl/seqtool
 
 Assuming that the *seqtool* repo is at `../seqtool`
 
-```sh
+```bash
 ./gen_docs.sh
 ```

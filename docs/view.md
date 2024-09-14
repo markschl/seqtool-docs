@@ -65,14 +65,14 @@ sequence type (DNA/RNA or Protein).
 
 Example view of DNA sequences:
 
-```sh
+```bash
 st view seqs.fasta
 ```
 
 ![DNA sequence](img/base_view.png)
 
 
-```sh
+```bash
 st view H1.fasta
 ```
 
@@ -84,7 +84,7 @@ colored according to the [RasMol scheme](http://www.openrasmol.org/doc/#aminocol
 If quality scores are present (from FASTQ or QUAL files), the background is colored
 accordingly (configure with `--qscale` and `--qmax`):
 
-```sh
+```bash
 st view seqs.fastq
 ```
 

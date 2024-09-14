@@ -7,6 +7,10 @@
     font-size: .7rem;
 }
 
+.md-typeset code {
+    font-size: .95em;
+}
+
 .md-typeset .admonition,
 .md-typeset details {
     font-size: .7rem;
