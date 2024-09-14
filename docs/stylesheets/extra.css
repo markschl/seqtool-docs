@@ -10,17 +10,29 @@
 .md-typeset .admonition,
 .md-typeset details {
     font-size: .7rem;
+    border: none;
+    margin: 0;
+    padding: 0.2em 0.5em;
+}
+
+.md-typeset .admonition-title,
+.md-typeset details summary {
+    background-color: rgba(142, 177, 187, 0.08);
+    font-weight: normal;
+}
+
+.md-typeset details summary::before {
+    display: none;
+    width: 0;
+}
+
+.md-typeset .admonition,
+.md-typeset details.highlight {
     border: .05rem solid rgba(102, 165, 186, 0.3);
     margin: 1em 0;
 }
 
 .md-typeset .admonition-title,
-.md-typeset summary {
+.md-typeset details.highlight summary {
     background-color: rgba(102, 165, 186, 0.08);
-    font-weight: normal;
-}
-
-.md-typeset summary::before {
-    display: none;
-    width: 0;
 }

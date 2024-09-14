@@ -18,3 +18,9 @@ files to a RAM instead of the disk.
 The fastest/most memory-efficient commands are highlighted by '🏆' and an indication,
 how many times faster/less memory it uses compared to the command ranking second.
 Click on the commands list to show more details.
+
+<style>
+.md-grid {
+    max-width: 100rem !important;
+}
+</style>

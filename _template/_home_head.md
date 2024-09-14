@@ -28,7 +28,7 @@ with [GZIP](https://en.wikipedia.org/wiki/Gzip), [BZIP2](https://en.wikipedia.or
 or the faster and more modern [Zstandard](http://facebook.github.io/zstd/) or [LZ4](https://lz4.org/)
 formats
 
-<details markdown>
+<details markdown class="highlight">
 <summary>
 Example: compressed FASTQ to FASTA
 </summary>
@@ -44,7 +44,7 @@ st pass file1.fastq.gz file2.fastq.gz -o output.fasta
 
 </details>
 
-<details markdown>
+<details markdown class="highlight">
 <summary>
 Example: FASTA to tab-separated list
 </summary>
@@ -69,7 +69,7 @@ id1	ACGTA	5
 
 See also **[variables/functions](variables.md)** for more details.
 
-<details markdown>
+<details markdown class="highlight">
 <summary>
 Example: count sequences in a large set of FASTQ files
 </summary>
@@ -92,7 +92,7 @@ data/sample5.fastq.gz	7021
 
 </details>
 
-<details markdown>
+<details markdown class="highlight">
 <summary>
 Example: summarize the GC content in 10% intervals
 </summary>
@@ -114,7 +114,7 @@ st count -k 'bin(gc_percent, 10)' sequences.fasta
 
 </details>
 
-<details markdown>
+<details markdown class="highlight">
 <summary>
 Example: Assign new sequence IDs
 </summary>
@@ -135,7 +135,7 @@ SEQUENCE
 
 </details>
 
-<details markdown>
+<details markdown class="highlight">
 <summary>
 Example: De-replicate by description and sequence
 </summary>
@@ -176,7 +176,7 @@ From simple math to complicated filter [expressions](expressions.md), the tiny i
 ([QuickJS](https://bellard.org/quickjs)) offers countless possibilities for customized
 sequence processing.
 
-<details markdown>
+<details markdown class="highlight">
 <summary>
 Example: filter FASTQ sequences by quality and length
 </summary>
@@ -197,7 +197,7 @@ st filter 'exp_err < 1 && seqlen >= 100' reads.fastq > filtered.fastq
 **`key=value` [header attributes](attributes.md)** allow storing and passing on
 all kinds of information
 
-<details markdown>
+<details markdown class="highlight">
 <summary>
 Example: De-replicate by sequence (seq variable) and/or other properties  
 </summary>
@@ -238,7 +238,7 @@ SEQUENCE4
 
 </details>
 
-<details markdown>
+<details markdown class="highlight">
 <summary>
 Example: pre-processing of mixed multi-marker amplicon sequences (primer trimming, grouping by amplicon)
 </summary>
@@ -312,7 +312,7 @@ UNTRIMMEDSEQUENCE
 
 Integration of [**sequence metadata sources**](meta.md) in the form of delimited text
 
-<details markdown>
+<details markdown class="highlight">
 <summary>
 Example: Add Genus names from a separate tab-separated list
 </summary>
@@ -368,7 +368,7 @@ SEQUENCE
 </table>
 </details>
 
-<details markdown>
+<details markdown class="highlight">
 <summary>
 Example: Choose specific sequences given a separate file with an ID list
 </summary>
