@@ -19,3 +19,7 @@ Options:
   -t, --threads <THREADS>  Number of threads to use [default: 1]
 ```
 [See this page](opts.md) for the options common to all commands.
+## More
+
+[This page](comparison.md#revcomp) lists examples with execution times compared
+to other tools.

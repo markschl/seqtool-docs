@@ -136,3 +136,8 @@ which makes sure that the categories are correctly sorted:
 ```sh
 st count -k 'num(attr(numeric_attr))' input.fasta
 ```
+
+## More
+
+[This page](comparison.md#count) lists examples with execution times compared
+to other tools.

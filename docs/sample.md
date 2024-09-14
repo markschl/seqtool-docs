@@ -41,3 +41,13 @@ Options:
                         5G]
 ```
 [See this page](opts.md) for the options common to all commands.
+## Example
+
+```sh
+st sample -n 100 input.fasta > subset.fasta
+```
+
+## More
+
+[This page](comparison.md#sample) lists examples with execution times compared
+to other tools.

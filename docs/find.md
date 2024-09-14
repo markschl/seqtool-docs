@@ -304,6 +304,11 @@ as well (in contrast to the *replace* command). Backreferences to regex groups
 (e.g. `$1`) are not supported like the *replace* command does.
 Instead, they can be accessed using variables (`match_group()`, etc.)
 
+## More
+
+[This page](comparison.md#find) lists more examples with execution times and
+comparisons with other tools.
+
 ## Variables/functions provided by the 'find' command
 > see also `st find --help-vars`
 
@@ -330,15 +335,13 @@ The find command provides many variables/functions to obtain information about t
 | match_ins<br />match_ins(hit)<br />match_ins(hit, pattern) | Number of insertions in the matched sequence compared to the search pattern. |
 | match_del<br />match_del(hit)<br />match_del(hit, pattern) | Number of deletions in the matched text sequence to the search pattern. |
 | match_subst<br />match_subst(hit)<br />match_subst(hit, pattern) | Number of substitutions (non-matching letters) in the matched sequence compared to the pattern |
-| pattern_name<br />pattern_name(rank) | Name of the matching pattern (patterns supplied with `file:patterns.fasta`). In case a single pattern was specified in the commandline, this will just be `\<pattern\>`. `pattern_name(rank)` selects the n-th matching pattern, sorted by edit distance and/or pattern number (depending on `-D/-R` and `--in-order`). |
+| pattern_name<br />pattern_name(rank) | Name of the matching pattern (patterns supplied with `file:patterns.fasta`). In case a single pattern was specified in the commandline, this will just be *\<pattern\>*. `pattern_name(rank)` selects the n-th matching pattern, sorted by edit distance and/or pattern number (depending on `-D/-R` and `--in-order`). |
 | pattern<br />pattern(rank) | The best-matching pattern sequence, or the n-th matching pattern if `rank` is given, sorted by edit distance or by occurrence (depending on `-D/-R` and `--in-order`). |
 | aligned_pattern<br />aligned_pattern(hit)<br />aligned_pattern(hit, rank) | The aligned pattern, including gaps if needed. Regex patterns are returned as-is. |
 | pattern_len<br />pattern_len(rank) | Length of the matching pattern (see also `pattern`). For regex patterns, the length of the complete regular expression is returned. |
 
 ### Examples
-> see also `st find --help-vars`
-
-Find a primer sequence with up to 2 mismatches (`-d/--dist``) and write the match range and the mismatches ('dist') to the header as attributes. The result will be 'undefined' (=undefined in JavaScript) if there are > 2 mismatches:
+Find a primer sequence with up to 2 mismatches (`-d/--dist`) and write the match range and the mismatches ('dist') to the header as attributes. The result will be 'undefined' (=undefined in JavaScript) if there are > 2 mismatches:
 ```sh
 st find -d 2 CTTGGTCATTTAGAGGAAGTAA -a rng={match_range} -a dist={match_diffs} reads.fasta
 ```
@@ -347,14 +350,14 @@ st find -d 2 CTTGGTCATTTAGAGGAAGTAA -a rng={match_range} -a dist={match_diffs} r
 SEQUENCE
 >id2 rng=1:20 dist=0
 SEQUENCE
->id3 rng= dist=
+>id3 rng=undefined dist=undefined
 SEQUENCE
 (...)
 ```
 Find a primer sequence and if found, remove it using the 'trim' command, while non-matching sequences are written to 'no_primer.fasta':
 ```sh
 st find -f -d 2 CTTGGTCATTTAGAGGAAGTAA --dropped no_primer.fasta -a end={match_end} reads.fasta |
-   st trim -e '{attr(match_end)}..' > primer_trimmed.fasta
+   st trim -e '{attr(match_end)}:' > primer_trimmed.fasta
 ```
 Search for several primers with up to 2 mismatches and write the name and mismatches of the best-matching primer to the header:
 ```sh
@@ -365,7 +368,7 @@ st find -d 2 file:primers.fasta -a primer={pattern_name} -a dist={match_diffs} r
 SEQUENCE
 >id1 primer=primer_2 dist=0
 SEQUENCE
->id1 primer= dist=
+>id1 primer=undefined dist=undefined
 SEQUENCE
 (...)
 ```

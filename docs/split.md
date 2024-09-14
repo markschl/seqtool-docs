@@ -46,8 +46,6 @@ of any complexity.
 An example of de-multiplexing sequences by forward primer is found in the
 documetation of the [find](find.md#multiple-patterns) command.
 ## Variables available in the split command
-> see also `st split --help-vars`
-
 
 
 | | |
@@ -55,8 +53,6 @@ documetation of the [find](find.md#multiple-patterns) command.
 | chunk | If `-n/--num-seqs` was specified, the 'chunk' variable contains the number of the current sequence batch, starting with 1. *Note* that the 'chunk' variable is *only* available with `-n/--num-seqs`, otherwise there will be a message: "Unknown variable/function: chunk" |
 
 ### Example
-> see also `st split --help-vars`
-
 Split input into chunks of 1000 sequences, which will be named outdir/file_1.fq, outdir/file_2.fq, etc.:
 ```sh
 st split -n 1000 -po 'outdir/out_{chunk}.fq' input.fastq

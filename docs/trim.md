@@ -96,3 +96,8 @@ The trim command can also concatenate multiple parts of the sequence:
 ```sh
 st trim '2:5,10:1' input.fasta > output.fasta
 ```
+
+## More
+
+[This page](comparison.md#trim) lists examples with execution times compared
+to other tools.

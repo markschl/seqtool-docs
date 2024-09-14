@@ -4,14 +4,15 @@ set -euo pipefail
 
 # cargo build
 
-seqtool=../seqtool/target/debug/st
-st_readme=../seqtool/README.md
+st_dir=../seqtool
+seqtool=$st_dir/target/debug/st
+st_readme=$st_dir/README.md
 templates=_template
 outdir=docs
 main=docs/index.md
 config=mkdocs.yml
 
-(cd ../seqtool && cargo build)
+(cd $st_dir && cargo build)
 
 # copy mkdocs.yml without the nav
 cp $templates/mkdocs.yml $config
@@ -86,7 +87,8 @@ for cmd in "${cmd[@]}"; do
   # add variable help if present
   vars=$($seqtool $cmd  --help-vars-md --help-cmd-vars 2>&1)
   if [ ! -z "$vars" -a "$vars" != " "  ]; then
-    echo -e "$vars" | sed -E "s/(#.*)/\1\n> see also \`st $cmd --help-vars\`\n/g" >> $out
+    msg="see also \`st $cmd --help-vars\`\n"
+    echo -e "$vars" | sed -E "s|## Variables/functions provided.+|\n\0\n> $msg|g" >> $out
   fi
 done
 
@@ -118,6 +120,12 @@ $seqtool . --help-vars-md 2>&1 >> $out
 
 # other files
 
+cp _template/expressions.md $outdir
+echo "  - 'Expressions': expressions.md" >> $config
+
+cp _template/formats.md $outdir
+echo "  - 'Formats and compression': formats.md" >> $config
+
 cp _template/attributes.md $outdir
 echo "  - 'Header attributes': attributes.md" >> $config
 
@@ -129,7 +137,9 @@ echo "  - 'Other topics':" >> $config
 cp _template/ranges.md $outdir
 echo "    - 'Ranges': ranges.md" >> $config
 
-# TODO: _template/expressions.md
+cp _template/_comparison_head.md $outdir/comparison.md
+cat $st_dir/profile/comparison.md >> $outdir/comparison.md
+echo "    - 'Comparison of tools': comparison.md" >> $config
 
 # finally, copy the content of the landing page to seqtool/README.md,
 # inserting a link to the gh-page and adjusting the URLs

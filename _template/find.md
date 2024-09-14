@@ -198,3 +198,7 @@ as well (in contrast to the *replace* command). Backreferences to regex groups
 (e.g. `$1`) are not supported like the *replace* command does.
 Instead, they can be accessed using variables (`match_group()`, etc.)
 
+## More
+
+[This page](comparison.md#find) lists more examples with execution times and
+comparisons with other tools.

@@ -35,9 +35,11 @@ Options:
                          records are sorted by the header attribute 'a'
 ```
 [See this page](opts.md) for the options common to all commands.
-## Variables provided by the 'sort' command
-> see also `st sort --help-vars`
+### More
 
+[This page](comparison.md#sort) lists more examples with execution times and
+comparisons with other tools.
+## Variables provided by the 'sort' command
 
 
 | | |
@@ -45,8 +47,6 @@ Options:
 | key | The value of the key used for sorting |
 
 ### Example
-> see also `st sort --help-vars`
-
 Sort by part of the sequence ID, which is obtained using a JavaScript expression. We additionally keep this substring by writing the sort key to a header attribute::
 ```sh
 st sort -n '{ id.slice(2, 5) }' -a id_num='{num(key)}' input.fasta

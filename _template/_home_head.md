@@ -10,6 +10,7 @@ The standalone binary (~6 MB) is simply named `st` to save some typing.
 > ⚠ Also note that **there are some bugs in v0.3.0**,
 > see [CHANGELOG](https://github.com/markschl/seqtool/blob/main/CHANGELOG.md#important-bugfixes-).
 > Alternatively, v0.4.0-beta should be pretty safe to use already.
+> Approximate matching ([find](find.md) command) is not yet fully tested.
 
 **[📥 download stable release (v0.3.0)](https://github.com/markschl/seqtool/releases/latest)**
 
@@ -22,7 +23,7 @@ The standalone binary (~6 MB) is simply named `st` to save some typing.
 
 ### File formats
 
-[**Reads** and **writes**](pass.md) **FASTA, FASTQ** and **CSV/TSV**, optionally compressed
+[**Reads** and **writes**](formats.md) **FASTA, FASTQ** and **CSV/TSV**, optionally compressed
 with [GZIP](https://en.wikipedia.org/wiki/Gzip), [BZIP2](https://en.wikipedia.org/wiki/Bzip2),
 or the faster and more modern [Zstandard](http://facebook.github.io/zstd/) or [LZ4](https://lz4.org/)
 formats
@@ -34,12 +35,12 @@ Example: compressed FASTQ to FASTA
 
 Combine multiple compressed FASTQ files, converting them to FASTA, using [pass](pass.md).
 
-> **Note**: almost every command can read multiple input files and convert between formats,
-> but *pass* does nothing other than reading and writing while other command perform certain actions.
-
 ```sh
 st pass file1.fastq.gz file2.fastq.gz -o output.fasta
 ```
+
+> **Note**: almost every command can read multiple input files and convert between formats,
+> but *pass* does nothing other than reading and writing while other command perform certain actions.
 
 </details>
 
@@ -64,21 +65,14 @@ id1	ACGTA	5
 </details>
 
 
-### Commands for many different tasks
+### Highly versatile thanks to variables/functions
 
-([see list below](#commands))
-
-### Highly versatile
-
-... thanks to **[variables/functions](variables.md)**
+See also **[variables/functions](variables.md)** for more details.
 
 <details markdown>
 <summary>
 Example: count sequences in a large set of FASTQ files
 </summary>
-
-In [count](count.md), one or several categorical [variables/functions](variables.md)
-can be specified with `-k/--key`.
 
 ```sh
 st count -k path data/*.fastq.gz
@@ -92,6 +86,9 @@ data/sample4.fastq.gz	1120
 data/sample5.fastq.gz	7021
 (...)
 ```
+
+> In [count](count.md), one or several categorical [variables/functions](variables.md)
+> can be specified with `-k/--key`.
 
 </details>
 
@@ -195,7 +192,7 @@ st filter 'exp_err < 1 && seqlen >= 100' reads.fastq > filtered.fastq
 </details>
 
 
-### Header attributes
+### Header attributes for metadata storage
 
 **`key=value` [header attributes](attributes.md)** allow storing and passing on
 all kinds of information
@@ -252,7 +249,7 @@ multi-marker amplicons.
 and finally [split](split.md) distributes the sequences into different files named
 by the forward primer.
 
-`primers.fasta`
+**primers.fasta**
 
 ```
 >prA
@@ -260,6 +257,8 @@ PRIMER
 >prB
 PRIMER
 ```
+
+**Command for searching/trimming**
 
 ```sh
 st find file:primers.fasta -a primer='{pattern_name}' -a end='{match_end}' sequences.fasta |
@@ -309,7 +308,7 @@ UNTRIMMEDSEQUENCE
 </details>
 
 
-### Metadata integration
+### Integration of external metadata
 
 Integration of [**sequence metadata sources**](meta.md) in the form of delimited text
 

@@ -1,3 +1,5 @@
+## Examples
+
 ### RNA to DNA
 
 Simple RNA to DNA conversion by replacing all occurrences of `U` with `T`:
@@ -27,3 +29,7 @@ in replacements.
 > ⚠ In Bash, make sure to use single quotes around `'$acc'` (not double quotes) to avoid
 > that `$acc` is interpreted as a shell variable.
 
+## More
+
+[This page](comparison.md#replace) lists examples with execution times compared
+to other tools.

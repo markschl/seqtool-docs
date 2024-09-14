@@ -61,7 +61,10 @@ nav:
     - 'Modifying commands': cmds_mod.md
   - 'Commandline options': opts.md
   - 'Variables/functions': variables.md
+  - 'Expressions': expressions.md
+  - 'Formats and compression': formats.md
   - 'Header attributes': attributes.md
   - 'Metadata': meta.md
   - 'Other topics':
     - 'Ranges': ranges.md
+    - 'Comparison of tools': comparison.md

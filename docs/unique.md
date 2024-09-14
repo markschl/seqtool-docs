@@ -51,6 +51,11 @@ Options:
                          same key are discarded
 ```
 [See this page](opts.md) for the options common to all commands.
+### More
+
+[This page](comparison.md#unique) lists examples with execution times compared
+to other tools.
+
 ## Variables/functions provided by the 'unique' command
 > see also `st unique --help-vars`
 
@@ -63,8 +68,6 @@ Options:
 | duplicates_list<br />duplicates_list(include_self) | Returns a comma-delimited list of record IDs that share the same unique key. Make sure that the record IDs don't have commas in them. The ID of the returned unique record is included by default (`duplicate_list` is short for `duplicate_list(true)`) but can be excluded with `duplicate_list(false)`. |
 
 ### Examples
-> see also `st unique --help-vars`
-
 De-replicate sequences using the sequence hash (faster than using the sequence `seq` itself), and also storing the number of duplicates (including the unique sequence itself) in the sequence header:
 ```sh
 st unique seqhash -a abund={n_duplicates} input.fasta > uniques.fasta
