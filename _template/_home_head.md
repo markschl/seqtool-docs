@@ -1,7 +1,7 @@
 **Seqtool** is a  fast and flexible command line program for dealing with
 large amounts of biological sequences.
-It provides different subcommands for *converting*, *inspecting* and *modifying*
-sequences.
+It provides different [subcommands](#commands) for *converting*, *inspecting*
+and *modifying* sequences.
 The standalone binary (~6 MB) is simply named `st` to save some typing.
 
 > **Note:** this page describes the development version 0.4-beta.
