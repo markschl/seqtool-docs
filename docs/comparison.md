@@ -23,19 +23,30 @@ Click on the commands list to show more details.
 .md-grid {
     max-width: 100rem !important;
 }
+table.cmd {
+    table-layout: fixed;
+    width: 100%;
+}
+table.cmd td:first-child {
+    width: 30%;
+}
+table.cmd td:last-child {
+    width: 20%;
+}
 </style>
 ## pass
-<table>
-<colgroup><col span="5" /><col span="10" /><col span="3" /></colgroup>
+<table class="cmd">
 <tr>
 <td>
 
 Do nothing, just read and write FASTA
 
+</td>
 <td>
-<td><pre language="sh">st pass input.fasta > output.fasta</pre>
+<pre language="sh">st pass input.fasta > output.fasta</pre>
 <details markdown><summary><b>SeqKit</b> 🕓 <b>2.2 s</b> 🏆 (1.2x)</summary>
-<table><tr><td>SeqKit</td><td><pre language="sh">seqkit seq  input.fasta > output.fasta</pre></td><td>🕓 <b>2.2 s</b> 🏆 (1.2x) 106% CPU<br/>📈 18.0 MiB</td></tr>
+<table class="cmd">
+<tr><td>SeqKit</td><td><pre language="sh">seqkit seq  input.fasta > output.fasta</pre></td><td>🕓 <b>2.2 s</b> 🏆 (1.2x) 106% CPU<br/>📈 18.0 MiB</td></tr>
 </table>
 </details>
 </td>
@@ -46,10 +57,12 @@ Do nothing, just read and write FASTA
 
 Convert FASTQ to FASTA
 
+</td>
 <td>
-<td><pre language="sh">st pass --to-fa input.fastq > output.fasta</pre>
+<pre language="sh">st pass --to-fa input.fastq > output.fasta</pre>
 <details markdown><summary><b>FASTX-Toolkit</b> 🕓 287.9 s  ❙  <b>Seqtk</b> 🕓 4.3 s  ❙  <b>SeqKit</b> 🕓 3.1 s</summary>
-<table><tr><td>FASTX-Toolkit</td><td><pre language="sh">fastq_to_fasta -Q33 -i input.fastq > output.fasta</pre></td><td>🕓 287.9 s<br/>📈 <b>3.5 MiB</b> 🏆 (1.00x)</td></tr>
+<table class="cmd">
+<tr><td>FASTX-Toolkit</td><td><pre language="sh">fastq_to_fasta -Q33 -i input.fastq > output.fasta</pre></td><td>🕓 287.9 s<br/>📈 <b>3.5 MiB</b> 🏆 (1.00x)</td></tr>
 <tr><td>Seqtk</td><td><pre language="sh">seqtk seq -A input.fastq > output.fasta</pre></td><td>🕓 4.3 s<br/>📈 3.5 MiB</td></tr>
 <tr><td>SeqKit</td><td><pre language="sh">seqkit fq2fa input.fastq > output.fasta</pre></td><td>🕓 3.1 s<br/>📈 18.4 MiB</td></tr>
 </table>
@@ -62,10 +75,12 @@ Convert FASTQ to FASTA
 
 Convert FASTQ quality scores
 
+</td>
 <td>
-<td><pre language="sh">st pass --to fastq-illumina input.fastq > output.fastq</pre>
+<pre language="sh">st pass --to fastq-illumina input.fastq > output.fastq</pre>
 <details markdown><summary><b>VSEARCH</b> 🕓 12.9 s  ❙  <b>SeqKit</b> 🕓 48.8 s</summary>
-<table><tr><td>VSEARCH</td><td><pre language="sh">vsearch --fastq_convert input.fastq --fastq_asciiout 64 --fastqout output.fastq</pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+<table class="cmd">
+<tr><td>VSEARCH</td><td><pre language="sh">vsearch --fastq_convert input.fastq --fastq_asciiout 64 --fastqout output.fastq</pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
 https://github.com/torognes/vsearch
 
 Reading FASTQ file 100%
@@ -84,10 +99,12 @@ Reading FASTQ file 100%
 
 Write compressed FASTQ files in GZIP format
 
+</td>
 <td>
-<td><pre language="sh">st pass input.fastq -o output.fastq.gz</pre>
+<pre language="sh">st pass input.fastq -o output.fastq.gz</pre>
 <details markdown><summary><b>SeqKit</b> 🕓 <b>30.3 s</b> 🏆 (1.3x)  ❙  <b>seqtool | gzip</b> 🕓 159.1 s  ❙  <b>gzip directly</b> 🕓 158.6 s  ❙  <b>pigz directly (4 threads)</b> 🕓 39.0 s</summary>
-<table><tr><td>SeqKit</td><td><pre language="sh">seqkit seq input.fastq -o output.fastq.gz</pre></td><td>🕓 <b>30.3 s</b> 🏆 (1.3x)<br/>📈 37.5 MiB</td></tr>
+<table class="cmd">
+<tr><td>SeqKit</td><td><pre language="sh">seqkit seq input.fastq -o output.fastq.gz</pre></td><td>🕓 <b>30.3 s</b> 🏆 (1.3x)<br/>📈 37.5 MiB</td></tr>
 <tr><td>seqtool | gzip</td><td><pre language="sh">st pass input.fastq | gzip -c > output.fastq.gz</pre></td><td>🕓 159.1 s<br/>📈 7.2 MiB</td></tr>
 <tr><td>gzip directly</td><td><pre language="sh">gzip -kf input.fastq</pre></td><td>🕓 158.6 s<br/>📈 <b>3.5 MiB</b> 🏆 (1.21x)</td></tr>
 <tr><td>pigz directly (4 threads)</td><td><pre language="sh">pigz -p4 -kf input.fastq</pre></td><td>🕓 39.0 s 405% CPU<br/>📈 4.2 MiB</td></tr>
@@ -101,10 +118,12 @@ Write compressed FASTQ files in GZIP format
 
 Write compressed FASTQ files in Zstandard format
 
+</td>
 <td>
-<td><pre language="sh">st pass input.fastq -o output.fastq.zst</pre>
+<pre language="sh">st pass input.fastq -o output.fastq.zst</pre>
 <details markdown><summary><b>seqtool | zstd piped</b> 🕓 <b>12.8 s</b> 🏆 (1.2x)</summary>
-<table><tr><td>seqtool | zstd piped</td><td><pre language="sh">st pass input.fastq | zstd -c > output.fastq.zst</pre></td><td>🕓 <b>12.8 s</b> 🏆 (1.2x) 147% CPU<br/>📈 38.8 MiB</td></tr>
+<table class="cmd">
+<tr><td>seqtool | zstd piped</td><td><pre language="sh">st pass input.fastq | zstd -c > output.fastq.zst</pre></td><td>🕓 <b>12.8 s</b> 🏆 (1.2x) 147% CPU<br/>📈 38.8 MiB</td></tr>
 </table>
 </details>
 </td>
@@ -115,10 +134,12 @@ Write compressed FASTQ files in Zstandard format
 
 Write compressed FASTQ files in Lz4 format
 
+</td>
 <td>
-<td><pre language="sh">st pass input.fastq -o output.fastq.lz4</pre>
+<pre language="sh">st pass input.fastq -o output.fastq.lz4</pre>
 <details markdown><summary><b>seqtool | lz4 piped</b> 🕓 9.9 s</summary>
-<table><tr><td>seqtool | lz4 piped</td><td><pre language="sh">st pass input.fastq | lz4 -c > output.fastq.lz4</pre></td><td>🕓 9.9 s 116% CPU<br/>📈 <b>7.4 MiB</b> 🏆 (3.75x)</td></tr>
+<table class="cmd">
+<tr><td>seqtool | lz4 piped</td><td><pre language="sh">st pass input.fastq | lz4 -c > output.fastq.lz4</pre></td><td>🕓 9.9 s 116% CPU<br/>📈 <b>7.4 MiB</b> 🏆 (3.75x)</td></tr>
 </table>
 </details>
 </td>
@@ -127,19 +148,20 @@ Write compressed FASTQ files in Lz4 format
 </table>
 
 ## count
-<table>
-<colgroup><col span="5" /><col span="10" /><col span="3" /></colgroup>
+<table class="cmd">
 <tr>
 <td>
 
 Count the number of FASTQ sequences in the input
 
+</td>
 <td>
-<td><pre language="sh">st count input.fastq</pre>
+<pre language="sh">st count input.fastq</pre>
 <details><summary>🟦 output</summary><pre>2610480
 </pre></details>
 <details markdown><summary><b>Seqtk</b> 🕓 0.7 s</summary>
-<table><tr><td>Seqtk</td><td><pre language="sh">seqtk size input.fasta</pre><details><summary>🟦 output</summary><pre>2610480	712939424
+<table class="cmd">
+<tr><td>Seqtk</td><td><pre language="sh">seqtk size input.fasta</pre><details><summary>🟦 output</summary><pre>2610480	712939424
 </pre></details>
 </td><td>🕓 0.7 s<br/>📈 <b>3.4 MiB</b> 🏆 (2.11x)</td></tr>
 </table>
@@ -152,8 +174,9 @@ Count the number of FASTQ sequences in the input
 
 Count the number of FASTQ sequences, grouped by GC content (in 10% intervals)
 
+</td>
 <td>
-<td><pre language="sh">st count -k 'bin(gc_percent, 10)' input.fastq</pre>
+<pre language="sh">st count -k 'bin(gc_percent, 10)' input.fastq</pre>
 <details><summary>🟦 output</summary><pre>(10, 20]	16
 (20, 30]	3004
 (30, 40]	51945
@@ -167,7 +190,8 @@ Count the number of FASTQ sequences, grouped by GC content (in 10% intervals)
 (NaN, NaN]	136197
 </pre></details>
 <details markdown><summary><b>st with math expression</b> 🕓 7.0 s</summary>
-<table><tr><td>st with math expression</td><td><pre language="sh">st count -k '{bin(gc_percent/100*100, 10)}' input.fastq</pre><details><summary>🟦 output</summary><pre>(10, 20]	16
+<table class="cmd">
+<tr><td>st with math expression</td><td><pre language="sh">st count -k '{bin(gc_percent/100*100, 10)}' input.fastq</pre><details><summary>🟦 output</summary><pre>(10, 20]	16
 (20, 30]	3004
 (30, 40]	51945
 (40, 50]	1149946
@@ -188,17 +212,18 @@ Count the number of FASTQ sequences, grouped by GC content (in 10% intervals)
 </table>
 
 ## sort
-<table>
-<colgroup><col span="5" /><col span="10" /><col span="3" /></colgroup>
+<table class="cmd">
 <tr>
 <td>
 
 Sort by sequence
 
+</td>
 <td>
-<td><pre language="sh">st sort seq input.fasta > output.fasta</pre>
+<pre language="sh">st sort seq input.fasta > output.fasta</pre>
 <details markdown><summary><b>SeqKit</b> 🕓 42.3 s</summary>
-<table><tr><td>SeqKit</td><td><pre language="sh">seqkit sort -s  input.fasta > output.fasta</pre><details><summary> messages</summary><pre>[INFO][0m read sequences ...
+<table class="cmd">
+<tr><td>SeqKit</td><td><pre language="sh">seqkit sort -s  input.fasta > output.fasta</pre><details><summary> messages</summary><pre>[INFO][0m read sequences ...
 [INFO][0m 2610480 sequences loaded
 [INFO][0m sorting ...
 [INFO][0m output ...
@@ -214,12 +239,14 @@ Sort by sequence
 
 Sort by sequence with ~ 50 MiB memory limit
 
+</td>
 <td>
-<td><pre language="sh">st sort seq input.fasta -M 50M > output.fasta</pre>
+<pre language="sh">st sort seq input.fasta -M 50M > output.fasta</pre>
 <details><summary> messages</summary><pre>Memory limit reached after 78050 records, writing to temporary file(s). Consider raising the limit (-M/--max-mem) to speed up sorting. Use -q/--quiet to silence this message.
 </pre></details>
 <details markdown><summary><b>100 MiB memory limit</b> 🕓 20.6 s</summary>
-<table><tr><td>100 MiB memory limit</td><td><pre language="sh">st sort seq input.fasta -M 100M > output.fasta</pre><details><summary> messages</summary><pre>Memory limit reached after 155392 records, writing to temporary file(s). Consider raising the limit (-M/--max-mem) to speed up sorting. Use -q/--quiet to silence this message.
+<table class="cmd">
+<tr><td>100 MiB memory limit</td><td><pre language="sh">st sort seq input.fasta -M 100M > output.fasta</pre><details><summary> messages</summary><pre>Memory limit reached after 155392 records, writing to temporary file(s). Consider raising the limit (-M/--max-mem) to speed up sorting. Use -q/--quiet to silence this message.
 </pre></details>
 </td><td>🕓 20.6 s<br/>📈 108.7 MiB</td></tr>
 </table>
@@ -232,10 +259,12 @@ Sort by sequence with ~ 50 MiB memory limit
 
 Sort by record ID
 
+</td>
 <td>
-<td><pre language="sh">st sort id input.fasta > output.fasta</pre>
+<pre language="sh">st sort id input.fasta > output.fasta</pre>
 <details markdown><summary><b>SeqKit</b> 🕓 34.2 s</summary>
-<table><tr><td>SeqKit</td><td><pre language="sh">seqkit sort  input.fasta > output.fasta</pre><details><summary> messages</summary><pre>[INFO][0m read sequences ...
+<table class="cmd">
+<tr><td>SeqKit</td><td><pre language="sh">seqkit sort  input.fasta > output.fasta</pre><details><summary> messages</summary><pre>[INFO][0m read sequences ...
 [INFO][0m 2610480 sequences loaded
 [INFO][0m sorting ...
 [INFO][0m output ...
@@ -251,10 +280,12 @@ Sort by record ID
 
 Sort by sequence length
 
+</td>
 <td>
-<td><pre language="sh">st sort seqlen input.fasta > output.fasta</pre>
+<pre language="sh">st sort seqlen input.fasta > output.fasta</pre>
 <details markdown><summary><b>SeqKit</b> 🕓 33.7 s  ❙  <b>VSEARCH</b> 🕓 9.4 s</summary>
-<table><tr><td>SeqKit</td><td><pre language="sh">seqkit sort -l  input.fasta > output.fasta</pre><details><summary> messages</summary><pre>[INFO][0m read sequences ...
+<table class="cmd">
+<tr><td>SeqKit</td><td><pre language="sh">seqkit sort -l  input.fasta > output.fasta</pre><details><summary> messages</summary><pre>[INFO][0m read sequences ...
 [INFO][0m 2610480 sequences loaded
 [INFO][0m sorting ...
 [INFO][0m output ...
@@ -281,12 +312,14 @@ Writing output 100%
 
 Sort sequences by USEARCH/VSEARCH-style abundance annotations
 
+</td>
 <td>
-<td><pre language="sh">ST_ATTR_FMT=';key=value' st unique seq -a size={n_duplicates} input.fasta |
+<pre language="sh">ST_ATTR_FMT=';key=value' st unique seq -a size={n_duplicates} input.fasta |
   st sort '{-attr("size")}' > output.fasta
 </pre>
 <details markdown><summary><b>VSEARCH</b> 🕓 20.4 s</summary>
-<table><tr><td>VSEARCH</td><td><pre language="sh">vsearch --derep_fulllength input.fasta --output - --sizeout |   vsearch --sortbysize - --output output.fasta  </pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+<table class="cmd">
+<tr><td>VSEARCH</td><td><pre language="sh">vsearch --derep_fulllength input.fasta --output - --sizeout |   vsearch --sortbysize - --output output.fasta  </pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
 https://github.com/torognes/vsearch
 
 vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
@@ -313,18 +346,19 @@ Writing output 100%
 </table>
 
 ## unique
-<table>
-<colgroup><col span="5" /><col span="10" /><col span="3" /></colgroup>
+<table class="cmd">
 <tr>
 <td>
 
 Remove duplicate sequences using sequence hashes. This is more memory efficient and usually faster than keeping the whole  sequence around.
 
 
+</td>
 <td>
-<td><pre language="sh">st unique seqhash input.fasta > output.fasta</pre>
+<pre language="sh">st unique seqhash input.fasta > output.fasta</pre>
 <details markdown><summary><b>SeqKit</b> 🕓 <b>3.3 s</b> 🏆 (1.2x)</summary>
-<table><tr><td>SeqKit</td><td><pre language="sh">seqkit rmdup -sP  input.fasta > output.fasta</pre><details><summary> messages</summary><pre>[INFO][0m 475551 duplicated records removed
+<table class="cmd">
+<tr><td>SeqKit</td><td><pre language="sh">seqkit rmdup -sP  input.fasta > output.fasta</pre><details><summary> messages</summary><pre>[INFO][0m 475551 duplicated records removed
 </pre></details>
 </td><td>🕓 <b>3.3 s</b> 🏆 (1.2x)<br/>📈 180.1 MiB</td></tr>
 </table>
@@ -338,10 +372,12 @@ Remove duplicate sequences using sequence hashes. This is more memory efficient 
 Remove duplicate sequences using sequence hashes (case-insensitive).
 
 
+</td>
 <td>
-<td><pre language="sh">st unique 'seqhash(true)' input.fasta > output.fasta</pre>
+<pre language="sh">st unique 'seqhash(true)' input.fasta > output.fasta</pre>
 <details markdown><summary><b>VSEARCH</b> 🕓 12.1 s  ❙  <b>SeqKit</b> 🕓 6.2 s</summary>
-<table><tr><td>VSEARCH</td><td><pre language="sh">vsearch --derep_smallmem input.fasta --fastaout output.fasta </pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+<table class="cmd">
+<tr><td>VSEARCH</td><td><pre language="sh">vsearch --derep_smallmem input.fasta --fastaout output.fasta </pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
 https://github.com/torognes/vsearch
 
 Dereplicating file input.fasta 100%
@@ -364,10 +400,12 @@ Writing FASTA output file 100%
 Remove duplicate sequences that are exactly identical (case-insensitive); comparing full sequences instead of not hashes (requires more memory). VSEARCH additionally treats &#x27;T&#x27; and &#x27;U&#x27; in the same way (seqtool doesn&#x27;t).
 
 
+</td>
 <td>
-<td><pre language="sh">st unique upper_seq input.fasta > output.fasta</pre>
+<pre language="sh">st unique upper_seq input.fasta > output.fasta</pre>
 <details markdown><summary><b>seqtool (sorted by sequence)</b> 🕓 13.5 s  ❙  <b>VSEARCH</b> 🕓 15.8 s</summary>
-<table><tr><td>seqtool (sorted by sequence)</td><td><pre language="sh">st unique -s upper_seq input.fasta > output.fasta</pre></td><td>🕓 13.5 s<br/>📈 1640.7 MiB</td></tr>
+<table class="cmd">
+<tr><td>seqtool (sorted by sequence)</td><td><pre language="sh">st unique -s upper_seq input.fasta > output.fasta</pre></td><td>🕓 13.5 s<br/>📈 1640.7 MiB</td></tr>
 <tr><td>VSEARCH</td><td><pre language="sh">vsearch --derep_fulllength input.fasta --output output.fasta </pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
 https://github.com/torognes/vsearch
 
@@ -388,8 +426,9 @@ Writing FASTA output file 100%
 
 Remove duplicate sequences (exact mode) with a memory limit of ~50 MiB
 
+</td>
 <td>
-<td><pre language="sh">st unique seq -M 50M input.fasta > output.fasta</pre>
+<pre language="sh">st unique seq -M 50M input.fasta > output.fasta</pre>
 <details><summary> messages</summary><pre>Memory limit reached after 151512 records, writing to temporary file(s). Consider raising the limit (-M/--max-mem) to speed up de-duplicating. Use -q/--quiet to silence this message.
 </pre></details>
 </td>
@@ -400,10 +439,12 @@ Remove duplicate sequences (exact mode) with a memory limit of ~50 MiB
 
 Remove duplicate sequences, checking both strands
 
+</td>
 <td>
-<td><pre language="sh">st unique seqhash_both input.fasta > output.fasta</pre>
+<pre language="sh">st unique seqhash_both input.fasta > output.fasta</pre>
 <details markdown><summary><b>SeqKit</b> 🕓 14.8 s</summary>
-<table><tr><td>SeqKit</td><td><pre language="sh">seqkit rmdup -s  input.fasta > output.fasta</pre><details><summary> messages</summary><pre>[INFO][0m 475687 duplicated records removed
+<table class="cmd">
+<tr><td>SeqKit</td><td><pre language="sh">seqkit rmdup -s  input.fasta > output.fasta</pre><details><summary> messages</summary><pre>[INFO][0m 475687 duplicated records removed
 </pre></details>
 </td><td>🕓 14.8 s<br/>📈 293.6 MiB</td></tr>
 </table>
@@ -417,10 +458,12 @@ Remove duplicate sequences, checking both strands
 Remove duplicate sequences, appending USEARCH/VSEARCH-style abundance annotations to the headers: *&gt;id;size=NN*
 
 
+</td>
 <td>
-<td><pre language="sh">st unique seq -a size={n_duplicates} --attr-fmt ';key=value' input.fasta > output.fasta</pre>
+<pre language="sh">st unique seq -a size={n_duplicates} --attr-fmt ';key=value' input.fasta > output.fasta</pre>
 <details markdown><summary><b>VSEARCH</b> 🕓 16.1 s</summary>
-<table><tr><td>VSEARCH</td><td><pre language="sh">vsearch --derep_fulllength input.fasta --sizeout --output output.fasta </pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+<table class="cmd">
+<tr><td>VSEARCH</td><td><pre language="sh">vsearch --derep_fulllength input.fasta --sizeout --output output.fasta </pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
 https://github.com/torognes/vsearch
 
 Dereplicating file input.fasta 100%
@@ -441,10 +484,12 @@ Writing FASTA output file 100%
 De-replicate both by sequence *and* record ID (the part before the first space in the header). The given benchmark actually has unique sequence IDs, so the result is the same as de-replication by sequence.
 
 
+</td>
 <td>
-<td><pre language="sh">st unique id,seq input.fasta > output.fasta</pre>
+<pre language="sh">st unique id,seq input.fasta > output.fasta</pre>
 <details markdown><summary><b>VSEARCH</b> 🕓 17.7 s</summary>
-<table><tr><td>VSEARCH</td><td><pre language="sh">vsearch --derep_id input.fasta --output output.fasta</pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+<table class="cmd">
+<tr><td>VSEARCH</td><td><pre language="sh">vsearch --derep_id input.fasta --output output.fasta</pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
 https://github.com/torognes/vsearch
 
 Dereplicating file input.fasta 100%
@@ -462,17 +507,18 @@ Writing FASTA output file 100%
 </table>
 
 ## filter
-<table>
-<colgroup><col span="5" /><col span="10" /><col span="3" /></colgroup>
+<table class="cmd">
 <tr>
 <td>
 
 Filter sequences by length
 
+</td>
 <td>
-<td><pre language="sh">st filter 'seqlen >= 100' input.fastq > output.fastq</pre>
+<pre language="sh">st filter 'seqlen >= 100' input.fastq > output.fastq</pre>
 <details markdown><summary><b>Seqtk</b> 🕓 6.5 s  ❙  <b>SeqKit</b> 🕓 <b>4.1 s</b> 🏆 (1.3x)</summary>
-<table><tr><td>Seqtk</td><td><pre language="sh">seqtk seq -L 100 input.fastq > output.fastq</pre></td><td>🕓 6.5 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.07x)</td></tr>
+<table class="cmd">
+<tr><td>Seqtk</td><td><pre language="sh">seqtk seq -L 100 input.fastq > output.fastq</pre></td><td>🕓 6.5 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.07x)</td></tr>
 <tr><td>SeqKit</td><td><pre language="sh">seqkit seq -m 100 input.fastq > output.fastq</pre><details><summary> messages</summary><pre>[33m[WARN][0m you may switch on flag -g/--remove-gaps to remove spaces
 </pre></details>
 </td><td>🕓 <b>4.1 s</b> 🏆 (1.3x)<br/>📈 28.1 MiB</td></tr>
@@ -487,10 +533,12 @@ Filter sequences by length
 Filter sequences by the total expected error as calculated from the quality scores
 
 
+</td>
 <td>
-<td><pre language="sh">st filter 'exp_err <= 1' input.fastq --to-fa > output.fastq</pre>
+<pre language="sh">st filter 'exp_err <= 1' input.fastq --to-fa > output.fastq</pre>
 <details markdown><summary><b>VSEARCH</b> 🕓 32.9 s  ❙  <b>USEARCH</b> 🕓 <b>16.0 s</b> 🏆 (1.7x)</summary>
-<table><tr><td>VSEARCH</td><td><pre language="sh">vsearch --fastq_filter input.fastq --fastq_maxee 1 --fastaout output.fasta </pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+<table class="cmd">
+<tr><td>VSEARCH</td><td><pre language="sh">vsearch --fastq_filter input.fastq --fastq_maxee 1 --fastaout output.fasta </pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
 https://github.com/torognes/vsearch
 
 Reading input file 100%
@@ -522,10 +570,12 @@ License: personal use only
 
 Select records from a large set of sequences given a list of 1000 sequence IDs
 
+</td>
 <td>
-<td><pre language="sh">st filter -m ids_list.txt 'has_meta()' input.fasta > output.fasta</pre>
+<pre language="sh">st filter -m ids_list.txt 'has_meta()' input.fasta > output.fasta</pre>
 <details markdown><summary><b>VSEARCH</b> 🕓 28.1 s  ❙  <b>SeqKit</b> 🕓 <b>1.0 s</b> 🏆 (1.6x)</summary>
-<table><tr><td>VSEARCH</td><td><pre language="sh">vsearch --fastx_getseqs input.fasta --labels ids_list.txt --fastaout output.fasta</pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+<table class="cmd">
+<tr><td>VSEARCH</td><td><pre language="sh">vsearch --fastx_getseqs input.fasta --labels ids_list.txt --fastaout output.fasta</pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
 https://github.com/torognes/vsearch
 
 Reading labels 100%
@@ -544,17 +594,18 @@ Extracting sequences 100%
 </table>
 
 ## sample
-<table>
-<colgroup><col span="5" /><col span="10" /><col span="3" /></colgroup>
+<table class="cmd">
 <tr>
 <td>
 
 Random subsampling to 1000 of sequences
 
+</td>
 <td>
-<td><pre language="sh">st sample -n 1000 input.fasta > output.fasta</pre>
+<pre language="sh">st sample -n 1000 input.fasta > output.fasta</pre>
 <details markdown><summary><b>VSEARCH</b> 🕓 4.3 s  ❙  <b>Seqtk</b> 🕓 0.8 s  ❙  <b>SeqKit</b> 🕓 11.5 s</summary>
-<table><tr><td>VSEARCH</td><td><pre language="sh">vsearch --fastx_subsample input.fasta --sample_size 1000 --fastaout output.fasta</pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+<table class="cmd">
+<tr><td>VSEARCH</td><td><pre language="sh">vsearch --fastx_subsample input.fasta --sample_size 1000 --fastaout output.fasta</pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
 https://github.com/torognes/vsearch
 
 Reading file input.fasta 100%
@@ -581,10 +632,12 @@ Subsampled 1000 reads from 1000 amplicons
 
 Random subsampling to ~10% of sequences
 
+</td>
 <td>
-<td><pre language="sh">st sample -p 0.1 input.fasta > output.fasta</pre>
+<pre language="sh">st sample -p 0.1 input.fasta > output.fasta</pre>
 <details markdown><summary><b>Seqtk</b> 🕓 1.7 s  ❙  <b>SeqKit</b> 🕓 2.0 s</summary>
-<table><tr><td>Seqtk</td><td><pre language="sh">seqtk sample input.fastq 0.1 > output.fasta</pre></td><td>🕓 1.7 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.04x)</td></tr>
+<table class="cmd">
+<tr><td>Seqtk</td><td><pre language="sh">seqtk sample input.fastq 0.1 > output.fasta</pre></td><td>🕓 1.7 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.04x)</td></tr>
 <tr><td>SeqKit</td><td><pre language="sh">seqkit sample -p 0.1 input.fastq > output.fasta</pre><details><summary> messages</summary><pre>[INFO][0m sample by proportion
 [INFO][0m 260463 sequences outputted
 </pre></details>
@@ -597,19 +650,20 @@ Random subsampling to ~10% of sequences
 </table>
 
 ## find
-<table>
-<colgroup><col span="5" /><col span="10" /><col span="3" /></colgroup>
+<table class="cmd">
 <tr>
 <td>
 
 Find the forward primer location in the input reads with up to 4 mismatches
 
+</td>
 <td>
-<td><pre language="sh">st find -D4 file:primers.fasta input.fastq -a primer={pattern_name} -a rng={match_range} > output.fastq</pre>
+<pre language="sh">st find -D4 file:primers.fasta input.fastq -a primer={pattern_name} -a rng={match_range} > output.fastq</pre>
 <details><summary> messages</summary><pre>Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
 </pre></details>
 <details markdown><summary><b>st (4 threads)</b> 🕓 <b>6.0 s</b> 🏆 (3.5x)  ❙  <b>st (max. mismatches = 2)</b> 🕓 21.1 s  ❙  <b>st (max. mismatches = 8)</b> 🕓 26.7 s</summary>
-<table><tr><td>st (4 threads)</td><td><pre language="sh">st find -t4 -D4 file:primers.fasta input.fastq -a primer={pattern_name} -a rng={match_range} > output.fastq</pre><details><summary> messages</summary><pre>Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
+<table class="cmd">
+<tr><td>st (4 threads)</td><td><pre language="sh">st find -t4 -D4 file:primers.fasta input.fastq -a primer={pattern_name} -a rng={match_range} > output.fastq</pre><details><summary> messages</summary><pre>Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
 </pre></details>
 </td><td>🕓 <b>6.0 s</b> 🏆 (3.5x) 402% CPU<br/>📈 17.6 MiB</td></tr>
 <tr><td>st (max. mismatches = 2)</td><td><pre language="sh">st find -D2 file:primers.fasta input.fastq -a primer={pattern_name} -a rng={match_range} > output.fastq</pre><details><summary> messages</summary><pre>Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
@@ -629,14 +683,16 @@ Find the forward primer location in the input reads with up to 4 mismatches
 Find and trim the forward primer up to an error rate (edit distance) of 20%, discarding unmatched reads. *Note:* Unlike Cutadapt, seqtool currently does not offer ungapped alignments (`--no-indels`).
 
 
+</td>
 <td>
-<td><pre language="sh">st find -f file:primers.fasta -R 0.2 input.fastq -a primer={pattern_name} -a end={match_end} |
+<pre language="sh">st find -f file:primers.fasta -R 0.2 input.fastq -a primer={pattern_name} -a end={match_end} |
   st trim -e '{attr(end)}:' --fq > output.fastq
 </pre>
 <details><summary> messages</summary><pre>Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
 </pre></details>
 <details markdown><summary><b>Cutadapt</b> 🕓 67.1 s</summary>
-<table><tr><td>Cutadapt</td><td><pre language="sh">cutadapt -g 'file:primers.fasta;min_overlap=15' input.fastq -e 0.2 --rename '{id} primer={adapter_name}' --discard-untrimmed > output.fastq </pre><details><summary> messages</summary><pre>This is cutadapt 4.6 with Python 3.12.2
+<table class="cmd">
+<tr><td>Cutadapt</td><td><pre language="sh">cutadapt -g 'file:primers.fasta;min_overlap=15' input.fastq -e 0.2 --rename '{id} primer={adapter_name}' --discard-untrimmed > output.fastq </pre><details><summary> messages</summary><pre>This is cutadapt 4.6 with Python 3.12.2
 Command line parameters: -g file:primers.fasta;min_overlap=15 input.fastq -e 0.2 --rename {id} primer={adapter_name} --discard-untrimmed
 Processing single-end reads on 1 core ...
 Finished in 66.906 s (25.630 µs/read; 2.34 M reads/minute).
@@ -733,14 +789,16 @@ length	count	expect	max.err	error counts
 Find and trim the forward primer in parallel using 4 threads (cores).
 
 
+</td>
 <td>
-<td><pre language="sh">st find -f file:primers.fasta -R 0.2 -t4 input.fastq -a primer={pattern_name} -a end={match_end} |
+<pre language="sh">st find -f file:primers.fasta -R 0.2 -t4 input.fastq -a primer={pattern_name} -a end={match_end} |
   st trim -e '{attr(end)}:' --fq > output.fastq
 </pre>
 <details><summary> messages</summary><pre>Note: the sequence type of the pattern 'ITS4' was determined as 'dna'. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
 </pre></details>
 <details markdown><summary><b>Cutadapt</b> 🕓 18.1 s</summary>
-<table><tr><td>Cutadapt</td><td><pre language="sh">cutadapt -j4 -g 'file:primers.fasta;min_overlap=15' input.fastq -e 0.2 --rename '{id} primer={adapter_name}' --discard-untrimmed > output.fastq </pre><details><summary> messages</summary><pre>This is cutadapt 4.6 with Python 3.12.2
+<table class="cmd">
+<tr><td>Cutadapt</td><td><pre language="sh">cutadapt -j4 -g 'file:primers.fasta;min_overlap=15' input.fastq -e 0.2 --rename '{id} primer={adapter_name}' --discard-untrimmed > output.fastq </pre><details><summary> messages</summary><pre>This is cutadapt 4.6 with Python 3.12.2
 Command line parameters: -j4 -g file:primers.fasta;min_overlap=15 input.fastq -e 0.2 --rename {id} primer={adapter_name} --discard-untrimmed
 Processing single-end reads on 4 cores ...
 Finished in 17.956 s (6.878 µs/read; 8.72 M reads/minute).
@@ -834,17 +892,18 @@ length	count	expect	max.err	error counts
 </table>
 
 ## replace
-<table>
-<colgroup><col span="5" /><col span="10" /><col span="3" /></colgroup>
+<table class="cmd">
 <tr>
 <td>
 
 Convert DNA to RNA using the replace command
 
+</td>
 <td>
-<td><pre language="sh">st replace T U input.fasta > output.fasta</pre>
+<pre language="sh">st replace T U input.fasta > output.fasta</pre>
 <details markdown><summary><b>st find</b> 🕓 14.3 s  ❙  <b>SeqKit</b> 🕓 <b>4.8 s</b> 🏆 (2.1x)  ❙  <b>FASTX-Toolkit</b> 🕓 283.5 s</summary>
-<table><tr><td>st find</td><td><pre language="sh">st find T --rep U input.fasta > output.fasta</pre><details><summary> messages</summary><pre>Note: the sequence type of the pattern was determined as 'dna'. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
+<table class="cmd">
+<tr><td>st find</td><td><pre language="sh">st find T --rep U input.fasta > output.fasta</pre><details><summary> messages</summary><pre>Note: the sequence type of the pattern was determined as 'dna'. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
 </pre></details>
 </td><td>🕓 14.3 s<br/>📈 7.2 MiB</td></tr>
 <tr><td>SeqKit</td><td><pre language="sh">seqkit seq --dna2rna  input.fasta > output.fasta</pre></td><td>🕓 <b>4.8 s</b> 🏆 (2.1x)<br/>📈 27.3 MiB</td></tr>
@@ -859,10 +918,12 @@ Convert DNA to RNA using the replace command
 
 Convert DNA to RNA using 4 threads
 
+</td>
 <td>
-<td><pre language="sh">st replace -t4 T U input.fasta > output.fasta</pre>
+<pre language="sh">st replace -t4 T U input.fasta > output.fasta</pre>
 <details markdown><summary><b>st find</b> 🕓 8.4 s</summary>
-<table><tr><td>st find</td><td><pre language="sh">st find -t4 T --rep U input.fasta > output.fasta</pre><details><summary> messages</summary><pre>Note: the sequence type of the pattern was determined as 'dna'. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
+<table class="cmd">
+<tr><td>st find</td><td><pre language="sh">st find -t4 T --rep U input.fasta > output.fasta</pre><details><summary> messages</summary><pre>Note: the sequence type of the pattern was determined as 'dna'. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
 </pre></details>
 </td><td>🕓 8.4 s 282% CPU<br/>📈 24.6 MiB</td></tr>
 </table>
@@ -873,17 +934,18 @@ Convert DNA to RNA using 4 threads
 </table>
 
 ## trim
-<table>
-<colgroup><col span="5" /><col span="10" /><col span="3" /></colgroup>
+<table class="cmd">
 <tr>
 <td>
 
 Trim the leading 99 bp from the sequences
 
+</td>
 <td>
-<td><pre language="sh">st trim 100: input.fasta > output.fasta</pre>
+<pre language="sh">st trim 100: input.fasta > output.fasta</pre>
 <details markdown><summary><b>SeqKit (creates FASTA index)</b> 🕓 44.8 s</summary>
-<table><tr><td>SeqKit (creates FASTA index)</td><td><pre language="sh">seqkit subseq -r '100:-1'  input.fasta > output.fasta</pre><details><summary> messages</summary><pre>[INFO][0m create or read FASTA index ...
+<table class="cmd">
+<tr><td>SeqKit (creates FASTA index)</td><td><pre language="sh">seqkit subseq -r '100:-1'  input.fasta > output.fasta</pre><details><summary> messages</summary><pre>[INFO][0m create or read FASTA index ...
 [INFO][0m create FASTA index for input.fasta
 [INFO][0m   2610480 records loaded from input.fasta.seqkit.fai
 </pre></details>
@@ -896,17 +958,18 @@ Trim the leading 99 bp from the sequences
 </table>
 
 ## upper
-<table>
-<colgroup><col span="5" /><col span="10" /><col span="3" /></colgroup>
+<table class="cmd">
 <tr>
 <td>
 
 Convert sequences to uppercase
 
+</td>
 <td>
-<td><pre language="sh">st upper input.fasta > output.fasta</pre>
+<pre language="sh">st upper input.fasta > output.fasta</pre>
 <details markdown><summary><b>Seqtk</b> 🕓 5.2 s  ❙  <b>SeqKit</b> 🕓 4.2 s</summary>
-<table><tr><td>Seqtk</td><td><pre language="sh">seqtk seq -U input.fasta > output.fasta</pre></td><td>🕓 5.2 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.11x)</td></tr>
+<table class="cmd">
+<tr><td>Seqtk</td><td><pre language="sh">seqtk seq -U input.fasta > output.fasta</pre></td><td>🕓 5.2 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.11x)</td></tr>
 <tr><td>SeqKit</td><td><pre language="sh">seqkit seq -u  input.fasta > output.fasta</pre></td><td>🕓 4.2 s<br/>📈 62.2 MiB</td></tr>
 </table>
 </details>
@@ -916,17 +979,18 @@ Convert sequences to uppercase
 </table>
 
 ## revcomp
-<table>
-<colgroup><col span="5" /><col span="10" /><col span="3" /></colgroup>
+<table class="cmd">
 <tr>
 <td>
 
 Reverse complement sequences
 
+</td>
 <td>
-<td><pre language="sh">st revcomp input.fasta > output.fasta</pre>
+<pre language="sh">st revcomp input.fasta > output.fasta</pre>
 <details markdown><summary><b>Seqtk</b> 🕓 <b>5.3 s</b> 🏆 (1.1x)  ❙  <b>VSEARCH</b> 🕓 7.7 s  ❙  <b>SeqKit</b> 🕓 7.8 s</summary>
-<table><tr><td>Seqtk</td><td><pre language="sh">seqtk seq -r input.fasta > output.fasta</pre></td><td>🕓 <b>5.3 s</b> 🏆 (1.1x)<br/>📈 <b>3.5 MiB</b> 🏆 (1.21x)</td></tr>
+<table class="cmd">
+<tr><td>Seqtk</td><td><pre language="sh">seqtk seq -r input.fasta > output.fasta</pre></td><td>🕓 <b>5.3 s</b> 🏆 (1.1x)<br/>📈 <b>3.5 MiB</b> 🏆 (1.21x)</td></tr>
 <tr><td>VSEARCH</td><td><pre language="sh">vsearch --fastx_revcomp input.fasta --fastaout output.fasta </pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
 https://github.com/torognes/vsearch
 
@@ -944,17 +1008,18 @@ Reading FASTA file 100%
 </table>
 
 ## concat
-<table>
-<colgroup><col span="5" /><col span="10" /><col span="3" /></colgroup>
+<table class="cmd">
 <tr>
 <td>
 
 Concatenate sequences, adding an `NNNNN` spacer inbetween
 
+</td>
 <td>
-<td><pre language="sh">st concat -s 5 -c N file1.fastq file2.fastq > output.fastq</pre>
+<pre language="sh">st concat -s 5 -c N file1.fastq file2.fastq > output.fastq</pre>
 <details markdown><summary><b>VSEARCH</b> 🕓 20.5 s</summary>
-<table><tr><td>VSEARCH</td><td><pre language="sh">vsearch --fastq_join file1.fastq --reverse file2.fastq --join_padgap NNNNN --fastqout output.fastq</pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+<table class="cmd">
+<tr><td>VSEARCH</td><td><pre language="sh">vsearch --fastq_join file1.fastq --reverse file2.fastq --join_padgap NNNNN --fastqout output.fastq</pre><details><summary> messages</summary><pre>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
 https://github.com/torognes/vsearch
 
 Joining reads 100%

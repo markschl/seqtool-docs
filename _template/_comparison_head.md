@@ -23,4 +23,14 @@ Click on the commands list to show more details.
 .md-grid {
     max-width: 100rem !important;
 }
+table.cmd {
+    table-layout: fixed;
+    width: 100%;
+}
+table.cmd td:first-child {
+    width: 30%;
+}
+table.cmd td:last-child {
+    width: 20%;
+}
 </style>
