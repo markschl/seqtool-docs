@@ -14,3 +14,4 @@ Options:
   -n, --no-id-check  Don't check if the IDs of the files match
 ```
 [See this page](opts.md) for the options common to all commands.
+

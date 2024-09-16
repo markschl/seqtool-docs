@@ -22,6 +22,7 @@ Options:
                          which is the default assumed encoding) [default: J]
 ```
 [See this page](opts.md) for the options common to all commands.
+
 ## More
 
 [This page](comparison.md#concat) lists examples with execution times compared

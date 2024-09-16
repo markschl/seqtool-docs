@@ -15,3 +15,4 @@ Options:
   -n, --num-seqs <N>  Number of sequences to return [default: 10]
 ```
 [See this page](opts.md) for the options common to all commands.
+

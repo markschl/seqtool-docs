@@ -104,6 +104,7 @@ Search command actions:
                         {variables/functions}
 ```
 [See this page](opts.md) for the options common to all commands.
+
 ## Searching in headers
 
 Specify `-i/--id` to search in sequence IDs (everything before the first space)
@@ -119,7 +120,7 @@ st find -df 'label' gb_seqs.fasta
 > *Note*: use `--dropped <not_matched_out>` to write unmatched sequences to 
 > another file.
 
-Often, searching in headers requires a regular expression (`-r/--regex`).
+To match a certain pattern, use a regular expression (`-r/--regex`).
 The following example extracts Genbank accessions from sequence headers that follow
 the old-style Genbank format:
 
@@ -136,8 +137,9 @@ SEQUENCE
 > You can use online tools such as https://regex101.com to build and debug your
 > regular expression
 
-> *Note:* replacing the whole header with the accession would be another
-> (probably faster) approach, see the [replace](replace.md) command.
+> *Note:* You could also replace the whole header with the accession using
+> the [replace](replace.md) command. This might be faster, but the original header
+> will not be retained.
 
 
 ## Searching in sequences
@@ -239,7 +241,7 @@ PRIMER
 
 ```bash
 st find file:primers.fasta -a primer='{pattern_name}' -a end='{match_end}' sequences.fasta |
-    st trim -e '{attr(end)}:' | 
+    st trim -e '{attr(end)}:' |
     st split -o '{attr(primer)}'
 ```
 
@@ -316,29 +318,29 @@ The find command provides many variables/functions to obtain information about t
 
 | | |
 |-|-|
-| match<br />match(hit)<br />match(hit, pattern) | The text matched by the pattern. With approximate matching (`-D/--diffs` \> 0), this is the match with the smallest edit distance or the leftmost occurrence if `--in-order` was specified. With exact/regex matching, the leftmost hit is always returned. In case of multiple patterns in a pattern file, the best hit of the best-matching pattern is returned (fuzzy matching), or the first hit of the first pattern with an exact match.<br />`match(hit) returns the matched text of the given hit number, whereas `match(all)` or `match('all') returns a comma-delimited list of all hits. These are either sorted by the edit distance (default) or by occurrence (`--in-order` or exact matching).<br />`match(1, 2)`, `match(1, 3)`, etc. references the 2nd, 3rd, etc. best matching pattern in case multiple patterns were suplied in a file (default: hit=1, pattern=1)." |
-| aligned_match<br />aligned_match(hit)<br />aligned_match(hit, rank) | Text match aligned with the pattern, including gaps if needed. |
-| match_start<br />match_start(hit)<br />match_start(hit, pattern) | Start coordinate of the first/best match. Other hits/patterns are selected with `match_start(hit, [pattern])`, for details see `match` |
-| match_end<br />match_end(hit)<br />match_end(hit, pattern) | Start of the first/best match relative to sequence end (negative coordinate). Other hits/patterns are selected with `match_neg_start(hit, [pattern])`, for details see `match`. |
-| match_neg_start<br />match_neg_start(hit)<br />match_neg_start(hit, pattern) | End of the first/best match relative to sequence end (negative coordinate). Other hits/patterns are selected with `match_neg_end(hit, [pattern])`, for details see `match`. |
-| match_neg_end<br />match_neg_end(hit)<br />match_neg_end(hit, pattern) | End coordinate of the first/best match. Other hits/patterns are selected with `match_end(hit, [pattern])`, for details see `match` |
-| match_len<br />match_len(hit)<br />match_len(hit, rank) | Length of the match |
-| match_range<br />match_range(hit)<br />match_range(hit, pattern)<br />match_range(hit, pattern, delim) | Range (start:end) of the first/best match. Other hits/patterns are selected with `match_range(hit, [pattern])`, for details see `match`. The 3rd argument allows changing the range delimiter, e.g. to '-'. |
-| match_group(group)<br />match_group(group, hit)<br />match_group(group, hit, pattern) | Text matched by regex match group of given number (0 = entire match) or name in case of a named group: `(?\<name\>...)`. The hit number (sorted by edit distance or occurrence) and the pattern number can be specified as well (see `match` for details). |
-| match_grp_start(group)<br />match_grp_start(group, hit)<br />match_grp_start(group, hit, pattern) | Start coordinate of the regex match group 'group' within the first/best match. See 'match_group' for options and details. |
-| match_grp_end(group)<br />match_grp_end(group, hit)<br />match_grp_end(group, hit, pattern) | End coordinate of the regex match group 'group' within the first/best match. See 'match_group' for options and details. |
-| match_grp_neg_start(group)<br />match_grp_neg_start(group, hit)<br />match_grp_neg_start(group, hit, pattern) | Start coordinate of regex match group 'group' relative to the sequence end (negative number). See 'match_group' for options and details. |
-| match_grp_neg_end(group)<br />match_grp_neg_end(group, hit)<br />match_grp_neg_end(group, hit, pattern) | Start coordinate of regex match group 'group' relative to the sequence end (negative number). See 'match_group' for options and details. |
-| match_grp_range(group)<br />match_grp_range(group, hit)<br />match_grp_range(group, hit, pattern)<br />match_grp_range(group, hit, pattern, delim) | Range (start-end) of regex match group 'group' relative to the sequence end. See 'match_group' for options and details. The 4th argument allows changing the range delimiter, e.g. to '-'. |
-| match_diffs<br />match_diffs(hit)<br />match_diffs(hit, pattern) | Number of mismatches/insertions/deletions of the search pattern compared to the sequence (corresponds to edit distance). Either just `match_diffs` for the best match, or `match_diffs(h, [p])` to get the edit distance of the h-th best hit of the p-th pattern. `match_diffs('all', [p]) will return a comma delimited list of distances for all hits of a pattern. |
-| match_diff_rate<br />match_diff_rate(hit)<br />match_diff_rate(hit, pattern) | Number of insertions in the sequence compared to the search pattern. Proportion of differences between the search pattern and the matched sequence, relative to the pattern length. See `match_diffs` for details on hit/pattern arguments. |
-| match_ins<br />match_ins(hit)<br />match_ins(hit, pattern) | Number of insertions in the matched sequence compared to the search pattern. |
-| match_del<br />match_del(hit)<br />match_del(hit, pattern) | Number of deletions in the matched text sequence to the search pattern. |
-| match_subst<br />match_subst(hit)<br />match_subst(hit, pattern) | Number of substitutions (non-matching letters) in the matched sequence compared to the pattern |
-| pattern_name<br />pattern_name(rank) | Name of the matching pattern (patterns supplied with `file:patterns.fasta`). In case a single pattern was specified in the commandline, this will just be *\<pattern\>*. `pattern_name(rank)` selects the n-th matching pattern, sorted by edit distance and/or pattern number (depending on `-D/-R` and `--in-order`). |
-| pattern<br />pattern(rank) | The best-matching pattern sequence, or the n-th matching pattern if `rank` is given, sorted by edit distance or by occurrence (depending on `-D/-R` and `--in-order`). |
-| aligned_pattern<br />aligned_pattern(hit)<br />aligned_pattern(hit, rank) | The aligned pattern, including gaps if needed. Regex patterns are returned as-is. |
-| pattern_len<br />pattern_len(rank) | Length of the matching pattern (see also `pattern`). For regex patterns, the length of the complete regular expression is returned. |
+| <a name="match"></a>match<br />match(hit)<br />match(hit, pattern) | The text matched by the pattern. With approximate matching (`-D/--diffs` \> 0), this is the match with the smallest edit distance or the leftmost occurrence if `--in-order` was specified. With exact/regex matching, the leftmost hit is always returned. In case of multiple patterns in a pattern file, the best hit of the best-matching pattern is returned (fuzzy matching), or the first hit of the first pattern with an exact match.<br />`match(hit) returns the matched text of the given hit number, whereas `match(all)` or `match('all') returns a comma-delimited list of all hits. These are either sorted by the edit distance (default) or by occurrence (`--in-order` or exact matching).<br />`match(1, 2)`, `match(1, 3)`, etc. references the 2nd, 3rd, etc. best matching pattern in case multiple patterns were suplied in a file (default: hit=1, pattern=1)." |
+| <a name="aligned_match"></a>aligned_match<br />aligned_match(hit)<br />aligned_match(hit, rank) | Text match aligned with the pattern, including gaps if needed. |
+| <a name="match_start"></a>match_start<br />match_start(hit)<br />match_start(hit, pattern) | Start coordinate of the first/best match. Other hits/patterns are selected with `match_start(hit, [pattern])`, for details see `match` |
+| <a name="match_end"></a>match_end<br />match_end(hit)<br />match_end(hit, pattern) | Start of the first/best match relative to sequence end (negative coordinate). Other hits/patterns are selected with `match_neg_start(hit, [pattern])`, for details see `match`. |
+| <a name="match_neg_start"></a>match_neg_start<br />match_neg_start(hit)<br />match_neg_start(hit, pattern) | End of the first/best match relative to sequence end (negative coordinate). Other hits/patterns are selected with `match_neg_end(hit, [pattern])`, for details see `match`. |
+| <a name="match_neg_end"></a>match_neg_end<br />match_neg_end(hit)<br />match_neg_end(hit, pattern) | End coordinate of the first/best match. Other hits/patterns are selected with `match_end(hit, [pattern])`, for details see `match` |
+| <a name="match_len"></a>match_len<br />match_len(hit)<br />match_len(hit, rank) | Length of the match |
+| <a name="match_range"></a>match_range<br />match_range(hit)<br />match_range(hit, pattern)<br />match_range(hit, pattern, delim) | Range (start:end) of the first/best match. Other hits/patterns are selected with `match_range(hit, [pattern])`, for details see `match`. The 3rd argument allows changing the range delimiter, e.g. to '-'. |
+| <a name="match_group"></a>match_group(group)<br />match_group(group, hit)<br />match_group(group, hit, pattern) | Text matched by regex match group of given number (0 = entire match) or name in case of a named group: `(?\<name\>...)`. The hit number (sorted by edit distance or occurrence) and the pattern number can be specified as well (see `match` for details). |
+| <a name="match_grp_start"></a>match_grp_start(group)<br />match_grp_start(group, hit)<br />match_grp_start(group, hit, pattern) | Start coordinate of the regex match group 'group' within the first/best match. See 'match_group' for options and details. |
+| <a name="match_grp_end"></a>match_grp_end(group)<br />match_grp_end(group, hit)<br />match_grp_end(group, hit, pattern) | End coordinate of the regex match group 'group' within the first/best match. See 'match_group' for options and details. |
+| <a name="match_grp_neg_start"></a>match_grp_neg_start(group)<br />match_grp_neg_start(group, hit)<br />match_grp_neg_start(group, hit, pattern) | Start coordinate of regex match group 'group' relative to the sequence end (negative number). See 'match_group' for options and details. |
+| <a name="match_grp_neg_end"></a>match_grp_neg_end(group)<br />match_grp_neg_end(group, hit)<br />match_grp_neg_end(group, hit, pattern) | Start coordinate of regex match group 'group' relative to the sequence end (negative number). See 'match_group' for options and details. |
+| <a name="match_grp_range"></a>match_grp_range(group)<br />match_grp_range(group, hit)<br />match_grp_range(group, hit, pattern)<br />match_grp_range(group, hit, pattern, delim) | Range (start-end) of regex match group 'group' relative to the sequence end. See 'match_group' for options and details. The 4th argument allows changing the range delimiter, e.g. to '-'. |
+| <a name="match_diffs"></a>match_diffs<br />match_diffs(hit)<br />match_diffs(hit, pattern) | Number of mismatches/insertions/deletions of the search pattern compared to the sequence (corresponds to edit distance). Either just `match_diffs` for the best match, or `match_diffs(h, [p])` to get the edit distance of the h-th best hit of the p-th pattern. `match_diffs('all', [p]) will return a comma delimited list of distances for all hits of a pattern. |
+| <a name="match_diff_rate"></a>match_diff_rate<br />match_diff_rate(hit)<br />match_diff_rate(hit, pattern) | Number of insertions in the sequence compared to the search pattern. Proportion of differences between the search pattern and the matched sequence, relative to the pattern length. See `match_diffs` for details on hit/pattern arguments. |
+| <a name="match_ins"></a>match_ins<br />match_ins(hit)<br />match_ins(hit, pattern) | Number of insertions in the matched sequence compared to the search pattern. |
+| <a name="match_del"></a>match_del<br />match_del(hit)<br />match_del(hit, pattern) | Number of deletions in the matched text sequence to the search pattern. |
+| <a name="match_subst"></a>match_subst<br />match_subst(hit)<br />match_subst(hit, pattern) | Number of substitutions (non-matching letters) in the matched sequence compared to the pattern |
+| <a name="pattern_name"></a>pattern_name<br />pattern_name(rank) | Name of the matching pattern (patterns supplied with `file:patterns.fasta`). In case a single pattern was specified in the commandline, this will just be *\<pattern\>*. `pattern_name(rank)` selects the n-th matching pattern, sorted by edit distance and/or pattern number (depending on `-D/-R` and `--in-order`). |
+| <a name="pattern"></a>pattern<br />pattern(rank) | The best-matching pattern sequence, or the n-th matching pattern if `rank` is given, sorted by edit distance or by occurrence (depending on `-D/-R` and `--in-order`). |
+| <a name="aligned_pattern"></a>aligned_pattern<br />aligned_pattern(hit)<br />aligned_pattern(hit, rank) | The aligned pattern, including gaps if needed. Regex patterns are returned as-is. |
+| <a name="pattern_len"></a>pattern_len<br />pattern_len(rank) | Length of the matching pattern (see also `pattern`). For regex patterns, the length of the complete regular expression is returned. |
 
 ### Examples
 Find a primer sequence with up to 2 mismatches (`-d/--dist`) and write the match range and the mismatches ('dist') to the header as attributes. The result will be 'undefined' (=undefined in JavaScript) if there are > 2 mismatches:

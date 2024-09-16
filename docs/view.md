@@ -54,6 +54,7 @@ Colors:
                            fails [possible values: true, false]
 ```
 [See this page](opts.md) for the options common to all commands.
+
 This command allows for viewing sequences in the terminal. The output
 is colored if the terminal supports colors. On UNIX systems (Linux, Mac OS, ...),
 the sequences are directly forwarded to the `less` pager command, which allows for

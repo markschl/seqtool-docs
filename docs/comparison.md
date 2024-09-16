@@ -16,8 +16,8 @@ The comparison was run on a Ryzen 4750U CPU with frequency boost disabled, writi
 files to a RAM instead of the disk.
 
 The fastest/most memory-efficient commands are highlighted by '🏆' and an indication,
-how many times faster/less memory it uses compared to the command ranking second.
-Click on the commands list to show more details.
+how many times faster / less memory they use compared to the commands ranking second.
+To show more details, click on the alternative commands list.
 
 <style>
 .md-grid {

@@ -12,3 +12,4 @@ Options:
       --attrs <ATTRS>  Delete attributes
 ```
 [See this page](opts.md) for the options common to all commands.
+

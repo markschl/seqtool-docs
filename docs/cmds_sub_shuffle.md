@@ -1,7 +1,7 @@
 
 ### Subset/shuffle
 * **[sort](sort.md)**: Sort records by sequence or any other criterion
-* **[unique](unique.md)**: General purpose tool for reading, modifying and writing biological sequences.
+* **[unique](unique.md)**: De-replicate by sequence and/or other properties, returning only unique records
 * **[filter](filter.md)**: Keep/exclude sequences based on different properties with a mathematical
 (JavaScript) expression
 * **[split](split.md)**: Distribute sequences into multiple files based on a variable/function or

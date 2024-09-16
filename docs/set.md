@@ -13,3 +13,4 @@ Options:
   -s, --seq <SEQ>    New sequence (variables allowed)
 ```
 [See this page](opts.md) for the options common to all commands.
+

@@ -18,6 +18,7 @@ Options:
   <REPLACEMENT>  Replacement string, cannot contain variables
 ```
 [See this page](opts.md) for the options common to all commands.
+
 ## Examples
 
 ### RNA to DNA
@@ -37,7 +38,7 @@ the old-style Genbank format, e.g. `gi|1031916024|gb|KU317675.1|`:
 st replace -ir "gi\|\d+\|[a-z]+\|(?<acc>.+?)\|.*" seqs.fasta '$acc' > seqs_accession.fasta
 ```
 
-The accession `KU317675` is matched by the named regex group 'acc' and
+The accession `KU317675.1` is matched by the named regex group 'acc' and
 referenced by `'$acc'`.
 Regular expression (regex) groups can be accessed with
 [the '$' prefix](https://docs.rs/regex/latest/regex/#example-replacement-with-named-capture-groups)

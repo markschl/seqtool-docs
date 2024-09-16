@@ -35,6 +35,7 @@ Options:
                          records are sorted by the header attribute 'a'
 ```
 [See this page](opts.md) for the options common to all commands.
+
 ### More
 
 [This page](comparison.md#sort) lists more examples with execution times and
@@ -44,7 +45,7 @@ comparisons with other tools.
 
 | | |
 |-|-|
-| key | The value of the key used for sorting |
+| <a name="key"></a>key | The value of the key used for sorting |
 
 ### Example
 Sort by part of the sequence ID, which is obtained using a JavaScript expression. We additionally keep this substring by writing the sort key to a header attribute::

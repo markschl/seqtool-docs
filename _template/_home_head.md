@@ -4,19 +4,24 @@ It provides different [subcommands](#commands) for *converting*, *inspecting*
 and *modifying* sequences.
 The standalone binary (~6 MB) is simply named `st` to save some typing.
 
+[![CI](https://github.com/markschl/seqtool/actions/workflows/ci.yaml/badge.svg)](https://github.com/markschl/seqtool/actions/workflows/ci.yaml)
+
 > **Note:** this page describes the development version 0.4-beta.
 > **The older stable version (v0.3.0) is [documented here](https://github.com/markschl/seqtool/wiki).**
 
-> ⚠ Also note that **there are some bugs in v0.3.0**,
-> see [CHANGELOG](https://github.com/markschl/seqtool/blob/main/CHANGELOG.md#important-bugfixes-).
-> Alternatively, v0.4.0-beta should be pretty safe to use already.
-> Approximate matching ([find](find.md) command) is not yet fully tested.
+## Downloads
 
 **[📥 download stable release (v0.3.0)](https://github.com/markschl/seqtool/releases/latest)**
 
+> **⚠ Note**: there are a few **unfixed bugs in v0.3.0** (currently)
+> when reading GZIP files or searching/replacing;
+> see [CHANGELOG for v0.4.0-beta](https://github.com/markschl/seqtool/blob/main/CHANGELOG.md#important-bugfixes-).
+> Alternatively, consider using v0.4.0-beta.
+
 **[📥 download beta release (v0.4.0-beta)](https://github.com/markschl/seqtool/releases/tag/0.4.0-beta.2)**
 
-[![CI](https://github.com/markschl/seqtool/actions/workflows/ci.yaml/badge.svg)](https://github.com/markschl/seqtool/actions/workflows/ci.yaml)
+> Should be pretty safe to use despite considerable refactoring.
+> Approximate matching ([find](find.md) command) is yet to be fully tested.
 
 
 ## Feature overview

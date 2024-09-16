@@ -1,16 +1,19 @@
 # Metadata from delimited files
 
-It often occurs that information from text files (created manually or
-using another program) needs to be integrated.
-This can be done in every *seqtool* command with the `-m/--meta` option.
-The delimiter and the column containing the sequence IDs can be configured
-with `--meta-delim` and `--id-col`.
+In all *seqtool* commands, it is possible to integrate external metadata
+from delimited text files created manually or using another program.
 
-Fields are accessible as [variables](variables.md) in this form: `meta(column)` where
-*column* is either a number or the header name of the given column.
+Files are specified using the `-m/--meta` option and accessed using the [functions](variables.md)
+`meta(column)`,  `opt_meta(column)` (with missing data) or `has_meta(column)`
+(to check if the metadata is present).
+*Column* is either a number or the header name of the given column.
 
 > See also **[variable reference](var_reference.md/#access-metadata-from-delimited-text-files)**
 > and detailed description of **[command-line options](opts.md)**
+
+By default, files are assumed to be **tab-delimited**, and the
+**first column should contain the ID**.
+However, this can be changed with `--meta-delim` and `--id-col`.
 
 ## Examples
 
@@ -75,4 +78,5 @@ Several sources can be simultaneously used in the same command with
 st filter -m source1.txt -m source2.txt 'meta("column", 1) == "value" && has_meta(2)' seqs.fasta > in_list.fasta
 ```
 
-> Sources are referenced using `meta(column, file_number)` or `has_meta(file_number)`
+> Sources are referenced using `meta(column, file_number)` or `has_meta(file_number)`;
+> see also **[variable reference](var_reference.md/#access-metadata-from-delimited-text-files)**

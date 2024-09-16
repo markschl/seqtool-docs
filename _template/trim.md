@@ -1,5 +1,7 @@
-The trim ranges are 1-based, using negative numbers means that the number
-is relative to the sequence end (see [the explanation of ranges](ranges.md)).
+The trim ranges always include the start and end coordinates unless `-0` is
+specified.
+Coordinates can be negative to indicate an offset from the end.
+See [explanation of ranges](ranges.md) for more details.
 
 ## Example: primer trimming
 

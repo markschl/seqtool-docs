@@ -13,7 +13,7 @@ st find -df 'label' gb_seqs.fasta
 > *Note*: use `--dropped <not_matched_out>` to write unmatched sequences to 
 > another file.
 
-Often, searching in headers requires a regular expression (`-r/--regex`).
+To match a certain pattern, use a regular expression (`-r/--regex`).
 The following example extracts Genbank accessions from sequence headers that follow
 the old-style Genbank format:
 
@@ -30,8 +30,9 @@ SEQUENCE
 > You can use online tools such as https://regex101.com to build and debug your
 > regular expression
 
-> *Note:* replacing the whole header with the accession would be another
-> (probably faster) approach, see the [replace](replace.md) command.
+> *Note:* You could also replace the whole header with the accession using
+> the [replace](replace.md) command. This might be faster, but the original header
+> will not be retained.
 
 
 ## Searching in sequences
@@ -133,7 +134,7 @@ PRIMER
 
 ```bash
 st find file:primers.fasta -a primer='{pattern_name}' -a end='{match_end}' sequences.fasta |
-    st trim -e '{attr(end)}:' | 
+    st trim -e '{attr(end)}:' |
     st split -o '{attr(primer)}'
 ```
 

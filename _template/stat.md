@@ -3,7 +3,7 @@
 Example:
 
 ```bash
-st stat seqlen,gc seqs.fasta
+st stat seqlen,gc_percent seqs.fasta
 ```
 
 Example output:

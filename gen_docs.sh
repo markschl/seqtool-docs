@@ -77,6 +77,7 @@ for cmd in "${cmd[@]}"; do
   echo -e "$opts" | sed '/Usage:/,$!d' >> $out
   echo '```' >> $out
   echo '[See this page](opts.md) for the options common to all commands.' >> $out
+  echo '' >> $out
 
   # add custom help content if file exists in doc dir
   desc_f=$templates/$cmd.md

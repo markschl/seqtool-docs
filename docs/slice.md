@@ -25,3 +25,4 @@ Options:
   <FROM:TO>  Range in form 'start:end' or ':end' or 'start:'
 ```
 [See this page](opts.md) for the options common to all commands.
+

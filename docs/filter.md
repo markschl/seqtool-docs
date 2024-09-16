@@ -16,6 +16,7 @@ Options:
 ```
 [See this page](opts.md) for the options common to all commands.
 
+
 ## Examples
 
 Removing sequences shorter than 100 bp:
@@ -27,7 +28,7 @@ st filter "seqlen >= 100" input.fasta > filtered.fasta
 Removing DNA sequences with more than 10% of ambiguous bases:
 
 ```bash
-st filter "charcount(ATGC) / seqlen >= 0.9" input.fasta > filtered.fasta
+st filter "charcount(ACGT) / seqlen >= 0.9" input.fasta > filtered.fasta
 ```
 
 Quick and easy way to select certain sequences:
@@ -47,8 +48,10 @@ st filter "['id1', 'id2', 'id3'].contains(id)" input.fasta > filtered.fasta
 The [`exp_err` statistics variable](var_reference.md#sequence-statistics)
 represents the total expected number of errors
 in a sequence, as provided by the quality scores.
-By default, the Sanger / Illumina 1.8+ format (offset 33) is assumed.
-[See here](pass.md#quality-scores) for more information.
+By default,
+the [Sanger / Illumina 1.8+ format](https://en.wikipedia.org/wiki/FASTQ_format#Encoding)
+(with ASCII offset 33) is assumed.
+[See here](formats.md#quality-scores) for more information.
 
 This example removes sequences with less than one expected error. The
 output is the same as for `fastq_filter` if 

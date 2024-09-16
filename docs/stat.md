@@ -18,12 +18,13 @@ Options:
   <VAR>  Comma delimited list of statistics variables
 ```
 [See this page](opts.md) for the options common to all commands.
+
 `st stat <variables>` is a shorter equivalent of `st pass --to-tsv id,<variables>`.
 
 Example:
 
 ```bash
-st stat seqlen,gc seqs.fasta
+st stat seqlen,gc_percent seqs.fasta
 ```
 
 Example output:

@@ -26,7 +26,7 @@ input2.fasta  573
 input3.fasta  99186
 ```
 
-If the record number is required for each file, use the `path` or `filename`
+If the record count should be listed for each file separately, use the `path` or `filename`
 variable:
 
 ```bash
@@ -38,7 +38,7 @@ file2.fasta    24022
 file3.fasta    1771678
 ```
 
-Print the sequence length distribution:
+To print the sequence length distribution:
 
 ```bash
 st count -k seqlen input.fasta
@@ -50,13 +50,18 @@ st count -k seqlen input.fasta
 (...)
 ```
 
-It is possible to use multiple keys. Consider the
-[primer finding example](find.md#multiple-patterns) where the primer names 
-and number of mismatches are annotated as attributes.
-Now, the mismatch distribution for each primer can be analysed:
+### Multiple keys
+
+It is possible to use multiple keys.
+Consider an example similar to the [primer finding example](find.md#multiple-patterns),
+but in addition we also store the number of primer mismatches (edit distance)
+in the `diffs` header attribute.
+After trimming, we can visualize the mismatch distribution for each primer:
 
 ```bash
-st count -k 'attr(f_primer)' -k 'attr(f_dist)' seqs.fasta
+st find file:primers.fasta -a primer='{pattern_name}' -a end='{match_end}' -a diffs='{match_diffs}' sequences.fasta |
+    st trim -e '{attr(end)}:' > trimmed.fasta
+st count -k 'attr(primer)' -k 'attr(diffs)' trimmed.fasta
 ```
 ```
 primer1	0	249640
@@ -72,15 +77,25 @@ primer2	3	691
 primer2	4	34
 primer2	5	7
 primer2	6	1
-undefined	5029
+undefined	undefined	5029
 ```
 
-If primers on both ends were searched, it might make sense to use an
-[expression](expressions.md) to get the sum of edit distances for both primers.
+### Expressions as keys
+
+Assuming that we need to trim both the forward *and* reverse primer from a FASTQ
+file, we might categorize by the *sum* of the forward and reverse mismatches
+using an [expression](expressions.md).
 
 ```bash
-st count -k 'attr(f_primer)' -k 'attr(r_primer)' \
-  -k '{ num(attr("f_dist")) + num(attr("r_dist")) }' primer_trimmed.fq.gz
+# first, search and trim
+st find file:f_primers.fasta sequences.fastq \
+     -a f_primer='{pattern_name}' -a f_end='{match_end}' -a f_diffs='{match_diffs}' |
+  st find --fq file:r_primers.fasta \
+     -a r_primer='{pattern_name}' -a r_start='{match_start}' -a r_diffs='{match_diffs}' |
+  st trim --fq -e '{attr(f_end)}:{attr(r_start)}' > trimmed.fastq
+# then count
+st count -k 'attr(f_primer)' -k 'attr(r_primer)' -k 'attr(diffs)' \
+  -k '{ num(attr("f_diffs")) + num(attr("r_diffs")) }' trimmed.fastq
 ```
 ```
 f_primer1	r_primer1	0	3457490
@@ -91,11 +106,14 @@ f_primer1	r_primer1	4	10
 (...)
 ```
 
+> **A few important points**
+>
 > ⚠ [JavaScript expressions](expressions.md) always need to be enclosed in
 > `{curly braces}`, while simple variables/functions only require this
->  [in some cases](variables.md). Also, attribute names need to be in double
->  or single quotes: `attr("f_dist")`.
-
+>  [in some cases](variables.md#use-of-braces).
+>
+> ⚠ Attribute names need to be in double or single quotes: `attr("f_dist")`.
+>
 > ⚠ The `f_dist` and `r_dist` attributes are numeric, but *seqtool* doesn't know
 > that (see [below](#numbers-stored-as-text)), and the JavaScript expression would simply
 > [concatenate them as strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_overview#strings)

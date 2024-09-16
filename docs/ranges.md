@@ -9,8 +9,9 @@ Ranges in seqtool are used or produced by commands like [trim](trim.md), [find](
    unless [0-based coordinates](#0-based-coordinates-0) are configured.
 2. Negative coordinates (e.g. `-5:-1`) indicate coordinate offsets from the end
 3. [Unbounded](#unbounded-ranges-start-or-end) ranges (`start:` or `:end`)
-   have only one defined coordinate, while the range includes everything on the
-   other side. *"undefined"* equals to missing coordinates.
+   include everything from `start` to the sequence end,
+   respectively from the beginning to `end`.
+   *"undefined"* equals to missing coordinates.
 4. If interpreting ranges as [exclusive](#exclusive-ranges-e-exclusive), the
    actual start or end positions are not included in the range.
 

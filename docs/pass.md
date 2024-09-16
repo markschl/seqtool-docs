@@ -9,6 +9,7 @@ Options:
   -h, --help  Print help
 ```
 [See this page](opts.md) for the options common to all commands.
+
 The `pass` command does nothing to the sequence records, it just passes them
 directly to the output. Still, this is an useful command for the following:
 
