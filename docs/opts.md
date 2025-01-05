@@ -43,6 +43,11 @@ Input (common to all commands):
 Output (common to all commands):
   -o, --output <FILE>       Write output to <file> instead of STDOUT [Default:
                             STDOUT (-)]
+      --append              Append sequences to the end if the output file(s)
+                            already exist instead of replacing the content. In
+                            case writing to standard output (which is the
+                            default if `-o/--output` is not specified), this
+                            option has no effect
       --to <FORMAT>         Output format and compression. See --fmt. Only
                             needed if not guessed from the extension (default:
                             input format)

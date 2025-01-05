@@ -16,12 +16,14 @@ Options:
   -h, --help  Print help
 
 'Split' command options:
-  -n, --num-seqs <N>  Split into chunks of <N> sequences and writes each chunk
-                      to a separate file with a numbered suffix. The output path
-                      is: '{filestem}_{chunk}.{default_ext}', e.g.
-                      'input_name_1.fasta'. Change with `-o/--output`
-  -p, --parents       Automatically create all parent directories of the output
-                      path
+  -n, --num-seqs <N>     Split into chunks of <N> sequences and writes each
+                         chunk to a separate file with a numbered suffix. The
+                         output path is: '{filestem}_{chunk}.{default_ext}',
+                         e.g. 'input_name_1.fasta'. Change with `-o/--output`
+  -p, --parents          Automatically create all parent directories of the
+                         output path
+  -c, --counts <COUNTS>  Write a tab-separated list of file path + record count
+                         to the given file (or STDOUT if `-` is specified)
 ```
 [See this page](opts.md) for the options common to all commands.
 
