@@ -148,5 +148,5 @@ echo "    - 'Comparison of tools': comparison.md" >> $config
 doc_link="\n## Detailed documentation\n\n**See [this page](https://markschl.github.io/seqtool-docs)**\n\n"
 cat $main |
   awk -v doc=$"$doc_link" '/## / && !x {print doc; x=1} 1' |
-  sed -E 's|\(([^.)]+)\.md\)|(https://markschl.github.io/seqtool-docs/\1)|g' \
+  sed -E 's|\]\(([^.)]+)\.md\)|\](https://markschl.github.io/seqtool-docs/\1)|g' \
   > $st_readme
