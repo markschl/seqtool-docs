@@ -1,0 +1,1241 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>find - seqtool documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#find" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="seqtool documentation" class="md-header__button md-logo" aria-label="seqtool documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            seqtool documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              find
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/markschl/seqtool" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="seqtool documentation" class="md-nav__button md-logo" aria-label="seqtool documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    seqtool documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/markschl/seqtool" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/markschl/seqtool/releases/latest" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Download
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Commands
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmds_basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic conversion/editing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmds_info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Information about sequences
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmds_sub_shuffle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subset/shuffle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmds_search_rep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Search and replace
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmds_mod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modifying commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Commandline options
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables/functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expressions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formats and compression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Header attributes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metadata
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Other topics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Other topics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ranges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ranges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comparison of tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#searching-in-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Searching in headers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searching-in-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Searching in sequences
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiple patterns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-other-hits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting other hits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replacing-matches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replacing matches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more" class="md-nav__link">
+    <span class="md-ellipsis">
+      More
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variablesfunctions-provided-by-the-find-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables/functions provided by the 'find' command
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="find">find<a class="headerlink" href="#find" title="Permanent link">&para;</a></h1>
+<p>Search for pattern(s) in sequences or sequene headers for record filtering,
+pattern replacement or passing hits to next command</p>
+<p>There are different search modes:</p>
+<ol>
+<li>Exact search</li>
+<li>Regular expressions (<code>-r/--regex</code>)</li>
+<li>DNA or protein patterns with ambiguous letters</li>
+<li>Approximate matching up to a given edit distance
+    (<code>-D/--diffs</code> or <code>-R/--max-diff-rate</code>)</li>
+</ol>
+<p>Search results can be used in three different ways:</p>
+<ol>
+<li>Keeping (<code>-f/--filter</code>) or excluding (<code>-e/--exclude</code>) matched
+   sequences</li>
+<li>Pattern replacement (<code>--rep</code>) with ambiguous/approximate
+   matching (for exact/regex replacement, use the 'replace'
+   command)</li>
+<li>Passing the search results to the output in sequence
+   headers (<code>-a/--attr</code>) or TSV/CSV fields (<code>--to-tsv/--to-csv</code>);
+   see <code>st find --help-vars</code> for all possible variables/
+   functions</li>
+</ol>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Usage: st find [OPTIONS] &lt;PATTERNS&gt; [INPUT]...
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Arguments:
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  &lt;PATTERNS&gt;  Pattern string or &#39;file:&lt;patterns.fasta&gt;&#39;
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Options:
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  -h, --help  Print help
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Where to search (default: sequence):
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  -i, --id    Search / replace in IDs instead of sequences
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  -d, --desc  Search / replace in descriptions
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Search options:
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>  -D, --max-diffs &lt;N&gt;      Return pattern matches up to a given maximum edit
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>                           distance of N differences (= substitutions,
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                           insertions or deletions). Residues that go beyond the
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                           sequence (partial matches) are always counted as
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                           differences. [default: pefect match]
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>  -R, --max-diff-rate &lt;R&gt;  Return of matches up to a given maximum rate of
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>                           differences, that is the fraction of divergences
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>                           (edit distance = substitutions, insertions or
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>                           deletions) divided by the pattern length. If
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>                           searching a 20bp pattern at a difference rate of 0.2,
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>                           matches with up to 4 differences (see also
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>                           `-D/--max-diffs`) are returned. [default: pefect
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>                           match]
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>  -r, --regex              Interpret pattern(s) as regular expression(s). All
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>                           *non-overlapping* matches in are searched in headers
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>                           or sequences. The regex engine lacks some advanced
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>                           syntax features such as look-around and
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>                           backreferences (see https://docs.rs/regex/#syntax).
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>                           Capture groups can be extracted by functions such as
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>                           `match_group(number)`, or `match_group(name)` if
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>                           named: `(?&lt;name&gt;)` (see also `st find --help-vars`)
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>      --in-order           Report hits in the order of their occurrence instead
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>                           of sorting by distance. Note that this option only
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>                           has an effect with `-D/--max-dist` &gt; 0, otherwise
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>                           matches are always reported in the order of their
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>                           occurrence
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>  -t, --threads &lt;N&gt;        Number of threads to use for searching [default: 1]
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>      --no-ambig           Don&#39;t interpret DNA ambiguity (IUPAC) characters
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>      --algo &lt;NAME&gt;        Override decision of algorithm for testing
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>                           (regex/exact/myers/auto) [default: auto]
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>      --gap-penalty &lt;N&gt;    Gap penalty used for prioritizing among multiple
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>                           matches with the same starting position and an
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>                           equally small edit distance. While substitutions have
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>                           a fixed penalty of 1, the gap penalty can be modified
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>                           to take values &gt;1. The default of 2 prefers more
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>                           concise alignments. A high gap penalty does *not*
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>                           enforce ungapped alignments. Only perfect matches
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>                           (`-D/--max-diffs 0`) are ungapped [default: 2]
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>Search range:
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>      --rng &lt;RANGE&gt;          Search within the given range (&#39;start:end&#39;,
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>                             &#39;start:&#39; or &#39;:end&#39;). Using variables is not
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>                             possible
+</span><span id="__span-0-57"><a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>      --max-shift-start &lt;N&gt;  Consider only matches with a maximum of &lt;N&gt; letters
+</span><span id="__span-0-58"><a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>                             preceding the start of the match (relative to the
+</span><span id="__span-0-59"><a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>                             sequence start or the start of the range `--rng`)
+</span><span id="__span-0-60"><a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>      --max-shift-end &lt;N&gt;    Consider only matches with a maximum of &lt;N&gt; letters
+</span><span id="__span-0-61"><a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>                             following the end of the match (relative to the
+</span><span id="__span-0-62"><a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>                             sequence end or the end of the range `--rng`)
+</span><span id="__span-0-63"><a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>
+</span><span id="__span-0-64"><a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>Search command actions:
+</span><span id="__span-0-65"><a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>  -f, --filter          Keep only matching sequences
+</span><span id="__span-0-66"><a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>  -e, --exclude         Exclude sequences that matched
+</span><span id="__span-0-67"><a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>      --dropped &lt;FILE&gt;  Output file for sequences that were removed by
+</span><span id="__span-0-68"><a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>                        filtering. The format is auto-recognized from the
+</span><span id="__span-0-69"><a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>                        extension
+</span><span id="__span-0-70"><a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>      --rep &lt;BY&gt;        Replace by a string, which may also contain
+</span><span id="__span-0-71"><a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>                        {variables/functions}
+</span></code></pre></div>
+<a href="../opts/">See this page</a> for the options common to all commands.</p>
+<h2 id="searching-in-headers">Searching in headers<a class="headerlink" href="#searching-in-headers" title="Permanent link">&para;</a></h2>
+<p>Specify <code>-i/--id</code> to search in sequence IDs (everything before the first space)
+or <code>-d/--desc</code> to search in the description part (everything <em>after</em> the space).</p>
+<p>Example: selectively return sequences that have <code>label</code> in their description
+(filtering with the <code>-f/--filter</code> flag):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>st<span class="w"> </span>find<span class="w"> </span>-df<span class="w"> </span><span class="s1">&#39;label&#39;</span><span class="w"> </span>gb_seqs.fasta
+</span></code></pre></div>
+<blockquote>
+<p><em>Note</em>: use <code>--dropped &lt;not_matched_out&gt;</code> to write unmatched sequences to 
+another file.</p>
+</blockquote>
+<p>To match a certain pattern, use a regular expression (<code>-r/--regex</code>).
+The following example extracts Genbank accessions from sequence headers that follow
+the old-style Genbank format:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>st<span class="w"> </span>find<span class="w"> </span>-ir<span class="w"> </span><span class="s2">&quot;gi\|\d+\|[a-z]+\|(?&lt;acc&gt;.+?)\|.*&quot;</span><span class="w"> </span>gb_seqs.fasta<span class="w"> </span>-a<span class="w"> </span><span class="s1">&#39;acc={match_group(acc)}&#39;</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&gt;gi|1031916024|gb|KU317675.1| acc=KU317675.1
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>SEQUENCE
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>(...)
+</span></code></pre></div>
+<blockquote>
+<p>You can use online tools such as https://regex101.com to build and debug your
+regular expression</p>
+<p><em>Note:</em> You could also replace the whole header with the accession using
+the <a href="../replace/">replace</a> command. This might be faster, but the original header
+will not be retained.</p>
+</blockquote>
+<h2 id="searching-in-sequences">Searching in sequences<a class="headerlink" href="#searching-in-sequences" title="Permanent link">&para;</a></h2>
+<p>Without the <code>-i</code> or <code>-d</code> flag, the default mode is to search in the sequence.
+The pattern type is automatically recognized and usually reported to avoid
+problems:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>st<span class="w"> </span>find<span class="w"> </span>-f<span class="w"> </span>AATGRAAT<span class="w"> </span>seqs.fasta<span class="w"> </span>&gt;<span class="w"> </span>filtered.fasta
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Note: the sequence type of the pattern was determined as &#39;dna&#39; (with ambiguous letters). If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
+</span></code></pre></div>
+<p><code>R</code> stands for <code>A</code> or <code>G</code>. <em>Seqtool</em> recognizes the IUPAC ambiguity codes for
+<a href="https://iubmb.qmul.ac.uk/misc/naseq.html#500">DNA/RNA</a> and
+<a href="https://iupac.qmul.ac.uk/AminoAcid/A2021.html#AA212">proteins</a>
+(with the exception of U = Selenocysteine).</p>
+<p><strong>⚠</strong> Matching is asymmetric: <code>R</code> in a search pattern matches [<code>A</code>, <code>G</code>, <code>R</code>]
+in sequences, but <code>R</code> in a sequence will only match ambiguities sharing the same
+set of bases (<code>R</code>, <code>V</code>, <code>D</code>, <code>N</code>) in the pattern. This should prevent false
+positive matches in sequences with many ambiguous characters.</p>
+<h3 id="approximate-matching">Approximate matching<a class="headerlink" href="#approximate-matching" title="Permanent link">&para;</a></h3>
+<p><em>Seqtool</em> can search for patterns such as adapter and primer sequences in an
+error-tolerant way, up to a given <a href="https://en.wikipedia.org/wiki/Edit_distance">edit distance</a>
+(<code>-D/--diffs</code> argument). Alternatively, <code>-R/--diff-rate</code> specifies a distance
+threshold relative to the length of the pattern (in other words, an "error rate").</p>
+<p>In this example, the edit distance and range of the best match are stored
+into <a href="../attributes/">header attributes</a>. If no hit is found, the attributes
+are set to <code>undefined</code>.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>st<span class="w"> </span>find<span class="w"> </span>-D<span class="w"> </span><span class="m">2</span><span class="w"> </span>AATGRAAT<span class="w"> </span>seqs.fasta<span class="w"> </span>-a<span class="w"> </span><span class="nv">d</span><span class="o">=</span><span class="s1">&#39;{match_diffs}&#39;</span><span class="w"> </span>-a<span class="w"> </span><span class="nv">rng</span><span class="o">=</span><span class="s1">&#39;{match_range}&#39;</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&gt;seq1 d=1 rng=3:11
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>GGAACGAAATATCAGCGATCC
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>&gt;seq2 d=undefined rng=undefined
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>TTATCGAATATGAGCGATCG
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>(...)
+</span></code></pre></div>
+<p>The second best hit (if any) can be returned with <code>{match_diffs(2)}</code> or
+<code>{match_range(2)}</code>, etc.</p>
+<blockquote>
+<p><em>Note:</em> Approximative matching is done using <a href="https://doi.org/10.1145/316542.316550">Myers</a>
+bit-parallel algorithm, which is very fast with short patterns and reasonably
+short sequences. It may not be the fastest solution if searching in large
+genomes.</p>
+<p>Recognizing adapter or primers should be very fast.
+Further speedups can be achieved by multithreading (<code>-t</code>) and
+restricting the search range (<code>--rng</code>).</p>
+<p><em>Note 2</em>: To report all hits below the given distance threshold 
+<em>in order of occurrence</em> instead of <em>decreasing distance</em>, specify <code>--in-order</code>
+(this may be faster)</p>
+</blockquote>
+<h2 id="multiple-patterns">Multiple patterns<a class="headerlink" href="#multiple-patterns" title="Permanent link">&para;</a></h2>
+<p>The <em>find</em> command supports searching for several patterns at once.
+They have to be supplied in a separate FASTA file (<code>file:path</code>).
+The best matching pattern with the smallest edit distance is always reported first.</p>
+<p>The following example de-multiplexes sequences amplified with different forward
+primers and then uses <a href="../trim/">trim</a> to remove the primers, and finally distributes
+the sequences into different files named by the forward primer (<a href="../split/">split</a>).</p>
+<table>
+<tr>
+<th>
+
+primers.fasta
+
+</th>
+</tr>
+<tr>
+<td>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&gt;prA
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>PRIMER
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>&gt;prB
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>PRIMER
+</span></code></pre></div>
+
+</td>
+</tr>
+</table>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>st<span class="w"> </span>find<span class="w"> </span>file:primers.fasta<span class="w"> </span>-a<span class="w"> </span><span class="nv">primer</span><span class="o">=</span><span class="s1">&#39;{pattern_name}&#39;</span><span class="w"> </span>-a<span class="w"> </span><span class="nv">end</span><span class="o">=</span><span class="s1">&#39;{match_end}&#39;</span><span class="w"> </span>sequences.fasta<span class="w"> </span><span class="p">|</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span>st<span class="w"> </span>trim<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;{attr(end)}:&#39;</span><span class="w"> </span><span class="p">|</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span>st<span class="w"> </span>split<span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;{attr(primer)}&#39;</span>
+</span></code></pre></div>
+<table>
+<tr>
+<th>prA.fasta </th>
+<th>prB.fasta</th>
+<th>undefined.fasta</th>
+</tr>
+<tr>
+<td>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>&gt;id1 primer=prA end=22
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>SEQUENCE
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>&gt;id4 primer=prA end=21
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>SEQUENCE
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>(...)
+</span></code></pre></div>
+
+</td>
+<td>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>&gt;id2 primer=prB end=20
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>SEQUENCE
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>&gt;id3 primer=prB end=22
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>SEQUENCE
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>(...)
+</span></code></pre></div>
+
+</td>
+<td>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>&gt;id5 primer=undefined end=undefined
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>UNTRIMMEDSEQUENCE
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>(...)
+</span></code></pre></div>
+
+&gt; <em>Note:</em> no primer, sequence <strong>not</strong> trimmed since <code>end=undefined</code> (see <a href="../ranges/">ranges</a>).
+
+</td>
+</tr>
+</table>
+<h2 id="selecting-other-hits">Selecting other hits<a class="headerlink" href="#selecting-other-hits" title="Permanent link">&para;</a></h2>
+<p>The find command is very versatile thanks to the large number of variables/functions
+that provide information about the search results
+(see <a href="#variablesfunctions-provided-by-the-find-command">variable reference</a>).</p>
+<p>For instance, the best hit from the <em>second best</em> matching pattern can be selected using
+<code>{match_range(1, 2)}</code>.</p>
+<p>It is also possible to return a comma-delimited list of matches, e.g.:
+<code>{match_range(all)}</code>. See the <a href="../mask/">mask</a> command for an example on how this could be useful.</p>
+<h2 id="replacing-matches">Replacing matches<a class="headerlink" href="#replacing-matches" title="Permanent link">&para;</a></h2>
+<p>Hits can be replaced by other text (<code>--repl</code>). Variables are allowed
+as well (in contrast to the <em>replace</em> command). Backreferences to regex groups
+(e.g. <code>$1</code>) are not supported like the <em>replace</em> command does.
+Instead, they can be accessed using variables (<code>match_group()</code>, etc.)</p>
+<h2 id="more">More<a class="headerlink" href="#more" title="Permanent link">&para;</a></h2>
+<p><a href="../comparison/#find">This page</a> lists more examples with execution times and
+comparisons with other tools.</p>
+<h2 id="variablesfunctions-provided-by-the-find-command">Variables/functions provided by the 'find' command<a class="headerlink" href="#variablesfunctions-provided-by-the-find-command" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>see also <code>st find --help-vars</code></p>
+</blockquote>
+<p>The find command provides many variables/functions to obtain information about the pattern matches. These are either written to header attributes (<code>-a/--attr</code>) or CSV/TSV fields (e.g. <code>--to-tsv ...</code>). See also examples section below.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="match"></a>match<br />match(hit)<br />match(hit, pattern)</td>
+<td>The text matched by the pattern. With approximate matching (<code>-D/--diffs</code> &gt; 0), this is the match with the smallest edit distance or the leftmost occurrence if <code>--in-order</code> was specified. With exact/regex matching, the leftmost hit is always returned. In case of multiple patterns in a pattern file, the best hit of the best-matching pattern is returned (fuzzy matching), or the first hit of the first pattern with an exact match.<br /><code>match(hit) returns the matched text of the given hit number, whereas</code>match(all)<code>or</code>match('all') returns a comma-delimited list of all hits. These are either sorted by the edit distance (default) or by occurrence (<code>--in-order</code> or exact matching).<br /><code>match(1, 2)</code>, <code>match(1, 3)</code>, etc. references the 2nd, 3rd, etc. best matching pattern in case multiple patterns were suplied in a file (default: hit=1, pattern=1)."</td>
+</tr>
+<tr>
+<td><a name="aligned_match"></a>aligned_match<br />aligned_match(hit)<br />aligned_match(hit, rank)</td>
+<td>Text match aligned with the pattern, including gaps if needed.</td>
+</tr>
+<tr>
+<td><a name="match_start"></a>match_start<br />match_start(hit)<br />match_start(hit, pattern)</td>
+<td>Start coordinate of the first/best match. Other hits/patterns are selected with <code>match_start(hit, [pattern])</code>, for details see <code>match</code></td>
+</tr>
+<tr>
+<td><a name="match_end"></a>match_end<br />match_end(hit)<br />match_end(hit, pattern)</td>
+<td>Start of the first/best match relative to sequence end (negative coordinate). Other hits/patterns are selected with <code>match_neg_start(hit, [pattern])</code>, for details see <code>match</code>.</td>
+</tr>
+<tr>
+<td><a name="match_neg_start"></a>match_neg_start<br />match_neg_start(hit)<br />match_neg_start(hit, pattern)</td>
+<td>End of the first/best match relative to sequence end (negative coordinate). Other hits/patterns are selected with <code>match_neg_end(hit, [pattern])</code>, for details see <code>match</code>.</td>
+</tr>
+<tr>
+<td><a name="match_neg_end"></a>match_neg_end<br />match_neg_end(hit)<br />match_neg_end(hit, pattern)</td>
+<td>End coordinate of the first/best match. Other hits/patterns are selected with <code>match_end(hit, [pattern])</code>, for details see <code>match</code></td>
+</tr>
+<tr>
+<td><a name="match_len"></a>match_len<br />match_len(hit)<br />match_len(hit, rank)</td>
+<td>Length of the match</td>
+</tr>
+<tr>
+<td><a name="match_range"></a>match_range<br />match_range(hit)<br />match_range(hit, pattern)<br />match_range(hit, pattern, delim)</td>
+<td>Range (start:end) of the first/best match. Other hits/patterns are selected with <code>match_range(hit, [pattern])</code>, for details see <code>match</code>. The 3rd argument allows changing the range delimiter, e.g. to '-'.</td>
+</tr>
+<tr>
+<td><a name="match_group"></a>match_group(group)<br />match_group(group, hit)<br />match_group(group, hit, pattern)</td>
+<td>Text matched by regex match group of given number (0 = entire match) or name in case of a named group: <code>(?\&lt;name\&gt;...)</code>. The hit number (sorted by edit distance or occurrence) and the pattern number can be specified as well (see <code>match</code> for details).</td>
+</tr>
+<tr>
+<td><a name="match_grp_start"></a>match_grp_start(group)<br />match_grp_start(group, hit)<br />match_grp_start(group, hit, pattern)</td>
+<td>Start coordinate of the regex match group 'group' within the first/best match. See 'match_group' for options and details.</td>
+</tr>
+<tr>
+<td><a name="match_grp_end"></a>match_grp_end(group)<br />match_grp_end(group, hit)<br />match_grp_end(group, hit, pattern)</td>
+<td>End coordinate of the regex match group 'group' within the first/best match. See 'match_group' for options and details.</td>
+</tr>
+<tr>
+<td><a name="match_grp_neg_start"></a>match_grp_neg_start(group)<br />match_grp_neg_start(group, hit)<br />match_grp_neg_start(group, hit, pattern)</td>
+<td>Start coordinate of regex match group 'group' relative to the sequence end (negative number). See 'match_group' for options and details.</td>
+</tr>
+<tr>
+<td><a name="match_grp_neg_end"></a>match_grp_neg_end(group)<br />match_grp_neg_end(group, hit)<br />match_grp_neg_end(group, hit, pattern)</td>
+<td>Start coordinate of regex match group 'group' relative to the sequence end (negative number). See 'match_group' for options and details.</td>
+</tr>
+<tr>
+<td><a name="match_grp_range"></a>match_grp_range(group)<br />match_grp_range(group, hit)<br />match_grp_range(group, hit, pattern)<br />match_grp_range(group, hit, pattern, delim)</td>
+<td>Range (start-end) of regex match group 'group' relative to the sequence end. See 'match_group' for options and details. The 4th argument allows changing the range delimiter, e.g. to '-'.</td>
+</tr>
+<tr>
+<td><a name="match_diffs"></a>match_diffs<br />match_diffs(hit)<br />match_diffs(hit, pattern)</td>
+<td>Number of mismatches/insertions/deletions of the search pattern compared to the sequence (corresponds to edit distance). Either just <code>match_diffs</code> for the best match, or <code>match_diffs(h, [p])</code> to get the edit distance of the h-th best hit of the p-th pattern. `match_diffs('all', [p]) will return a comma delimited list of distances for all hits of a pattern.</td>
+</tr>
+<tr>
+<td><a name="match_diff_rate"></a>match_diff_rate<br />match_diff_rate(hit)<br />match_diff_rate(hit, pattern)</td>
+<td>Number of insertions in the sequence compared to the search pattern. Proportion of differences between the search pattern and the matched sequence, relative to the pattern length. See <code>match_diffs</code> for details on hit/pattern arguments.</td>
+</tr>
+<tr>
+<td><a name="match_ins"></a>match_ins<br />match_ins(hit)<br />match_ins(hit, pattern)</td>
+<td>Number of insertions in the matched sequence compared to the search pattern.</td>
+</tr>
+<tr>
+<td><a name="match_del"></a>match_del<br />match_del(hit)<br />match_del(hit, pattern)</td>
+<td>Number of deletions in the matched text sequence to the search pattern.</td>
+</tr>
+<tr>
+<td><a name="match_subst"></a>match_subst<br />match_subst(hit)<br />match_subst(hit, pattern)</td>
+<td>Number of substitutions (non-matching letters) in the matched sequence compared to the pattern</td>
+</tr>
+<tr>
+<td><a name="pattern_name"></a>pattern_name<br />pattern_name(rank)</td>
+<td>Name of the matching pattern (patterns supplied with <code>file:patterns.fasta</code>). In case a single pattern was specified in the commandline, this will just be <em>\&lt;pattern&gt;</em>. <code>pattern_name(rank)</code> selects the n-th matching pattern, sorted by edit distance and/or pattern number (depending on <code>-D/-R</code> and <code>--in-order</code>).</td>
+</tr>
+<tr>
+<td><a name="pattern"></a>pattern<br />pattern(rank)</td>
+<td>The best-matching pattern sequence, or the n-th matching pattern if <code>rank</code> is given, sorted by edit distance or by occurrence (depending on <code>-D/-R</code> and <code>--in-order</code>).</td>
+</tr>
+<tr>
+<td><a name="aligned_pattern"></a>aligned_pattern<br />aligned_pattern(hit)<br />aligned_pattern(hit, rank)</td>
+<td>The aligned pattern, including gaps if needed. Regex patterns are returned as-is.</td>
+</tr>
+<tr>
+<td><a name="pattern_len"></a>pattern_len<br />pattern_len(rank)</td>
+<td>Length of the matching pattern (see also <code>pattern</code>). For regex patterns, the length of the complete regular expression is returned.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<p>Find a primer sequence with up to 2 mismatches (<code>-d/--dist</code>) and write the match range and the mismatches ('dist') to the header as attributes. The result will be 'undefined' (=undefined in JavaScript) if there are &gt; 2 mismatches:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>st<span class="w"> </span>find<span class="w"> </span>-d<span class="w"> </span><span class="m">2</span><span class="w"> </span>CTTGGTCATTTAGAGGAAGTAA<span class="w"> </span>-a<span class="w"> </span><span class="nv">rng</span><span class="o">={</span>match_range<span class="o">}</span><span class="w"> </span>-a<span class="w"> </span><span class="nv">dist</span><span class="o">={</span>match_diffs<span class="o">}</span><span class="w"> </span>reads.fasta
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>&gt;id1 rng=2:21 dist=1
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>SEQUENCE
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>&gt;id2 rng=1:20 dist=0
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>SEQUENCE
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>&gt;id3 rng=undefined dist=undefined
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>SEQUENCE
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>(...)
+</span></code></pre></div>
+Find a primer sequence and if found, remove it using the 'trim' command, while non-matching sequences are written to 'no_primer.fasta':
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>st<span class="w"> </span>find<span class="w"> </span>-f<span class="w"> </span>-d<span class="w"> </span><span class="m">2</span><span class="w"> </span>CTTGGTCATTTAGAGGAAGTAA<span class="w"> </span>--dropped<span class="w"> </span>no_primer.fasta<span class="w"> </span>-a<span class="w"> </span><span class="nv">end</span><span class="o">={</span>match_end<span class="o">}</span><span class="w"> </span>reads.fasta<span class="w"> </span><span class="p">|</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">   </span>st<span class="w"> </span>trim<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;{attr(match_end)}:&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>primer_trimmed.fasta
+</span></code></pre></div>
+Search for several primers with up to 2 mismatches and write the name and mismatches of the best-matching primer to the header:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>st<span class="w"> </span>find<span class="w"> </span>-d<span class="w"> </span><span class="m">2</span><span class="w"> </span>file:primers.fasta<span class="w"> </span>-a<span class="w"> </span><span class="nv">primer</span><span class="o">={</span>pattern_name<span class="o">}</span><span class="w"> </span>-a<span class="w"> </span><span class="nv">dist</span><span class="o">={</span>match_diffs<span class="o">}</span><span class="w"> </span>reads.fasta
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>&gt;id1 primer=primer_1 dist=1
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>SEQUENCE
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>&gt;id1 primer=primer_2 dist=0
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>SEQUENCE
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>&gt;id1 primer=undefined dist=undefined
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>SEQUENCE
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>(...)
+</span></code></pre></div></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "header.autohide", "content.code.copy", "search.suggest", "search.highlight", "toc.follow"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "0.4.0-beta.1"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
