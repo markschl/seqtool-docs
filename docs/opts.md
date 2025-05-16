@@ -14,21 +14,22 @@ Input (common to all commands):
                          the extension (e.g. if reading from STDIN). 'fasta' is
                          assumed as default (can be configured with ST_FORMAT).
                          Possible choices: fasta (default), fastq
-                         (fastq-illumina, fastq-solexa), csv or tsv Compression:
-                         <format>.<compression> (.gz, .bz2 or .lz4) [env:
-                         ST_FORMAT=]
+                         (fastq-illumina, fastq-solexa), csv or tsv.
+                         Compression: <format>.<compression> (.gz, .bz2 or .lz4)
+                         [env: ST_FORMAT=]
       --fa               FASTA input. Short for '--fmt fasta'
       --fq               FASTQ input. Short for '--fmt fastq'
-      --fq-illumina      FASTQ input in Illumina 1.3-1.7 format (alias to --fmt
-                         fastq-illumina)
-      --fields <FIELDS>  CSV fields: 'id,seq,desc' (in order) or
-                         'id:2,desc:6,seq:9' (col. num.) or headers:
-                         'id:id,seq:sequence,desc:some_description' [default:
-                         id,desc,seq]
-      --delim <CHAR>     TSV/CSV delimiter. Defaults: '\t' for tsv/txt; ',' for
-                         csv
-      --header           Specify if CSV file has a header. Auto-enabled
-                         depending on the format of --fields, --csv or --tsv
+      --fq-illumina      FASTQ input in legacy Illumina 1.3-1.7 format (alias to
+                         --fmt fastq-illumina)
+      --fields <FIELDS>  Delimited text fields: 'id,seq,desc' (in order) or
+                         'id:2,desc:6,seq:9' (col. num.) or
+                         'id:ID,seq:Sequence,desc:Comment' (names in header)
+                         [default: 'id,seq,desc']
+      --delim <CHAR>     TSV/CSV delimiter. Defaults: '\t' for tsv/txt and ','
+                         for csv
+      --header           Specify if CSV file has a header. Auto-enabled if a
+                         'field:column name' mapping is provided with --fields,
+                         --csv or --tsv
       --csv <FIELDS>     CSV input. Short for '--fmt csv --fields <fields>'
       --tsv <FIELDS>     TSV input. Short for '--fmt tsv --fields <fields>'
       --qual <FILE>      Path to QUAL file with quality scores (Roche 454 style)
@@ -37,8 +38,8 @@ Input (common to all commands):
                          `seq_revcomp`, `seqhash_rev` and `seqhash_both`
                          (default: auto-detected based on the first sequence)
                          [possible values: dna, rna, protein, other]
-  [INPUT]...         Input file(s), multiple possible (use '-' for STDIN)
-                     [default: -]
+  [INPUT]...             Input file(s), multiple possible (use '-' for STDIN)
+                         [default: -]
 
 Output (common to all commands):
   -o, --output <FILE>       Write output to <file> instead of STDOUT [Default:
@@ -52,11 +53,11 @@ Output (common to all commands):
                             needed if not guessed from the extension (default:
                             input format)
       --wrap <WIDTH>        Wrap FASTA sequences to maximum <width> characters
-      --out-delim <DELIM>   TSV/CSV delimiter. Defaults: '\t' for tsv/txt; ','
-                            for csv
+      --out-delim <DELIM>   TSV/CSV delimiter. Defaults: '\t' for tsv/txt and
+                            ',' for csv
       --outfields <FIELDS>  Comma delimited list of CSV/TSV fields, which can be
                             variables/functions or contain
-                            variables/expressions. [default: input fields or
+                            {variables}/{expressions}. [default: input fields or
                             'id,desc,seq']
       --to-fa               FASTA output. Short for: '--to fasta'
       --to-fq               FASTQ output. Short for: '--to fastq'
@@ -124,13 +125,13 @@ Expressions/scripts (all commands):
                         'file:path/to/file.js'
 
 Advanced (all commands):
-      --max-read-mem <SIZE>  Buffer size limit for the internal reader. Larger
-                             sequence records will cause an error. Note, that
-                             some commands such as 'sort', 'unique' and 'sample'
-                             still use more memory and have their own additional
-                             memory limit setting. Either a plain number (bytes)
-                             a number with unit (K, M, G, T) based on powers of
-                             2 [default: 1G]
+      --max-read-mem <SIZE>  Buffer size limit for the internal FASTA/FASTQ
+                             reader. Larger sequence records will cause an
+                             error. Note, that some commands such as 'sort',
+                             'unique' and 'sample' still use more memory and
+                             have their own additional memory limit setting.
+                             Either a plain number (bytes) a number with unit
+                             (K, M, G, T) based on powers of 2 [default: 1G]
   -T, --read-thread          Read from a different thread. Enabled with
                              compressed input
   -W, --write-thread         Write in a different thread. Enabled with

@@ -21,10 +21,12 @@ Options:
                              records are in input order if the memory limit is
                              *not* exceeded, but are sorted by key otherwise
       --map-out <MAP_OUT>    Write a map of all duplicate sequence IDs to the
-                             given file (or '-' for stdout). By default, a
-                             two-column mapping of sequence ID -> unique
-                             reference record ID is written (`long` format).
-                             More formats can be selected with `--map_format`
+                             given file (or '-' for stdout). The (optional)
+                             compression format is auto-recognized from the
+                             extension. By default, a two-column mapping of
+                             sequence ID -> unique reference record ID is
+                             written (`long` format). More formats can be
+                             selected with `--map_format`
       --map-fmt <MAP_FMT>    Column format for the duplicate map `--map-out`
                              (use `--help` for details) [default: long]
                              [possible values: long, long-star, wide,
@@ -37,18 +39,19 @@ Options:
                              is exceeded)
       --temp-file-limit <N>  Maximum number of temporary files allowed [default:
                              1000]
-  <KEY>                  The key used to determine, which records are unique.
-                         The key can be a single variable/function such as
-                         'seq', a composed string such as '{attr(a)}_{attr(b)}',
-                         or a comma-delimited list of multiple
-                         variables/functions, whose values are all taken into
-                         account, e.g. 'seq,num(attr(a))'. In case of identical
-                         sequences, records are still de-replicated by the
-                         header attribute 'a'. The 'num()' function turns text
-                         values into numbers, which can speed up the
-                         de-replication. For each key, the *first* encountered
-                         record is returned, and all remaining ones with the
-                         same key are discarded
+  <KEY>                      The key used to determine, which records are
+                             unique. The key can be a single variable/function
+                             such as 'seq', a composed string such as
+                             '{attr(a)}_{attr(b)}', or a comma-delimited list of
+                             multiple variables/functions, whose values are all
+                             taken into account, e.g. 'seq,num(attr(a))'. In
+                             case of identical sequences, records are still
+                             de-replicated by the header attribute 'a'. The
+                             'num()' function turns text values into numbers,
+                             which can speed up the de-replication. For each
+                             key, the *first* encountered record is returned,
+                             and all remaining ones with the same key are
+                             discarded
 ```
 [See this page](opts.md) for the options common to all commands.
 

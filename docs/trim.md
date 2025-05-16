@@ -14,15 +14,15 @@ Options:
                     (`start:` or `:end`), the range still extends to the
                     complete end or the start of the sequence
   -0, --zero-based  Interpret range as 0-based, with the end not included
-  <RANGES>      Range(s) in the form 'start:end' or 'start:' or ':end', Multiple
-                ranges can be supplied as comma-delimited list:
-                'start:end,start2:end2', etc. The start/end positions can be
-                defined by variables/functions (start_var:end_var), or
-                variables/functions may return the whole range (e.g. stored as
-                header attribute 'attr(range)'), or even a list of ranges (e.g.
-                'attr(range_list)'). *Note* that with the FASTA format, multiple
-                trim ranges must be in order (from left to right) and cannot
-                overlap
+  <RANGES>          Range(s) in the form 'start:end' or 'start:' or ':end',
+                    Multiple ranges can be supplied as comma-delimited list:
+                    'start:end,start2:end2', etc. The start/end positions can be
+                    defined by variables/functions (start_var:end_var), or
+                    variables/functions may return the whole range (e.g. stored
+                    as header attribute 'attr(range)'), or even a list of ranges
+                    (e.g. 'attr(range_list)'). *Note* that with the FASTA
+                    format, multiple trim ranges must be in order (from left to
+                    right) and cannot overlap
 ```
 [See this page](opts.md) for the options common to all commands.
 

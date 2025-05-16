@@ -54,8 +54,8 @@ Search options:
                            *non-overlapping* matches in are searched in headers
                            or sequences. The regex engine lacks some advanced
                            syntax features such as look-around and
-                           backreferences (see https://docs.rs/regex). Capture
-                           groups can be extracted by functions such as
+                           backreferences (see https://docs.rs/regex/#syntax).
+                           Capture groups can be extracted by functions such as
                            `match_group(number)`, or `match_group(name)` if
                            named: `(?<name>)` (see also `st find --help-vars`)
       --in-order           Report hits in the order of their occurrence instead
@@ -67,21 +67,14 @@ Search options:
       --no-ambig           Don't interpret DNA ambiguity (IUPAC) characters
       --algo <NAME>        Override decision of algorithm for testing
                            (regex/exact/myers/auto) [default: auto]
-      --gap-penalty <N>    Gap penalty to use for selecting the the optimal
-                           alignment among multiple alignments with the same
-                           starting position and the same edit distance. The
-                           default penalty of 2 selects hits that don't have too
-                           InDels in the alignment. A penalty of 0 is not
-                           recommended; due to how the algorithm works, the
-                           alignment with the leftmost end position is chosen
-                           among the candidates, which often shows deletions in
-                           the pattern. Penalties >2 will further shift the
-                           preference towards hits with substitutions instead of
-                           InDels, but the selection is always done among hits
-                           with the same (lowest) edit distance, so raising the
-                           gap penalty will not help in trying to enfoce
-                           ungapped alignments (there is currently no way to do
-                           that) [default: 2]
+      --gap-penalty <N>    Gap penalty used for prioritizing among multiple
+                           matches with the same starting position and an
+                           equally small edit distance. While substitutions have
+                           a fixed penalty of 1, the gap penalty can be modified
+                           to take values >1. The default of 2 prefers more
+                           concise alignments. A high gap penalty does *not*
+                           enforce ungapped alignments. Only perfect matches
+                           (`-D/--max-diffs 0`) are ungapped [default: 2]
 
 Search range:
       --rng <RANGE>          Search within the given range ('start:end',
@@ -98,8 +91,8 @@ Search command actions:
   -f, --filter          Keep only matching sequences
   -e, --exclude         Exclude sequences that matched
       --dropped <FILE>  Output file for sequences that were removed by
-                        filtering. The output format is (currently) the same as
-                        for the main output, regardless of the file extension
+                        filtering. The format is auto-recognized from the
+                        extension
       --rep <BY>        Replace by a string, which may also contain
                         {variables/functions}
 ```
@@ -170,14 +163,14 @@ positive matches in sequences with many ambiguous characters.
 
 ### Approximate matching
 
-*Seqtool* can find patterns with mismatches or insertions/deletions
-(up to a given [edit distance](https://en.wikipedia.org/wiki/Edit_distance))
-using the `-D/--diffs` argument. Alternatively, use `-R/--diff-rate` to
-specify a distance limit relative to the length of the pattern
-(in other words, an "error rate").
+*Seqtool* can search for patterns such as adapter and primer sequences in an
+error-tolerant way, up to a given [edit distance](https://en.wikipedia.org/wiki/Edit_distance)
+(`-D/--diffs` argument). Alternatively, `-R/--diff-rate` specifies a distance
+threshold relative to the length of the pattern (in other words, an "error rate").
 
-In this example, the edit distance and range of the best match are saved
-into [header attributes](attributes.md) (or `undefined` if not found):
+In this example, the edit distance and range of the best match are stored
+into [header attributes](attributes.md). If no hit is found, the attributes
+are set to `undefined`.
 
 ```bash
 st find -D 2 AATGRAAT seqs.fasta -a d='{match_diffs}' -a rng='{match_range}'
@@ -191,11 +184,8 @@ TTATCGAATATGAGCGATCG
 (...)
 ```
 
-In case of multiple hits, the second best hit can be returned by using
-`{match_diffs(2)}` or `{match_range(2)}`, etc.
-
-
-Use `--in-order` to report hits in order from left to right instead.
+The second best hit (if any) can be returned with `{match_diffs(2)}` or
+`{match_range(2)}`, etc.
 
 > *Note:* Approximative matching is done using [Myers](https://doi.org/10.1145/316542.316550)
 > bit-parallel algorithm, which is very fast with short patterns and reasonably
@@ -207,8 +197,8 @@ Use `--in-order` to report hits in order from left to right instead.
 > restricting the search range (`--rng`).
 
 > *Note 2*: To report all hits below the given distance threshold 
-> *in order of occurrence* instead of *decreasing distance*, specify `--in-order`.
-
+> *in order of occurrence* instead of *decreasing distance*, specify `--in-order`
+> (this may be faster)
 
 ## Multiple patterns
 

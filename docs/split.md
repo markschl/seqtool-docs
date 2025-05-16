@@ -2,11 +2,11 @@
 Distribute sequences into multiple files based on a variable/function or
 advanced expression
 
-or advanced expressions specified in the output path (`-o/--output`).
-See `--help` and `--help-vars` for more information.
-In contrast to other commands, the output argument (`-o`) of the
-'split' command can contain variables/functions to determine the
-file path for each sequence.
+In contrast to other commands, the output argument (`-o/--output`) of the
+'split' command can contain variables and advanced expressions to determine the
+file path for each sequence. However, the output format will not be
+automatically
+determined from file extensions containing variables.
 
 
 ```

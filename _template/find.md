@@ -63,14 +63,14 @@ positive matches in sequences with many ambiguous characters.
 
 ### Approximate matching
 
-*Seqtool* can find patterns with mismatches or insertions/deletions
-(up to a given [edit distance](https://en.wikipedia.org/wiki/Edit_distance))
-using the `-D/--diffs` argument. Alternatively, use `-R/--diff-rate` to
-specify a distance limit relative to the length of the pattern
-(in other words, an "error rate").
+*Seqtool* can search for patterns such as adapter and primer sequences in an
+error-tolerant way, up to a given [edit distance](https://en.wikipedia.org/wiki/Edit_distance)
+(`-D/--diffs` argument). Alternatively, `-R/--diff-rate` specifies a distance
+threshold relative to the length of the pattern (in other words, an "error rate").
 
-In this example, the edit distance and range of the best match are saved
-into [header attributes](attributes.md) (or `undefined` if not found):
+In this example, the edit distance and range of the best match are stored
+into [header attributes](attributes.md). If no hit is found, the attributes
+are set to `undefined`.
 
 ```bash
 st find -D 2 AATGRAAT seqs.fasta -a d='{match_diffs}' -a rng='{match_range}'
@@ -84,11 +84,8 @@ TTATCGAATATGAGCGATCG
 (...)
 ```
 
-In case of multiple hits, the second best hit can be returned by using
-`{match_diffs(2)}` or `{match_range(2)}`, etc.
-
-
-Use `--in-order` to report hits in order from left to right instead.
+The second best hit (if any) can be returned with `{match_diffs(2)}` or
+`{match_range(2)}`, etc.
 
 > *Note:* Approximative matching is done using [Myers](https://doi.org/10.1145/316542.316550)
 > bit-parallel algorithm, which is very fast with short patterns and reasonably
@@ -100,8 +97,8 @@ Use `--in-order` to report hits in order from left to right instead.
 > restricting the search range (`--rng`).
 
 > *Note 2*: To report all hits below the given distance threshold 
-> *in order of occurrence* instead of *decreasing distance*, specify `--in-order`.
-
+> *in order of occurrence* instead of *decreasing distance*, specify `--in-order`
+> (this may be faster)
 
 ## Multiple patterns
 

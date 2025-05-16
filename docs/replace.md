@@ -14,8 +14,8 @@ Options:
                      characters are supported when searching in
                      IDs/descriptions, but not for sequence searches
   -t, --threads <N>  Number of threads [default: 1]
-  <PATTERN>      Search pattern
-  <REPLACEMENT>  Replacement string, cannot contain variables
+  <PATTERN>          Search pattern
+  <REPLACEMENT>      Replacement string, cannot contain variables
 ```
 [See this page](opts.md) for the options common to all commands.
 

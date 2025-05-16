@@ -21,9 +21,9 @@ Options:
                      or `:end`), the range still extends to the complete end or
                      the start of the sequence
   -0, --zero-based   Interpret range as 0-based, with the end not included
-  <RANGES>       Range in the form 'start:end' or 'start:' or ':end', The range
-                 start/end may be defined by varialbes/functions, or the
-                 varialbe/function may contain a whole range
+  <RANGES>           Range in the form 'start:end' or 'start:' or ':end', The
+                     range start/end may be defined by varialbes/functions, or
+                     the varialbe/function may contain a whole range
 ```
 [See this page](opts.md) for the options common to all commands.
 

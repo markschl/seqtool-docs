@@ -26,13 +26,14 @@ Options:
                              is exceeded)
       --temp-file-limit <N>  Maximum number of temporary files allowed [default:
                              1000]
-  <KEY>                  The key used to sort the records. It can be a single
-                         variable/function such as 'seq', 'id', a composed
-                         string, e.g. '{id}_{desc}', or a comma-delimited list
-                         of multiple variables/functions to sort by, e.g.
-                         'seq,attr(a)'. In this case, the records are first
-                         sorted by sequence, but in case of identical sequences,
-                         records are sorted by the header attribute 'a'
+  <KEY>                      The key used to sort the records. It can be a
+                             single variable/function such as 'seq', 'id', a
+                             composed string, e.g. '{id}_{desc}', or a
+                             comma-delimited list of multiple
+                             variables/functions to sort by, e.g. 'seq,attr(a)'.
+                             In this case, the records are first sorted by
+                             sequence, but in case of identical sequences,
+                             records are sorted by the header attribute 'a'
 ```
 [See this page](opts.md) for the options common to all commands.
 

@@ -10,9 +10,9 @@ Options:
 
 'Filter' command options:
   -d, --dropped <FILE>  Output file for sequences that were removed by
-                        filtering. The output format is (currently) the same as
-                        for the main output, regardless of the file extension
-  <EXPRESSION>      Filter expression
+                        filtering. The format is auto-recognized from the
+                        extension
+  <EXPRESSION>          Filter expression
 ```
 [See this page](opts.md) for the options common to all commands.
 
