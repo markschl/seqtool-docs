@@ -2,7 +2,7 @@
 De-replicate by sequence and/or other properties, returning only unique records
 
 The unique key can be 'seq' or any variable/function, expression, or
-text containing them (see <KEY> help and `st unique --help-vars`).
+text containing them (see <KEY> help and `st unique -V/--help-vars`).
 
 The order of the records is the same as in the input unless the memory limit
 is exceeded, in which case temporary files are used and all remaining records
@@ -61,15 +61,15 @@ Options:
 to other tools.
 
 ## Variables/functions provided by the 'unique' command
-> see also `st unique --help-vars`
+> see also `st unique -V` or `st unique --help-vars`
 
 
 
 | | |
 |-|-|
 | <a name="key"></a>key | The value of the unique key |
-| <a name="n_duplicates"></a>n_duplicates<br />n_duplicates(include_self) | The `n_duplicates` variable retuns the total number of duplicate records sharing the same unique key. It can also be used as a function `n_duplicates(false)` to exclude the returned unique record from the count. `n_duplicates` is short for `n_duplicates(true)`. |
-| <a name="duplicates_list"></a>duplicates_list<br />duplicates_list(include_self) | Returns a comma-delimited list of record IDs that share the same unique key. Make sure that the record IDs don't have commas in them. The ID of the returned unique record is included by default (`duplicate_list` is short for `duplicate_list(true)`) but can be excluded with `duplicate_list(false)`. |
+| <a name="n_duplicates"></a>n_duplicates<br />n_duplicates(include_self) | The `n_duplicates` variable retuns the total number of duplicate records sharing the same unique key. It can also be used as a function `n_duplicates(false)` to exclude the returned unique record from the count. `n_duplicates` is short for `n_duplicates(true)`.<br/>return type: number |
+| <a name="duplicates_list"></a>duplicates_list<br />duplicates_list(include_self) | Returns a comma-delimited list of record IDs that share the same unique key. Make sure that the record IDs don't have commas in them. The ID of the returned unique record is included by default (`duplicate_list` is short for `duplicate_list(true)`) but can be excluded with `duplicate_list(false)`.<br/>return type: text |
 
 ### Examples
 De-replicate sequences using the sequence hash (faster than using the sequence `seq` itself), and also storing the number of duplicates (including the unique sequence itself) in the sequence header:

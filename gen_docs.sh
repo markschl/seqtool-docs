@@ -35,7 +35,7 @@ echo "  - Commands:" >> $config
 cmd=(
   ">cmds_basic=Basic conversion/editing" pass
   ">cmds_info=Information about sequences" view count stat
-  ">cmds_sub_shuffle=Subset/shuffle" sort unique filter split sample slice head tail interleave
+  ">cmds_sub_shuffle=Subset/reorganize/compare" sort unique filter split cmp sample slice head tail interleave
   ">cmds_search_rep=Search and replace" find replace
   ">cmds_mod=Modifying commands" del set trim mask upper lower revcomp concat
 )
@@ -88,7 +88,7 @@ for cmd in "${cmd[@]}"; do
   # add variable help if present
   vars=$($seqtool $cmd  --help-vars-md --help-cmd-vars 2>&1)
   if [ ! -z "$vars" -a "$vars" != " "  ]; then
-    msg="see also \`st $cmd --help-vars\`\n"
+    msg="see also \`st $cmd -V\` or \`st $cmd --help-vars\`\n"
     echo -e "$vars" | sed -E "s|## Variables/functions provided.+|\n\0\n> $msg|g" >> $out
   fi
 done

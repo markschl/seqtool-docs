@@ -437,13 +437,14 @@ attribute setting
 * **[count](count.md)**: Count all records in the input (total or categorized by variables/functions)
 * **[stat](stat.md)**: Return per-sequence statistics as tab delimited list
 
-### Subset/shuffle
+### Subset/reorganize/compare
 * **[sort](sort.md)**: Sort records by sequence or any other criterion
 * **[unique](unique.md)**: De-replicate by sequence and/or other properties, returning only unique records
 * **[filter](filter.md)**: Keep/exclude sequences based on different properties with a mathematical
 (JavaScript) expression
 * **[split](split.md)**: Distribute sequences into multiple files based on a variable/function or
 advanced expression
+* **[cmp](cmp.md)**: Compare two input files/streams
 * **[sample](sample.md)**: Get a random subset of sequences; either a fixed number or an approximate
 fraction of the input
 * **[slice](slice.md)**: Return a range of sequence records from the input
@@ -478,3 +479,8 @@ as well.
 *Seqtool* performs well compared to these tools on a selection of diverse tasks:
 
 **[Comparison of tools](comparison.md)**
+
+
+## License
+
+Either [MIT](https://opensource.org/license/mit) or [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) at your choice

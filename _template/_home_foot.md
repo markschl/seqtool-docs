@@ -9,3 +9,8 @@ as well.
 *Seqtool* performs well compared to these tools on a selection of diverse tasks:
 
 **[Comparison of tools](comparison.md)**
+
+
+## License
+
+Either [MIT](https://opensource.org/license/mit) or [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) at your choice

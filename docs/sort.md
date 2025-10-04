@@ -2,7 +2,7 @@
 Sort records by sequence or any other criterion
 
 The sort key can be 'seq', 'id', or any variable/function, expression, or
-text containing them (see <KEY> help and `st sort --help-vars`).
+text containing them (see <KEY> help and `st sort -V/--help-vars`).
 
 Records with identical keys are kept in input order.
 

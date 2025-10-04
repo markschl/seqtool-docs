@@ -20,7 +20,7 @@ st view seqs.fasta
 st view H1.fasta
 ```
 
-View of [Histone H1 sequences](https://www.ncbi.nlm.nih.gov/research/HistoneDB2.0/index.fcgi/type/H1/#msa_div_browse),
+View of [Histone H1 sequences](https://www.ncbi.nlm.nih.gov/research/histonedb/type/H1/#msa_div_browse),
 colored according to the [RasMol scheme](http://www.openrasmol.org/doc/#aminocolours).
 
 ![Histone H1](img/h1.png)
@@ -40,6 +40,7 @@ st view seqs.fastq
 There are multiple color schemes/palettes available, which can be configured
 using `--dna-pal`, `--aa-pal` and `--qscale`.
 
-A visualization of the builtin palettes is obtained with `st view --list-pal`:
+A visualization of the builtin palettes is obtained with `st view --list-pal`
+or `st view -p`:
 
 ![Palettes](img/palettes.png)

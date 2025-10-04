@@ -57,7 +57,7 @@ nav:
   - Commands:
     - 'Basic conversion/editing': cmds_basic.md
     - 'Information about sequences': cmds_info.md
-    - 'Subset/shuffle': cmds_sub_shuffle.md
+    - 'Subset/reorganize/compare': cmds_sub_shuffle.md
     - 'Search and replace': cmds_search_rep.md
     - 'Modifying commands': cmds_mod.md
   - 'Commandline options': opts.md

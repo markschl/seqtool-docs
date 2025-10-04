@@ -1,11 +1,12 @@
 
-### Subset/shuffle
+### Subset/reorganize/compare
 * **[sort](sort.md)**: Sort records by sequence or any other criterion
 * **[unique](unique.md)**: De-replicate by sequence and/or other properties, returning only unique records
 * **[filter](filter.md)**: Keep/exclude sequences based on different properties with a mathematical
 (JavaScript) expression
 * **[split](split.md)**: Distribute sequences into multiple files based on a variable/function or
 advanced expression
+* **[cmp](cmp.md)**: Compare two input files/streams
 * **[sample](sample.md)**: Get a random subset of sequences; either a fixed number or an approximate
 fraction of the input
 * **[slice](slice.md)**: Return a range of sequence records from the input

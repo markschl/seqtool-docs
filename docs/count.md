@@ -19,7 +19,8 @@ Options:
           single variable/function such as 'filename', 'desc' or 'attr(name)',
           or a composed key such as '{filename}_{meta(species)}'. The `-k/--key`
           argument can be specified multiple times, in which case there will be
-          multiple category columns, one per key
+          multiple category columns, one per key. Alternatively, a
+          comma-delimited list of keys can be provided
   -l, --category-limit <CATEGORY_LIMIT>
           Maximum number of categories to count before aborting with an error.
           This limit is a safety measure to prevent memory exhaustion. A very

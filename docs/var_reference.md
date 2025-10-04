@@ -6,22 +6,22 @@ This list can also be viewed in the terminal by running `st command --help-vars`
 
 | | |
 |-|-|
-| <a name="id"></a>id | Record ID (in FASTA/FASTQ: everything before first space) |
-| <a name="desc"></a>desc | Record description (everything after first space) |
-| <a name="seq"></a>seq | Record sequence |
-| <a name="upper_seq"></a>upper_seq | Record sequence in uppercase letters |
-| <a name="lower_seq"></a>lower_seq | Record sequence in lowercase letters |
-| <a name="seqhash"></a>seqhash<br />seqhash(ignorecase) | Calculates a hash value from the sequence using the XXH3 algorithm. A hash is a integer number representing the sequence. In very rare cases, different sequences may lead to the same hash value, but using 'seqhash' instead of 'seq' speeds up de-replication ('unique' command) and requires less memory, at a very small risk of wrongly recognizing two different sequences as duplicates. The returned numbers can be positive or negative. |
-| <a name="seqhash_rev"></a>seqhash_rev<br />seqhash_rev(ignorecase) | The hash value of the reverse-complemented sequence |
-| <a name="seqhash_both"></a>seqhash_both<br />seqhash_both(ignorecase) | The sum of the hashes from the forward and reverse sequences. The result is always the same irrespective of the sequence orientation, which is useful when de-replicating sequences with potentially different orientations. [side note: to be precise it is a *wrapping addition* to prevent integer overflow] |
-| <a name="seq_num"></a>seq_num<br />seq_num(reset) | Sequence number (n-th sequence in the input), starting from 1. The numbering continues across all provided sequence files unless `reset` is `true`, in which case the numbering re-starts from 1 for each new sequence file.<br />Note that the output order can vary with multithreaded processing. |
-| <a name="seq_idx"></a>seq_idx<br />seq_idx(reset) | Sequence index, starting from 0.<br />The index is incremented across all provided sequence files unless `reset` is `true`, in which case the index is reset to 0 at the start of each new sequence file.<br />Note that the output order can vary with multithreaded processing. |
-| <a name="path"></a>path | Path to the current input file (or '-' if reading from STDIN) |
-| <a name="filename"></a>filename | Name of the current input file with extension (or '-') |
-| <a name="filestem"></a>filestem | Name of the current input file *without* extension (or '-') |
-| <a name="extension"></a>extension | Extension of the current input file (or '') |
-| <a name="dirname"></a>dirname | Name of the base directory of the current file (or '') |
-| <a name="default_ext"></a>default_ext | Default file extension for the configured output format (e.g. 'fasta' or 'fastq') |
+| <a name="id"></a>id | Record ID (in FASTA/FASTQ: everything before first space)<br/>return type: text |
+| <a name="desc"></a>desc | Record description (everything after first space)<br/>return type: text |
+| <a name="seq"></a>seq | Record sequence<br/>return type: text |
+| <a name="upper_seq"></a>upper_seq | Record sequence in uppercase letters<br/>return type: text |
+| <a name="lower_seq"></a>lower_seq | Record sequence in lowercase letters<br/>return type: text |
+| <a name="seqhash"></a>seqhash<br />seqhash(ignorecase) | Calculates a hash value from the sequence using the XXH3 algorithm. A hash is a integer number representing the sequence. In very rare cases, different sequences may lead to the same hash value. Using 'seqhash' instead of 'seq' speeds up de-replication ('unique' command) and requires less memory, at a very small risk of wrongly recognizing two different sequences as duplicates. The returned numbers can be negative.<br/>return type: number |
+| <a name="seqhash_rev"></a>seqhash_rev<br />seqhash_rev(ignorecase) | The hash value of the reverse-complemented sequence<br/>return type: number |
+| <a name="seqhash_both"></a>seqhash_both<br />seqhash_both(ignorecase) | The sum of the hashes from the forward and reverse sequences. The result is always the same irrespective of the sequence orientation, which is useful when de-replicating sequences with potentially different orientations. [side note: to be precise it is a *wrapping addition* to prevent integer overflow]<br/>return type: number |
+| <a name="seq_num"></a>seq_num<br />seq_num(reset) | Sequence number (n-th sequence in the input), starting from 1. The numbering continues across all provided sequence files unless `reset` is `true`, in which case the numbering re-starts from 1 for each new sequence file.<br />Note that the output order can vary with multithreaded processing.<br/>return type: number |
+| <a name="seq_idx"></a>seq_idx<br />seq_idx(reset) | Sequence index, starting from 0.<br />The index is incremented across all provided sequence files unless `reset` is `true`, in which case the index is reset to 0 at the start of each new sequence file.<br />Note that the output order can vary with multithreaded processing.<br/>return type: number |
+| <a name="path"></a>path | Path to the current input file (or '-' if reading from STDIN)<br/>return type: text |
+| <a name="filename"></a>filename | Name of the current input file with extension (or '-')<br/>return type: text |
+| <a name="filestem"></a>filestem | Name of the current input file *without* extension (or '-')<br/>return type: text |
+| <a name="extension"></a>extension | Extension of the current input file (or '')<br/>return type: text |
+| <a name="dirname"></a>dirname | Name of the base directory of the current file (or '')<br/>return type: text |
+| <a name="default_ext"></a>default_ext | Default file extension for the configured output format (e.g. 'fasta' or 'fastq')<br/>return type: text |
 
 ### Examples
 Add the sequence number to the ID:
@@ -60,12 +60,12 @@ st unique 'seqhash_both(true)' input.fasta
 
 | | |
 |-|-|
-| <a name="seqlen"></a>seqlen | Sequence length |
-| <a name="ungapped_seqlen"></a>ungapped_seqlen | Ungapped sequence length (without gap characters `-`) |
-| <a name="gc"></a>gc | GC content as fraction (0-1) of total bases. Lowercase (=masked) letters or characters other than ACGTU are not taken into account. |
-| <a name="gc_percent"></a>gc_percent | GC content as percentage of total bases. Lowercase (=masked) letters or characters other than ACGTU are not taken into account. |
-| <a name="charcount"></a>charcount(characters) | Count the occurrences of one or more single characters, which are supplied as a string |
-| <a name="exp_err"></a>exp_err | Total number of errors expected in the sequence, calculated from the quality scores as the sum of all error probabilities. For FASTQ, make sure to specify the correct format (--fmt) in case the scores are not in the Sanger/Illumina 1.8+ format. |
+| <a name="seqlen"></a>seqlen | Sequence length<br/>return type: number |
+| <a name="ungapped_seqlen"></a>ungapped_seqlen | Ungapped sequence length (without gap characters `-`)<br/>return type: number |
+| <a name="gc"></a>gc | GC content as fraction (0-1) of total bases. Lowercase (=masked) letters or characters other than ACGTU are not taken into account.<br/>return type: number |
+| <a name="gc_percent"></a>gc_percent | GC content as percentage of total bases. Lowercase (=masked) letters or characters other than ACGTU are not taken into account.<br/>return type: number |
+| <a name="charcount"></a>charcount(characters) | Count the occurrences of one or more single characters, which are supplied as a string<br/>return type: number |
+| <a name="exp_err"></a>exp_err | Total number of errors expected in the sequence, calculated from the quality scores as the sum of all error probabilities. For FASTQ, make sure to specify the correct format (--fmt) in case the scores are not in the Sanger/Illumina 1.8+ format.<br/>return type: number |
 
 ### Examples
 List the GC content (in %) for every sequence:
@@ -86,14 +86,14 @@ Attributes stored in FASTA/FASTQ headers. The expected pattern is ' key=value', 
 
 | | |
 |-|-|
-| <a name="attr"></a>attr(name) | Obtain an attribute of given name (must be present in all sequences) |
-| <a name="opt_attr"></a>opt_attr(name) | Obtain an attribute value, or 'undefined' if missing (=undefined in JavaScript expressions) |
-| <a name="attr_del"></a>attr_del(name) | Obtain an attribute (must be present), simultaneously removing it from the header. |
-| <a name="opt_attr_del"></a>opt_attr_del(name) | Obtain an attribute (may be missing), simultaneously removing it from the header. |
-| <a name="has_attr"></a>has_attr(name) | Returns `true` if the given attribute is present, otherwise returns `false`. Especially useful with the `filter` command; equivalent to the expression `opt_attr(name) != undefined`. |
+| <a name="attr"></a>attr(name) | Obtain an attribute of given name (must be present in all sequences)<br/>return type: text |
+| <a name="opt_attr"></a>opt_attr(name) | Obtain an attribute value, or 'undefined' if missing (=undefined in JavaScript expressions)<br/>return type: text |
+| <a name="attr_del"></a>attr_del(name) | Obtain an attribute (must be present), simultaneously removing it from the header.<br/>return type: text |
+| <a name="opt_attr_del"></a>opt_attr_del(name) | Obtain an attribute (may be missing), simultaneously removing it from the header.<br/>return type: text |
+| <a name="has_attr"></a>has_attr(name) | Returns `true` if the given attribute is present, otherwise returns `false`. Especially useful with the `filter` command; equivalent to the expression `opt_attr(name) != undefined`.<br/>return type: boolean |
 
 ### Examples
-Count the number of sequences for each unique value of an 'abund' attribute in the FASTA headers (.e.g. `>id abund=3`), which could be the number of duplicates obtained by the *unique* command (see `st unique --help-vars`):
+Count the number of sequences for each unique value of an 'abund' attribute in the FASTA headers (.e.g. `>id abund=3`), which could be the number of duplicates obtained by the *unique* command (see `st unique -V/--help-vars`):
 ```bash
 st count -k 'attr(abund)' seqs.fa
 ```
@@ -127,9 +127,9 @@ Multiple metadata files can be supplied (`-m file1 -m file2 -m file3 ...`) and a
 
 | | |
 |-|-|
-| <a name="meta"></a>meta(column)<br />meta(column, file_number) | Obtain a value an associated delimited text file supplied with `-m` or `--meta`. Individual columns from entries with matching record IDs are selected by number (1, 2, 3, etc.) or by their name according to the column names in the first row. Missing entries are not allowed. Column names can be in 'single' or "double" quotes (but quoting is only required in Javascript expressions).<br />If there are multiple metadata files supplied with -m/--meta (`-m file1 -m file2 -m file3, ...`), the specific file can be referenced by supplying `\<file-number\>` (1, 2, 3, ...) as first argument, followed by the column number or name. This is not necessary if only a single file is supplied. |
-| <a name="opt_meta"></a>opt_meta(column)<br />opt_meta(column, file_number) | Like `meta(...)`, but metadata entries can be missing, i.e. not every sequence record ID needs a matching metadata entry. Missing values will result in 'undefined' if written to the output (= undefined in JavaScript expressions). |
-| <a name="has_meta"></a>has_meta<br />has_meta(file_number) | Returns `true` if the given record has a metadata entry with the same ID in the in the given file. In case of multiple files, the file number must be supplied as an argument. |
+| <a name="meta"></a>meta(column)<br />meta(column, file_number) | Obtain a value an associated delimited text file supplied with `-m` or `--meta`. Individual columns from entries with matching record IDs are selected by number (1, 2, 3, etc.) or by their name according to the column names in the first row. Missing entries are not allowed. Column names can be in 'single' or "double" quotes (but quoting is only required in Javascript expressions).<br />If there are multiple metadata files supplied with -m/--meta (`-m file1 -m file2 -m file3, ...`), the specific file can be referenced by supplying `\<file-number\>` (1, 2, 3, ...) as first argument, followed by the column number or name. This is not necessary if only a single file is supplied.<br/>return type: text |
+| <a name="opt_meta"></a>opt_meta(column)<br />opt_meta(column, file_number) | Like `meta(...)`, but metadata entries can be missing, i.e. not every sequence record ID needs a matching metadata entry. Missing values will result in 'undefined' if written to the output (= undefined in JavaScript expressions).<br/>return type: text |
+| <a name="has_meta"></a>has_meta<br />has_meta(file_number) | Returns `true` if the given record has a metadata entry with the same ID in the in the given file. In case of multiple files, the file number must be supplied as an argument.<br/>return type: boolean |
 
 ### Examples
 Add taxonomic lineages to the FASTA headers (after a space). The taxonomy is stored in a GZIP-compressed TSV file (column no. 2) to the FASTA headers:
@@ -201,8 +201,8 @@ file_2.fasta
 
 | | |
 |-|-|
-| <a name="num"></a>num(expression) | Converts any expression or value to a decimal number. Missing (undefined/null) values are left as-is. |
-| <a name="bin"></a>bin(expression)<br />bin(expression, interval) | Groups a continuous numeric number into discrete bins with a given interval. The intervals are represented as '(start, end]', whereby start \<= value \< end; the intervals are thus open on the left as indicated by '(', and closed on the right, as indicated by ']'. If not interval is given, a default width of 1 is assumed. |
+| <a name="num"></a>num(expression) | Converts any expression or value to a decimal number. Missing (undefined/null) values are left as-is.<br/>return type: number |
+| <a name="bin"></a>bin(expression)<br />bin(expression, interval) | Groups a continuous numeric number into discrete bins with a given interval. The intervals are represented as '(start, end]', whereby start \<= value \< end; the intervals are thus open on the left as indicated by '(', and closed on the right, as indicated by ']'. If not interval is given, a default width of 1 is assumed.<br/>return type: text |
 
 ### Examples
 Summarize by a numeric header attribute in the form '>id n=3':

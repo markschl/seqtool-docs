@@ -1,7 +1,12 @@
 # view
 View biological sequences, colored by base / amino acid, or by sequence quality
 
-The output is automatically forwarded to the 'less' pager on UNIX.
+Sequences are displayed on a single line and can be navigated with
+up/down/left/right arrow keys and by scrolling.
+They are progressively read into memory while navigating down.
+
+Color palettes can be viewed with `st view -p/--list-pal` and also
+configured (as described in this help page).
 
 
 ```
@@ -14,23 +19,16 @@ General 'view' command options:
   -i, --id-len <CHARS>  Length of IDs in characters. Longer IDs are truncated
                         (default: 10 - 100 depending on ID length)
   -d, --show-desc       Show descriptions along IDs if there is enough space
-      --fg              Color base / amino acid letters instead of background.
-                        If base qualities are present, background coloration is
-                        shown, and the foreground scheme will be 'dna-bright'
-                        (change with --dna-pal)
-  -n, --n-max <N>       View only the top <N> sequences without pager. Automatic
-                        handoff to a pager is only available in UNIX (turn off
-                        with --no-pager) [default: 100]
-
-View pager (UNIX only):
-      --no-pager       Disable paged display
-      --pager <PAGER>  Pager command to use [env: ST_PAGER=] [default: "less
-                       -RS"]
-  -b, --break          Break lines in pager, disabling 'horizontal scrolling'.
-                       Equivalent to --pager 'less -R'
+  -b, --bold            Print the sequence in bold letters. Bold text is always
+                        used with `--fg` if quality scores are present
+      --fg              Color the sequence (foreground) instead of instead of
+                        the background (and additionally printed in bold). The
+                        background is simultaneously colored by quality scores
+                        if present, unless `-Q/--no-qual` is used
+  -Q, --no-qual         Ignore quality scores and color only by the sequence
 
 Colors:
-      --list-pal           Show a list of all builtin palettes and exit
+  -p, --list-pal           Show a list of all builtin palettes and exit
       --dna-pal <PAL>      Color mapping for DNA. Palette name (hex code,
                            CSS/SVG color name) or list of
                            'base1:rrggbb,base2:rrggbb,...' (builtin palettes:
@@ -77,7 +75,7 @@ st view seqs.fasta
 st view H1.fasta
 ```
 
-View of [Histone H1 sequences](https://www.ncbi.nlm.nih.gov/research/HistoneDB2.0/index.fcgi/type/H1/#msa_div_browse),
+View of [Histone H1 sequences](https://www.ncbi.nlm.nih.gov/research/histonedb/type/H1/#msa_div_browse),
 colored according to the [RasMol scheme](http://www.openrasmol.org/doc/#aminocolours).
 
 ![Histone H1](img/h1.png)
@@ -97,6 +95,7 @@ st view seqs.fastq
 There are multiple color schemes/palettes available, which can be configured
 using `--dna-pal`, `--aa-pal` and `--qscale`.
 
-A visualization of the builtin palettes is obtained with `st view --list-pal`:
+A visualization of the builtin palettes is obtained with `st view --list-pal`
+or `st view -p`:
 
 ![Palettes](img/palettes.png)

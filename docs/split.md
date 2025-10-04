@@ -53,7 +53,7 @@ documetation of the [find](find.md#multiple-patterns) command.
 
 | | |
 |-|-|
-| <a name="chunk"></a>chunk | If `-n/--num-seqs` was specified, the 'chunk' variable contains the number of the current sequence batch, starting with 1. *Note* that the 'chunk' variable is *only* available with `-n/--num-seqs`, otherwise there will be a message: "Unknown variable/function: chunk" |
+| <a name="chunk"></a>chunk | If `-n/--num-seqs` was specified, the 'chunk' variable contains the number of the current sequence batch, starting with 1. *Note* that the 'chunk' variable is *only* available with `-n/--num-seqs`, otherwise there will be a message: "Unknown variable/function: chunk"<br/>return type: number |
 
 ### Example
 Split input into chunks of 1000 sequences, which will be named outdir/file_1.fq, outdir/file_2.fq, etc.:
