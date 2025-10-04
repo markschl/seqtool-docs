@@ -1,0 +1,1315 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="cmds_basic/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>seqtool documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#downloads" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="seqtool documentation" class="md-header__button md-logo" aria-label="seqtool documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            seqtool documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/markschl/seqtool" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="seqtool documentation" class="md-nav__button md-logo" aria-label="seqtool documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    seqtool documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/markschl/seqtool" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-other-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison with other tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      License
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/markschl/seqtool/releases/latest" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Download
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Commands
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cmds_basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic conversion/editing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cmds_info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Information about sequences
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cmds_sub_shuffle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subset/reorganize/compare
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cmds_search_rep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Search and replace
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cmds_mod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modifying commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="opts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Commandline options
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables/functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expressions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formats and compression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Header attributes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metadata
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Other topics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Other topics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ranges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ranges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comparison of tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-with-other-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison with other tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      License
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Home</h1>
+
+<p><strong>Seqtool</strong> is a  fast and flexible command line program for dealing with
+large amounts of biological sequences.
+It provides different <a href="#commands">subcommands</a> for <em>converting</em>, <em>inspecting</em>
+and <em>modifying</em> sequences.
+The standalone binary (5-7 MB) is simply named <code>st</code> to save some typing.</p>
+<p><a href="https://github.com/markschl/seqtool/actions/workflows/ci.yaml"><img alt="CI" src="https://github.com/markschl/seqtool/actions/workflows/ci.yaml/badge.svg" /></a></p>
+<blockquote>
+<p><strong>Note:</strong> this page describes the development version 0.4-beta.
+<strong>The older stable version (v0.3.0) is <a href="https://github.com/markschl/seqtool/wiki">documented here</a>.</strong></p>
+</blockquote>
+<h2 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">&para;</a></h2>
+<p><strong><a href="https://github.com/markschl/seqtool/releases/tag/v0.4.0-beta.3">📥 download beta release (v0.4.0-beta.3)</a></strong></p>
+<blockquote>
+<p>Should be pretty safe to use despite the considerable refactoring.
+Approximate matching (<a href="find/">find</a> command) is yet to be fully tested.</p>
+</blockquote>
+<p><strong><a href="https://github.com/markschl/seqtool/releases/latest">📥 download stable release (v0.3.0)</a></strong></p>
+<blockquote>
+<p><strong>⚠ Note</strong>: there are a few <strong>unfixed bugs in v0.3.0</strong> (currently)
+when reading GZIP files or searching/replacing;
+see <a href="https://github.com/markschl/seqtool/blob/main/CHANGELOG.md#important-bugfixes-">CHANGELOG for v0.4.0-beta</a>.</p>
+</blockquote>
+<h2 id="feature-overview">Feature overview<a class="headerlink" href="#feature-overview" title="Permanent link">&para;</a></h2>
+<h3 id="file-formats">File formats<a class="headerlink" href="#file-formats" title="Permanent link">&para;</a></h3>
+<p><a href="formats/"><strong>Reads</strong> and <strong>writes</strong></a> <strong>FASTA, FASTQ</strong> and <strong>CSV/TSV</strong>, optionally compressed
+with <a href="https://en.wikipedia.org/wiki/Gzip">GZIP</a>, <a href="https://en.wikipedia.org/wiki/Bzip2">BZIP2</a>,
+or the faster and more modern <a href="http://facebook.github.io/zstd/">Zstandard</a> or <a href="https://lz4.org/">LZ4</a>
+formats</p>
+<details class="highlight">
+<summary>
+Example: compressed FASTQ to FASTA
+</summary>
+<p>Combine multiple compressed FASTQ files, converting them to FASTA, using <a href="pass/">pass</a>.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>st<span class="w"> </span>pass<span class="w"> </span>file1.fastq.gz<span class="w"> </span>file2.fastq.gz<span class="w"> </span>-o<span class="w"> </span>output.fasta
+</span></code></pre></div>
+<blockquote>
+<p><strong>Note</strong>: almost every command can read multiple input files and convert between formats,
+but <em>pass</em> does nothing other than reading and writing while other command perform certain actions.</p>
+</blockquote>
+</details>
+<details class="highlight">
+<summary>
+Example: FASTA to tab-separated list
+</summary>
+<p>Aside from ID and sequence, any <a href="variables/">variable/function</a> such as
+the sequence length (<code>seqlen</code>) can be written to  delimited text.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>st<span class="w"> </span>pass<span class="w"> </span>input.fasta<span class="w"> </span>--to-tsv<span class="w"> </span>id,seq,seqlen
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>id1 ACG 3
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>id1 ACGTACGT    7
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>id1 ACGTA   5
+</span></code></pre></div>
+</details>
+<h3 id="highly-versatile-thanks-to-variablesfunctions">Highly versatile thanks to variables/functions<a class="headerlink" href="#highly-versatile-thanks-to-variablesfunctions" title="Permanent link">&para;</a></h3>
+<p>See also <strong><a href="variables/">variables/functions</a></strong> for more details.</p>
+<details class="highlight">
+<summary>
+Example: count sequences in a large set of FASTQ files
+</summary>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>st<span class="w"> </span>count<span class="w"> </span>-k<span class="w"> </span>path<span class="w"> </span>data/*.fastq.gz
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>data/sample1.fastq.gz   30601
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>data/sample2.fastq.gz   15702
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>data/sample3.fastq.gz   264965
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>data/sample4.fastq.gz   1120
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>data/sample5.fastq.gz   7021
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>(...)
+</span></code></pre></div>
+<blockquote>
+<p>In <a href="count/">count</a>, one or several categorical <a href="variables/">variables/functions</a>
+can be specified with <code>-k/--key</code>.</p>
+</blockquote>
+</details>
+<details class="highlight">
+<summary>
+Example: summarize the GC content in 10% intervals
+</summary>
+<p>The function <code>bin(variable, interval)</code> groups continuous numeric values
+into intervals</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>st<span class="w"> </span>count<span class="w"> </span>-k<span class="w"> </span><span class="s1">&#39;bin(gc_percent, 10)&#39;</span><span class="w"> </span>sequences.fasta
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>(10, 20]    57
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>(20, 30]    2113
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>(30, 40]    11076
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>(40, 50]    7184
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>(50, 60]    12
+</span></code></pre></div>
+</details>
+<details class="highlight">
+<summary>
+Example: Assign new sequence IDs
+</summary>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>st<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;seq_{num}&#39;</span><span class="w"> </span>seqs.fasta<span class="w"> </span>&gt;<span class="w"> </span>renamed.fasta
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&gt;seq_1
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>SEQUENCE
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>&gt;seq_2
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>SEQUENCE
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>&gt;seq_3
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>SEQUENCE
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>(...)
+</span></code></pre></div>
+</details>
+<details class="highlight">
+<summary>
+Example: De-replicate by description and sequence
+</summary>
+<p><code>seqs.fasta</code> with a 'group' annotation in the header:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&gt;id1 group1
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>SEQUENCE1
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>&gt;id2 group1
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>SEQUENCE2
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>&gt;id3 group1
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>SEQUENCE2
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>&gt;id4 group2
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>SEQUENCE1
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>&gt;id5 group2
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>SEQUENCE1
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>st<span class="w"> </span>unique<span class="w"> </span><span class="s1">&#39;desc,seq&#39;</span><span class="w"> </span>seqs.fasta<span class="w"> </span>&gt;<span class="w"> </span>grouped_uniques.fasta
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>&gt;id1 group1
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>SEQUENCE1
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>&gt;id2 group1
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>SEQUENCE2
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>&gt;id4 group2
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>SEQUENCE1
+</span></code></pre></div>
+</details>
+<h3 id="expressions">Expressions<a class="headerlink" href="#expressions" title="Permanent link">&para;</a></h3>
+<p>From simple math to complicated filter <a href="expressions/">expressions</a>, the tiny integrated JavaScript engine
+(<a href="https://bellard.org/quickjs">QuickJS</a>) offers countless possibilities for customized
+sequence processing.</p>
+<details class="highlight">
+<summary>
+Example: filter FASTQ sequences by quality and length
+</summary>
+<p>This <a href="filter/">filter</a> command removes sequencing reads with more than one expected
+sequencing error (like <a href="https://www.drive5.com/usearch/manual/exp_errs.html">USEARCH</a> can do)
+or sequence length of &lt;100 bp.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>st<span class="w"> </span>filter<span class="w"> </span><span class="s1">&#39;exp_err &lt; 1 &amp;&amp; seqlen &gt;= 100&#39;</span><span class="w"> </span>reads.fastq<span class="w"> </span>&gt;<span class="w"> </span>filtered.fastq
+</span></code></pre></div>
+</details>
+<h3 id="header-attributes-for-metadata-storage">Header attributes for metadata storage<a class="headerlink" href="#header-attributes-for-metadata-storage" title="Permanent link">&para;</a></h3>
+<p><strong><code>key=value</code> <a href="attributes/">header attributes</a></strong> allow storing and passing on
+all kinds of information</p>
+<details class="highlight">
+<summary>
+Example: De-replicate by sequence (seq variable) and/or other properties  
+</summary>
+<p>The <a href="unique/">unique</a> command returns all unique sequences and annotates
+the number of records with the same sequence in the header:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>st<span class="w"> </span>unique<span class="w"> </span>seq<span class="w"> </span>-a<span class="w"> </span><span class="nv">abund</span><span class="o">={</span>n_duplicates<span class="o">}</span><span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>uniques.fasta
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>&gt;id1 abund=3
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>TCTTTAATAACCTGATTAG
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>&gt;id3 abund=1
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>GGAGGATCCGAGCG
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>(...)
+</span></code></pre></div>
+<p>It is also possible to de-replicate by multiple keys, e.g. by sequence,
+but grouped by a <code>sample</code> attribute in the header:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>st<span class="w"> </span>unique<span class="w"> </span><span class="s1">&#39;seq,attr(sample)&#39;</span><span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>uniques.fasta
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>&gt;id1 sample=1
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>SEQUENCE1
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>&gt;id3 sample=2
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>SEQUENCE2
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>&gt;id10 sample=1
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>SEQUENCE3
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>&gt;id11 sample=3
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>SEQUENCE4
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>(...)
+</span></code></pre></div>
+</details>
+<details class="highlight">
+<summary>
+Example: pre-processing of mixed multi-marker amplicon sequences (primer trimming, grouping by amplicon)
+</summary>
+<p>These steps could be part of an amplicon pipeline that de-multiplexes
+multi-marker amplicons.
+<a href="find/">find</a> searches for a set of primers, which are removed by <a href="trim/">trim</a>,
+and finally <a href="split/">split</a> distributes the sequences into different files named
+by the forward primer.</p>
+<p><strong>primers.fasta</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>&gt;prA
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>PRIMER
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>&gt;prB
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>PRIMER
+</span></code></pre></div>
+<p><strong>Command for searching/trimming</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>st<span class="w"> </span>find<span class="w"> </span>file:primers.fasta<span class="w"> </span>-a<span class="w"> </span><span class="nv">primer</span><span class="o">=</span><span class="s1">&#39;{pattern_name}&#39;</span><span class="w"> </span>-a<span class="w"> </span><span class="nv">end</span><span class="o">=</span><span class="s1">&#39;{match_end}&#39;</span><span class="w"> </span>sequences.fasta<span class="w"> </span><span class="p">|</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span>st<span class="w"> </span>trim<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;{attr(end)}..&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span>st<span class="w"> </span>split<span class="w"> </span>-o<span class="w"> </span><span class="s1">&#39;{attr(primer)}&#39;</span>
+</span></code></pre></div>
+<table>
+<tr>
+<th>prA.fasta </th>
+<th>prB.fasta</th>
+<th>undefined.fasta</th>
+</tr>
+<tr>
+<td>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>&gt;id1 primer=prA end=22
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>SEQUENCE
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>&gt;id4 primer=prA end=21
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>SEQUENCE
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>(...)
+</span></code></pre></div>
+
+</td>
+<td>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>&gt;id2 primer=prB end=20
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>SEQUENCE
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>&gt;id3 primer=prB end=22
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>SEQUENCE
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>(...)
+</span></code></pre></div>
+
+</td>
+<td>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>&gt;id5 primer=undefined end=undefined
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>UNTRIMMEDSEQUENCE
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>(...)
+</span></code></pre></div>
+
+<em>Note:</em> no primer, sequence <strong>not</strong> trimmed since <code>end=undefined</code> (see <a href="ranges/">ranges</a>).
+
+</td>
+</tr>
+</table>
+</details>
+<h3 id="integration-of-external-metadata">Integration of external metadata<a class="headerlink" href="#integration-of-external-metadata" title="Permanent link">&para;</a></h3>
+<p>Integration of <a href="meta/"><strong>sequence metadata sources</strong></a> in the form of delimited text</p>
+<details class="highlight">
+<summary>
+Example: Add Genus names from a separate tab-separated list
+</summary>
+<table>
+<tr>
+<th>input.fasta</th>
+<th>genus.tsv</th>
+</tr>
+<tr>
+<td>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>&gt;id1
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>SEQUENCE
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>&gt;id2
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>SEQUENCE
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>(...)
+</span></code></pre></div>
+
+</td>
+<td>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>id  genus
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>seq1  Actinomyces
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>seq2  Amycolatopsis
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>(...)
+</span></code></pre></div>
+
+</td>
+</tr>
+</table>
+<p>Using <code>-m/--meta</code> to include <code>genus.tsv</code> as metadata source:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>st<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-m<span class="w"> </span>genus.tsv<span class="w"> </span>--desc<span class="w"> </span><span class="s1">&#39;{meta(genus)}&#39;</span><span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>with_genus.fasta
+</span></code></pre></div>
+<table>
+<tr>
+<th>with_genus.fasta</th>
+</tr>
+<tr>
+<td>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>&gt;seq1 Actinomyces
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>SEQUENCE
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>&gt;seq2 Amycolatopsis
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>SEQUENCE
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>(...)
+</span></code></pre></div>
+
+</td>
+</tr>
+</table>
+</details>
+<details class="highlight">
+<summary>
+Example: Choose specific sequences given a separate file with an ID list
+</summary>
+<table>
+<tr>
+<th>input.fasta</th>
+<th>id_list.txt</th>
+</tr>
+<tr>
+<td>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>&gt;id1
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>SEQUENCE
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>&gt;id2
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>SEQUENCE
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>&gt;id3
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>SEQUENCE
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>&gt;id4
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>SEQUENCE
+</span></code></pre></div>
+
+</td>
+<td>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>id1
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>id4
+</span></code></pre></div>
+
+</td>
+</tr>
+</table>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>st<span class="w"> </span>filter<span class="w"> </span>-m<span class="w"> </span>id_list.txt<span class="w"> </span><span class="s1">&#39;has_meta()&#39;</span><span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>subset.fasta
+</span></code></pre></div>
+<table>
+<tr>
+<th>subset.fasta</th>
+</tr>
+<tr>
+<td>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>&gt;id1
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>SEQUENCE
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>&gt;id4
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>SEQUENCE
+</span></code></pre></div>
+
+</td>
+</tr>
+</table>
+</details>
+<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
+<h3 id="basic-conversionediting">Basic conversion/editing<a class="headerlink" href="#basic-conversionediting" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="pass/">pass</a></strong>: Directly pass input to output without any processing, useful for converting and
+attribute setting</li>
+</ul>
+<h3 id="information-about-sequences">Information about sequences<a class="headerlink" href="#information-about-sequences" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="view/">view</a></strong>: View biological sequences, colored by base / amino acid, or by sequence quality</li>
+<li><strong><a href="count/">count</a></strong>: Count all records in the input (total or categorized by variables/functions)</li>
+<li><strong><a href="stat/">stat</a></strong>: Return per-sequence statistics as tab delimited list</li>
+</ul>
+<h3 id="subsetreorganizecompare">Subset/reorganize/compare<a class="headerlink" href="#subsetreorganizecompare" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="sort/">sort</a></strong>: Sort records by sequence or any other criterion</li>
+<li><strong><a href="unique/">unique</a></strong>: De-replicate by sequence and/or other properties, returning only unique records</li>
+<li><strong><a href="filter/">filter</a></strong>: Keep/exclude sequences based on different properties with a mathematical
+(JavaScript) expression</li>
+<li><strong><a href="split/">split</a></strong>: Distribute sequences into multiple files based on a variable/function or
+advanced expression</li>
+<li><strong><a href="cmp/">cmp</a></strong>: Compare two input files/streams</li>
+<li><strong><a href="sample/">sample</a></strong>: Get a random subset of sequences; either a fixed number or an approximate
+fraction of the input</li>
+<li><strong><a href="slice/">slice</a></strong>: Return a range of sequence records from the input</li>
+<li><strong><a href="head/">head</a></strong>: Return the first N sequences</li>
+<li><strong><a href="tail/">tail</a></strong>: Return the last N sequences</li>
+<li><strong><a href="interleave/">interleave</a></strong>: Interleave records of all files in the input</li>
+</ul>
+<h3 id="search-and-replace">Search and replace<a class="headerlink" href="#search-and-replace" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="find/">find</a></strong>: Search for pattern(s) in sequences or sequene headers for record filtering,
+pattern replacement or passing hits to next command</li>
+<li><strong><a href="replace/">replace</a></strong>: Fast and simple pattern replacement in sequences or headers</li>
+</ul>
+<h3 id="modifying-commands">Modifying commands<a class="headerlink" href="#modifying-commands" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="del/">del</a></strong>: Delete header ID/description and/or attributes</li>
+<li><strong><a href="set/">set</a></strong>: Replace the header, header attributes or sequence with new content</li>
+<li><strong><a href="trim/">trim</a></strong>: Trim sequences on the left and/or right (single range) or extract and
+concatenate several ranges</li>
+<li><strong><a href="mask/">mask</a></strong>: Soft or hard mask sequence ranges</li>
+<li><strong><a href="upper/">upper</a></strong>: Convert sequences to uppercase</li>
+<li><strong><a href="lower/">lower</a></strong>: Convert sequences to lowercase</li>
+<li><strong><a href="revcomp/">revcomp</a></strong>: Reverse complements DNA or RNA sequences</li>
+<li><strong><a href="concat/">concat</a></strong>: Concatenates sequences/alignments from different files</li>
+</ul>
+<h2 id="comparison-with-other-tools">Comparison with other tools<a class="headerlink" href="#comparison-with-other-tools" title="Permanent link">&para;</a></h2>
+<p>There are other tools with a similar focus such as <a href="https://github.com/lh3/seqtk">Seqtk</a>,
+<a href="https://github.com/shenwei356/seqkit">SeqKit</a>, the <a href="https://github.com/agordon/fastx_toolkit">FASTX-Toolkit</a>,
+as well as the more specialized <a href="https://www.drive5.com/usearch">USEARCH</a> and
+<a href="https://github.com/torognes/vsearch">VSEARCH</a> offering some of the functions
+as well.</p>
+<p><em>Seqtool</em> performs well compared to these tools on a selection of diverse tasks:</p>
+<p><strong><a href="comparison/">Comparison of tools</a></strong></p>
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>Either <a href="https://opensource.org/license/mit">MIT</a> or <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache-2.0</a> at your choice</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "header.autohide", "content.code.copy", "search.suggest", "search.highlight", "toc.follow"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "0.4.0-beta.1"}</script>
+    
+    
+      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

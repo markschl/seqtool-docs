@@ -1,0 +1,41 @@
+
+.md-typeset a {
+    color: #0c58aa;
+}
+
+.md-typeset  table:not([class]) {
+    font-size: .7rem;
+}
+
+.md-typeset code {
+    font-size: .95em;
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+    font-size: .7rem;
+    border: none;
+    margin: 0;
+}
+
+.md-typeset .admonition-title,
+.md-typeset details summary {
+    background-color: rgba(142, 177, 187, 0.08);
+    font-weight: normal;
+}
+
+.md-typeset details summary::before {
+    display: none;
+    width: 0;
+}
+
+.md-typeset .admonition,
+.md-typeset details.highlight {
+    border: .05rem solid rgba(102, 165, 186, 0.3);
+    margin: 0.5rem 0;
+}
+
+.md-typeset .admonition-title,
+.md-typeset details.highlight summary {
+    background-color: rgba(102, 165, 186, 0.08);
+}

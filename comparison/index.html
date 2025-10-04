@@ -1,0 +1,3106 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../ranges/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Comparison of tools - seqtool documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#comparison-of-tools" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="seqtool documentation" class="md-header__button md-logo" aria-label="seqtool documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            seqtool documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Comparison of tools
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/markschl/seqtool" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="seqtool documentation" class="md-nav__button md-logo" aria-label="seqtool documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    seqtool documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/markschl/seqtool" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/markschl/seqtool/releases/latest" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Download
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Commands
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmds_basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Basic conversion/editing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmds_info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Information about sequences
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmds_sub_shuffle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Subset/reorganize/compare
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmds_search_rep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Search and replace
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmds_mod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modifying commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Commandline options
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variables/functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expressions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expressions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../formats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Formats and compression
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attributes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Header attributes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metadata
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Other topics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Other topics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ranges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ranges
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Comparison of tools
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comparison of tools
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      pass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    <span class="md-ellipsis">
+      count
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      sort
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unique" class="md-nav__link">
+    <span class="md-ellipsis">
+      unique
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      filter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample" class="md-nav__link">
+    <span class="md-ellipsis">
+      sample
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    <span class="md-ellipsis">
+      find
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      replace
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trim" class="md-nav__link">
+    <span class="md-ellipsis">
+      trim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upper" class="md-nav__link">
+    <span class="md-ellipsis">
+      upper
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revcomp" class="md-nav__link">
+    <span class="md-ellipsis">
+      revcomp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concat" class="md-nav__link">
+    <span class="md-ellipsis">
+      concat
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      pass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    <span class="md-ellipsis">
+      count
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      sort
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unique" class="md-nav__link">
+    <span class="md-ellipsis">
+      unique
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      filter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample" class="md-nav__link">
+    <span class="md-ellipsis">
+      sample
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    <span class="md-ellipsis">
+      find
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      replace
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trim" class="md-nav__link">
+    <span class="md-ellipsis">
+      trim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upper" class="md-nav__link">
+    <span class="md-ellipsis">
+      upper
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revcomp" class="md-nav__link">
+    <span class="md-ellipsis">
+      revcomp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concat" class="md-nav__link">
+    <span class="md-ellipsis">
+      concat
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="comparison-of-tools">Comparison of tools<a class="headerlink" href="#comparison-of-tools" title="Permanent link">&para;</a></h1>
+<p>In the following list, we show the execution time, memory footprint and CPU usage
+of <em>seqtool</em> v0.4.0-beta on a selection of tasks, compared with the following tools:</p>
+<ul>
+<li><a href="https://github.com/lh3/seqtk">Seqtk</a> v1.4</li>
+<li><a href="https://github.com/shenwei356/seqkit">SeqKit</a> v2.7.0</li>
+<li><a href="https://github.com/agordon/fastx_toolkit">FASTX-Toolkit</a></li>
+<li><a href="https://www.drive5.com/usearch">USEARCH</a> v11.0.667</li>
+<li><a href="https://github.com/torognes/vsearch">VSEARCH</a> v2.28.1</li>
+<li><a href="https://cutadapt.readthedocs.io/en/stable">Cutadapt</a> v4.6</li>
+</ul>
+<p>Details on the approach are <a href="https://github.com/markschl/seqtool/profile/README.md">found here</a>.
+The input file is a FASTQ or FASTA file containing 2.6 M reads (Illumina MiSeq, 300 bp).
+The comparison was run on a Ryzen 4750U CPU with frequency boost disabled, writing
+files to a RAM instead of the disk.</p>
+<p>The fastest/most memory-efficient commands are highlighted by '🏆' and an indication,
+how many times faster / less memory they use compared to the commands ranking second.
+To show more details, click on the alternative commands list.</p>
+<style>
+.md-grid {
+    max-width: 100rem !important;
+}
+table.cmd {
+    table-layout: fixed;
+    width: 100%;
+}
+table.cmd td {
+    padding: 0.2rem 0.5rem;
+}
+table.cmd td:first-child {
+    width: 25%;
+}
+table.cmd td:last-child {
+    width: 15%;
+}
+</style>
+<h2 id="pass">pass<a class="headerlink" href="#pass" title="Permanent link">&para;</a></h2>
+<table class="cmd">
+<tr>
+<td>
+
+Do nothing, just read and write FASTA
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>st<span class="w"> </span>pass<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>SeqKit</b> 🕓 <b>2.2 s</b> 🏆 (1.2x)</summary>
+
+<table class="cmd">
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>seqkit<span class="w"> </span>seq<span class="w">  </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 <b>2.2 s</b> 🏆 (1.2x) 106% CPU<br/>📈 18.0 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 2.6 s<br/>📈 <b>7.1 MiB</b> 🏆 (2.53x)</td>
+</tr>
+<tr>
+<td>
+
+Convert FASTQ to FASTA
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>st<span class="w"> </span>pass<span class="w"> </span>--to-fa<span class="w"> </span>input.fastq<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>FASTX-Toolkit</b> 🕓 287.9 s  ❙  <b>Seqtk</b> 🕓 4.3 s  ❙  <b>SeqKit</b> 🕓 3.1 s</summary>
+
+<table class="cmd">
+<tr>
+<td>FASTX-Toolkit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>fastq_to_fasta<span class="w"> </span>-Q33<span class="w"> </span>-i<span class="w"> </span>input.fastq<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 287.9 s<br/>📈 <b>3.5 MiB</b> 🏆 (1.00x)</td>
+</tr>
+
+<tr>
+<td>Seqtk</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>seqtk<span class="w"> </span>seq<span class="w"> </span>-A<span class="w"> </span>input.fastq<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 4.3 s<br/>📈 3.5 MiB</td>
+</tr>
+
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>seqkit<span class="w"> </span>fq2fa<span class="w"> </span>input.fastq<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 3.1 s<br/>📈 18.4 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>3.1 s</b> 🏆 (1.0x)<br/>📈 7.1 MiB</td>
+</tr>
+<tr>
+<td>
+
+Convert FASTQ quality scores
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>st<span class="w"> </span>pass<span class="w"> </span>--to<span class="w"> </span>fastq-illumina<span class="w"> </span>input.fastq<span class="w"> </span>&gt;<span class="w"> </span>output.fastq
+</span></code></pre></div>
+
+
+<details>
+<summary><b>VSEARCH</b> 🕓 12.9 s  ❙  <b>SeqKit</b> 🕓 48.8 s</summary>
+
+<table class="cmd">
+<tr>
+<td>VSEARCH</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>vsearch<span class="w"> </span>--fastq_convert<span class="w"> </span>input.fastq<span class="w"> </span>--fastq_asciiout<span class="w"> </span><span class="m">64</span><span class="w"> </span>--fastqout<span class="w"> </span>output.fastq
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>https://github.com/torognes/vsearch
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Reading FASTQ file 100%
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 12.9 s<br/>📈 <b>4.2 MiB</b> 🏆 (1.65x)</td>
+</tr>
+
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>seqkit<span class="w"> </span>convert<span class="w"> </span>--from<span class="w"> </span><span class="s1">&#39;Sanger&#39;</span><span class="w"> </span>--to<span class="w"> </span><span class="s1">&#39;Illumina-1.3+&#39;</span><span class="w"> </span>input.fastq<span class="w"> </span>&gt;<span class="w"> </span>output.fastq
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>[INFO][0m converting Sanger -&gt; Illumina-1.3+
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 48.8 s<br/>📈 47.9 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>7.4 s</b> 🏆 (1.8x)<br/>📈 7.0 MiB</td>
+</tr>
+<tr>
+<td>
+
+Write compressed FASTQ files in GZIP format
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>st<span class="w"> </span>pass<span class="w"> </span>input.fastq<span class="w"> </span>-o<span class="w"> </span>output.fastq.gz
+</span></code></pre></div>
+
+
+<details>
+<summary><b>SeqKit</b> 🕓 <b>30.3 s</b> 🏆 (1.3x)  ❙  <b>seqtool | gzip</b> 🕓 159.1 s  ❙  <b>gzip directly</b> 🕓 158.6 s  ❙  <b>pigz directly (4 threads)</b> 🕓 39.0 s</summary>
+
+<table class="cmd">
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>seqkit<span class="w"> </span>seq<span class="w"> </span>input.fastq<span class="w"> </span>-o<span class="w"> </span>output.fastq.gz
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 <b>30.3 s</b> 🏆 (1.3x)<br/>📈 37.5 MiB</td>
+</tr>
+
+<tr>
+<td>seqtool | gzip</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>st<span class="w"> </span>pass<span class="w"> </span>input.fastq<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>-c<span class="w"> </span>&gt;<span class="w"> </span>output.fastq.gz
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 159.1 s<br/>📈 7.2 MiB</td>
+</tr>
+
+<tr>
+<td>gzip directly</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>gzip<span class="w"> </span>-kf<span class="w"> </span>input.fastq
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 158.6 s<br/>📈 <b>3.5 MiB</b> 🏆 (1.21x)</td>
+</tr>
+
+<tr>
+<td>pigz directly (4 threads)</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>pigz<span class="w"> </span>-p4<span class="w"> </span>-kf<span class="w"> </span>input.fastq
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 39.0 s 405% CPU<br/>📈 4.2 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 55.8 s<br/>📈 27.5 MiB</td>
+</tr>
+<tr>
+<td>
+
+Write compressed FASTQ files in Zstandard format
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>st<span class="w"> </span>pass<span class="w"> </span>input.fastq<span class="w"> </span>-o<span class="w"> </span>output.fastq.zst
+</span></code></pre></div>
+
+
+<details>
+<summary><b>seqtool | zstd piped</b> 🕓 <b>12.8 s</b> 🏆 (1.2x)</summary>
+
+<table class="cmd">
+<tr>
+<td>seqtool | zstd piped</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>st<span class="w"> </span>pass<span class="w"> </span>input.fastq<span class="w"> </span><span class="p">|</span><span class="w"> </span>zstd<span class="w"> </span>-c<span class="w"> </span>&gt;<span class="w"> </span>output.fastq.zst
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 <b>12.8 s</b> 🏆 (1.2x) 147% CPU<br/>📈 38.8 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 15.5 s 114% CPU<br/>📈 <b>11.0 MiB</b> 🏆 (3.52x)</td>
+</tr>
+<tr>
+<td>
+
+Write compressed FASTQ files in Lz4 format
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>st<span class="w"> </span>pass<span class="w"> </span>input.fastq<span class="w"> </span>-o<span class="w"> </span>output.fastq.lz4
+</span></code></pre></div>
+
+
+<details>
+<summary><b>seqtool | lz4 piped</b> 🕓 9.9 s</summary>
+
+<table class="cmd">
+<tr>
+<td>seqtool | lz4 piped</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>st<span class="w"> </span>pass<span class="w"> </span>input.fastq<span class="w"> </span><span class="p">|</span><span class="w"> </span>lz4<span class="w"> </span>-c<span class="w"> </span>&gt;<span class="w"> </span>output.fastq.lz4
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 9.9 s 116% CPU<br/>📈 <b>7.4 MiB</b> 🏆 (3.75x)</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>9.4 s</b> 🏆 (1.1x) 116% CPU<br/>📈 27.6 MiB</td>
+</tr>
+</table>
+<h2 id="count">count<a class="headerlink" href="#count" title="Permanent link">&para;</a></h2>
+<table class="cmd">
+<tr>
+<td>
+
+Count the number of FASTQ sequences in the input
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>st<span class="w"> </span>count<span class="w"> </span>input.fastq
+</span></code></pre></div>
+
+<details>
+<summary>🟦 output</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>2610480
+</span></code></pre></div>
+
+</details>
+
+<details>
+<summary><b>Seqtk</b> 🕓 0.7 s</summary>
+
+<table class="cmd">
+<tr>
+<td>Seqtk</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>seqtk<span class="w"> </span>size<span class="w"> </span>input.fasta
+</span></code></pre></div>
+
+<details>
+<summary>🟦 output</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>2610480 712939424
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 0.7 s<br/>📈 <b>3.4 MiB</b> 🏆 (2.11x)</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>0.6 s</b> 🏆 (1.2x)<br/>📈 7.1 MiB</td>
+</tr>
+<tr>
+<td>
+
+Count the number of FASTQ sequences, grouped by GC content (in 10% intervals)
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>st<span class="w"> </span>count<span class="w"> </span>-k<span class="w"> </span><span class="s1">&#39;bin(gc_percent, 10)&#39;</span><span class="w"> </span>input.fastq
+</span></code></pre></div>
+
+<details>
+<summary>🟦 output</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>(10, 20]    16
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>(20, 30]    3004
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>(30, 40]    51945
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>(40, 50]    1149946
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>(50, 60]    1248702
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>(60, 70]    20439
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>(70, 80]    120
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>(80, 90]    63
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>(90, 100]   37
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>(100, 110]  11
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>(NaN, NaN]  136197
+</span></code></pre></div>
+
+</details>
+
+<details>
+<summary><b>st with math expression</b> 🕓 7.0 s</summary>
+
+<table class="cmd">
+<tr>
+<td>st with math expression</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>st<span class="w"> </span>count<span class="w"> </span>-k<span class="w"> </span><span class="s1">&#39;{bin(gc_percent/100*100, 10)}&#39;</span><span class="w"> </span>input.fastq
+</span></code></pre></div>
+
+<details>
+<summary>🟦 output</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>(10, 20]    16
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>(20, 30]    3004
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>(30, 40]    51945
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>(40, 50]    1149946
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>(50, 60]    1248702
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>(60, 70]    20439
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>(70, 80]    120
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>(80, 90]    63
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>(90, 100]   37
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>(100, 110]  11
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>(NaN, NaN]  136197
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 7.0 s<br/>📈 86.0 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>4.2 s</b> 🏆 (1.6x)<br/>📈 <b>7.4 MiB</b> 🏆 (11.66x)</td>
+</tr>
+</table>
+<h2 id="sort">sort<a class="headerlink" href="#sort" title="Permanent link">&para;</a></h2>
+<table class="cmd">
+<tr>
+<td>
+
+Sort by sequence
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>st<span class="w"> </span>sort<span class="w"> </span>seq<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>SeqKit</b> 🕓 42.3 s</summary>
+
+<table class="cmd">
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>seqkit<span class="w"> </span>sort<span class="w"> </span>-s<span class="w">  </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>[INFO][0m read sequences ...
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>[INFO][0m 2610480 sequences loaded
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>[INFO][0m sorting ...
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>[INFO][0m output ...
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 42.3 s<br/>📈 4595.1 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>13.6 s</b> 🏆 (3.1x)<br/>📈 <b>1771.4 MiB</b> 🏆 (2.59x)</td>
+</tr>
+<tr>
+<td>
+
+Sort by sequence with ~ 50 MiB memory limit
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>st<span class="w"> </span>sort<span class="w"> </span>seq<span class="w"> </span>input.fasta<span class="w"> </span>-M<span class="w"> </span>50M<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>Memory limit reached after 78050 records, writing to temporary file(s). Consider raising the limit (-M/--max-mem) to speed up sorting. Use -q/--quiet to silence this message.
+</span></code></pre></div>
+
+</details>
+
+<details>
+<summary><b>100 MiB memory limit</b> 🕓 20.6 s</summary>
+
+<table class="cmd">
+<tr>
+<td>100 MiB memory limit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>st<span class="w"> </span>sort<span class="w"> </span>seq<span class="w"> </span>input.fasta<span class="w"> </span>-M<span class="w"> </span>100M<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>Memory limit reached after 155392 records, writing to temporary file(s). Consider raising the limit (-M/--max-mem) to speed up sorting. Use -q/--quiet to silence this message.
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 20.6 s<br/>📈 108.7 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>20.3 s</b> 🏆 (1.0x)<br/>📈 <b>58.5 MiB</b> 🏆 (1.86x)</td>
+</tr>
+<tr>
+<td>
+
+Sort by record ID
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>st<span class="w"> </span>sort<span class="w"> </span>id<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>SeqKit</b> 🕓 34.2 s</summary>
+
+<table class="cmd">
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>seqkit<span class="w"> </span>sort<span class="w">  </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>[INFO][0m read sequences ...
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>[INFO][0m 2610480 sequences loaded
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>[INFO][0m sorting ...
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>[INFO][0m output ...
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 34.2 s<br/>📈 4436.4 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>6.5 s</b> 🏆 (5.3x)<br/>📈 <b>1119.2 MiB</b> 🏆 (3.96x)</td>
+</tr>
+<tr>
+<td>
+
+Sort by sequence length
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>st<span class="w"> </span>sort<span class="w"> </span>seqlen<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>SeqKit</b> 🕓 33.7 s  ❙  <b>VSEARCH</b> 🕓 9.4 s</summary>
+
+<table class="cmd">
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>seqkit<span class="w"> </span>sort<span class="w"> </span>-l<span class="w">  </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>[INFO][0m read sequences ...
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>[INFO][0m 2610480 sequences loaded
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>[INFO][0m sorting ...
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>[INFO][0m output ...
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 33.7 s<br/>📈 4153.5 MiB</td>
+</tr>
+
+<tr>
+<td>VSEARCH</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>vsearch<span class="w"> </span>--sortbylength<span class="w"> </span>input.fasta<span class="w"> </span>--output<span class="w"> </span>output.fasta<span class="w"> </span>
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>https://github.com/torognes/vsearch
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>Reading file input.fasta 100%
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>712939424 nt in 2610480 seqs, min 35, max 301, avg 273
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>Getting lengths 100%
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>Sorting 100%
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>Median length: 301
+</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>Writing output 100%
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 9.4 s<br/>📈 <b>891.4 MiB</b> 🏆 (1.17x)</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>5.9 s</b> 🏆 (1.6x)<br/>📈 1042.4 MiB</td>
+</tr>
+<tr>
+<td>
+
+Sort sequences by USEARCH/VSEARCH-style abundance annotations
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="nv">ST_ATTR_FMT</span><span class="o">=</span><span class="s1">&#39;;key=value&#39;</span><span class="w"> </span>st<span class="w"> </span>unique<span class="w"> </span>seq<span class="w"> </span>-a<span class="w"> </span><span class="nv">size</span><span class="o">={</span>n_duplicates<span class="o">}</span><span class="w"> </span>input.fasta<span class="w"> </span><span class="p">|</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="w">  </span>st<span class="w"> </span>sort<span class="w"> </span><span class="s1">&#39;{-attr(&quot;size&quot;)}&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>VSEARCH</b> 🕓 20.4 s</summary>
+
+<table class="cmd">
+<tr>
+<td>VSEARCH</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>vsearch<span class="w"> </span>--derep_fulllength<span class="w"> </span>input.fasta<span class="w"> </span>--output<span class="w"> </span>-<span class="w"> </span>--sizeout<span class="w"> </span><span class="p">|</span><span class="w">   </span>vsearch<span class="w"> </span>--sortbysize<span class="w"> </span>-<span class="w"> </span>--output<span class="w"> </span>output.fasta<span class="w">  </span>
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>https://github.com/torognes/vsearch
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>https://github.com/torognes/vsearch
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>Dereplicating file input.fasta 100%
+</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>712939424 nt in 2610480 seqs, min 35, max 301, avg 273
+</span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a>Sorting 100%
+</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a>2134929 unique sequences, avg cluster 1.2, median 1, max 136182
+</span><span id="__span-45-9"><a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a>Writing FASTA output fileReading file - 100%
+</span><span id="__span-45-10"><a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a> 100%
+</span><span id="__span-45-11"><a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a>606287856 nt in 2134929 seqs, min 35, max 301, avg 284
+</span><span id="__span-45-12"><a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a>Getting sizes 100%
+</span><span id="__span-45-13"><a id="__codelineno-45-13" name="__codelineno-45-13" href="#__codelineno-45-13"></a>Sorting 100%
+</span><span id="__span-45-14"><a id="__codelineno-45-14" name="__codelineno-45-14" href="#__codelineno-45-14"></a>Median abundance: 1
+</span><span id="__span-45-15"><a id="__codelineno-45-15" name="__codelineno-45-15" href="#__codelineno-45-15"></a>Writing output 100%
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 20.4 s 113% CPU<br/>📈 <b>1345.8 MiB</b> 🏆 (1.19x)</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>13.3 s</b> 🏆 (1.5x) 110% CPU<br/>📈 1606.5 MiB</td>
+</tr>
+</table>
+<h2 id="unique">unique<a class="headerlink" href="#unique" title="Permanent link">&para;</a></h2>
+<table class="cmd">
+<tr>
+<td>
+
+Remove duplicate sequences using sequence hashes. This is more memory efficient and usually faster than keeping the whole  sequence around.
+
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>st<span class="w"> </span>unique<span class="w"> </span>seqhash<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>SeqKit</b> 🕓 <b>3.3 s</b> 🏆 (1.2x)</summary>
+
+<table class="cmd">
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>seqkit<span class="w"> </span>rmdup<span class="w"> </span>-sP<span class="w">  </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>[INFO][0m 475551 duplicated records removed
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 <b>3.3 s</b> 🏆 (1.2x)<br/>📈 180.1 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 4.2 s<br/>📈 <b>117.1 MiB</b> 🏆 (1.54x)</td>
+</tr>
+<tr>
+<td>
+
+Remove duplicate sequences using sequence hashes (case-insensitive).
+
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>st<span class="w"> </span>unique<span class="w"> </span><span class="s1">&#39;seqhash(true)&#39;</span><span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>VSEARCH</b> 🕓 12.1 s  ❙  <b>SeqKit</b> 🕓 6.2 s</summary>
+
+<table class="cmd">
+<tr>
+<td>VSEARCH</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>vsearch<span class="w"> </span>--derep_smallmem<span class="w"> </span>input.fasta<span class="w"> </span>--fastaout<span class="w"> </span>output.fasta<span class="w"> </span>
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>https://github.com/torognes/vsearch
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>Dereplicating file input.fasta 100%
+</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>712939424 nt in 2610480 seqs, min 35, max 301, avg 273
+</span><span id="__span-51-5"><a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a>2134929 unique sequences, avg cluster 1.2, median 1, max 136182
+</span><span id="__span-51-6"><a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a>Writing FASTA output file 100%
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 12.1 s<br/>📈 <b>90.7 MiB</b> 🏆 (1.29x)</td>
+</tr>
+
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>seqkit<span class="w"> </span>rmdup<span class="w"> </span>-sPi<span class="w">  </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>[INFO][0m 475551 duplicated records removed
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 6.2 s<br/>📈 289.8 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>4.3 s</b> 🏆 (1.4x)<br/>📈 117.2 MiB</td>
+</tr>
+<tr>
+<td>
+
+Remove duplicate sequences that are exactly identical (case-insensitive); comparing full sequences instead of not hashes (requires more memory). VSEARCH additionally treats &#x27;T&#x27; and &#x27;U&#x27; in the same way (seqtool doesn&#x27;t).
+
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>st<span class="w"> </span>unique<span class="w"> </span>upper_seq<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>seqtool (sorted by sequence)</b> 🕓 13.5 s  ❙  <b>VSEARCH</b> 🕓 15.8 s</summary>
+
+<table class="cmd">
+<tr>
+<td>seqtool (sorted by sequence)</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>st<span class="w"> </span>unique<span class="w"> </span>-s<span class="w"> </span>upper_seq<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 13.5 s<br/>📈 1640.7 MiB</td>
+</tr>
+
+<tr>
+<td>VSEARCH</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>vsearch<span class="w"> </span>--derep_fulllength<span class="w"> </span>input.fasta<span class="w"> </span>--output<span class="w"> </span>output.fasta<span class="w"> </span>
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>https://github.com/torognes/vsearch
+</span><span id="__span-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>Dereplicating file input.fasta 100%
+</span><span id="__span-57-4"><a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a>712939424 nt in 2610480 seqs, min 35, max 301, avg 273
+</span><span id="__span-57-5"><a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a>Sorting 100%
+</span><span id="__span-57-6"><a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a>2134929 unique sequences, avg cluster 1.2, median 1, max 136182
+</span><span id="__span-57-7"><a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a>Writing FASTA output file 100%
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 15.8 s<br/>📈 1345.7 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>5.4 s</b> 🏆 (2.5x)<br/>📈 <b>729.0 MiB</b> 🏆 (1.85x)</td>
+</tr>
+<tr>
+<td>
+
+Remove duplicate sequences (exact mode) with a memory limit of ~50 MiB
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>st<span class="w"> </span>unique<span class="w"> </span>seq<span class="w"> </span>-M<span class="w"> </span>50M<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>Memory limit reached after 151512 records, writing to temporary file(s). Consider raising the limit (-M/--max-mem) to speed up de-duplicating. Use -q/--quiet to silence this message.
+</span></code></pre></div>
+
+</details>
+</td>
+<td>🕓 19.5 s<br/>📈 56.6 MiB</td>
+</tr>
+<tr>
+<td>
+
+Remove duplicate sequences, checking both strands
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>st<span class="w"> </span>unique<span class="w"> </span>seqhash_both<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>SeqKit</b> 🕓 14.8 s</summary>
+
+<table class="cmd">
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>seqkit<span class="w"> </span>rmdup<span class="w"> </span>-s<span class="w">  </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>[INFO][0m 475687 duplicated records removed
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 14.8 s<br/>📈 293.6 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>7.5 s</b> 🏆 (2.0x)<br/>📈 <b>117.1 MiB</b> 🏆 (2.51x)</td>
+</tr>
+<tr>
+<td>
+
+Remove duplicate sequences, appending USEARCH/VSEARCH-style abundance annotations to the headers: <em>&gt;id;size=NN</em>
+
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>st<span class="w"> </span>unique<span class="w"> </span>seq<span class="w"> </span>-a<span class="w"> </span><span class="nv">size</span><span class="o">={</span>n_duplicates<span class="o">}</span><span class="w"> </span>--attr-fmt<span class="w"> </span><span class="s1">&#39;;key=value&#39;</span><span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>VSEARCH</b> 🕓 16.1 s</summary>
+
+<table class="cmd">
+<tr>
+<td>VSEARCH</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>vsearch<span class="w"> </span>--derep_fulllength<span class="w"> </span>input.fasta<span class="w"> </span>--sizeout<span class="w"> </span>--output<span class="w"> </span>output.fasta<span class="w"> </span>
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a>https://github.com/torognes/vsearch
+</span><span id="__span-65-3"><a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a>Dereplicating file input.fasta 100%
+</span><span id="__span-65-4"><a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a>712939424 nt in 2610480 seqs, min 35, max 301, avg 273
+</span><span id="__span-65-5"><a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a>Sorting 100%
+</span><span id="__span-65-6"><a id="__codelineno-65-6" name="__codelineno-65-6" href="#__codelineno-65-6"></a>2134929 unique sequences, avg cluster 1.2, median 1, max 136182
+</span><span id="__span-65-7"><a id="__codelineno-65-7" name="__codelineno-65-7" href="#__codelineno-65-7"></a>Writing FASTA output file 100%
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 16.1 s<br/>📈 <b>1345.9 MiB</b> 🏆 (1.19x)</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>9.3 s</b> 🏆 (1.7x)<br/>📈 1606.2 MiB</td>
+</tr>
+<tr>
+<td>
+
+De-replicate both by sequence <em>and</em> record ID (the part before the first space in the header). The given benchmark actually has unique sequence IDs, so the result is the same as de-replication by sequence.
+
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>st<span class="w"> </span>unique<span class="w"> </span>id,seq<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>VSEARCH</b> 🕓 17.7 s</summary>
+
+<table class="cmd">
+<tr>
+<td>VSEARCH</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>vsearch<span class="w"> </span>--derep_id<span class="w"> </span>input.fasta<span class="w"> </span>--output<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+</span><span id="__span-68-2"><a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a>https://github.com/torognes/vsearch
+</span><span id="__span-68-3"><a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a>Dereplicating file input.fasta 100%
+</span><span id="__span-68-4"><a id="__codelineno-68-4" name="__codelineno-68-4" href="#__codelineno-68-4"></a>712939424 nt in 2610480 seqs, min 35, max 301, avg 273
+</span><span id="__span-68-5"><a id="__codelineno-68-5" name="__codelineno-68-5" href="#__codelineno-68-5"></a>Sorting 100%
+</span><span id="__span-68-6"><a id="__codelineno-68-6" name="__codelineno-68-6" href="#__codelineno-68-6"></a>2610480 unique sequences, avg cluster 1.0, median 1, max 1
+</span><span id="__span-68-7"><a id="__codelineno-68-7" name="__codelineno-68-7" href="#__codelineno-68-7"></a>Writing FASTA output file 100%
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 17.7 s<br/>📈 1364.4 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>7.5 s</b> 🏆 (2.3x)<br/>📈 <b>1090.6 MiB</b> 🏆 (1.25x)</td>
+</tr>
+</table>
+<h2 id="filter">filter<a class="headerlink" href="#filter" title="Permanent link">&para;</a></h2>
+<table class="cmd">
+<tr>
+<td>
+
+Filter sequences by length
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>st<span class="w"> </span>filter<span class="w"> </span><span class="s1">&#39;seqlen &gt;= 100&#39;</span><span class="w"> </span>input.fastq<span class="w"> </span>&gt;<span class="w"> </span>output.fastq
+</span></code></pre></div>
+
+
+<details>
+<summary><b>Seqtk</b> 🕓 6.5 s  ❙  <b>SeqKit</b> 🕓 <b>4.1 s</b> 🏆 (1.3x)</summary>
+
+<table class="cmd">
+<tr>
+<td>Seqtk</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>seqtk<span class="w"> </span>seq<span class="w"> </span>-L<span class="w"> </span><span class="m">100</span><span class="w"> </span>input.fastq<span class="w"> </span>&gt;<span class="w"> </span>output.fastq
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 6.5 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.07x)</td>
+</tr>
+
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>seqkit<span class="w"> </span>seq<span class="w"> </span>-m<span class="w"> </span><span class="m">100</span><span class="w"> </span>input.fastq<span class="w"> </span>&gt;<span class="w"> </span>output.fastq
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>[33m[WARN][0m you may switch on flag -g/--remove-gaps to remove spaces
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 <b>4.1 s</b> 🏆 (1.3x)<br/>📈 28.1 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 5.4 s<br/>📈 7.2 MiB</td>
+</tr>
+<tr>
+<td>
+
+Filter sequences by the total expected error as calculated from the quality scores
+
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>st<span class="w"> </span>filter<span class="w"> </span><span class="s1">&#39;exp_err &lt;= 1&#39;</span><span class="w"> </span>input.fastq<span class="w"> </span>--to-fa<span class="w"> </span>&gt;<span class="w"> </span>output.fastq
+</span></code></pre></div>
+
+
+<details>
+<summary><b>VSEARCH</b> 🕓 32.9 s  ❙  <b>USEARCH</b> 🕓 <b>16.0 s</b> 🏆 (1.7x)</summary>
+
+<table class="cmd">
+<tr>
+<td>VSEARCH</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>vsearch<span class="w"> </span>--fastq_filter<span class="w"> </span>input.fastq<span class="w"> </span>--fastq_maxee<span class="w"> </span><span class="m">1</span><span class="w"> </span>--fastaout<span class="w"> </span>output.fasta<span class="w"> </span>
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+</span><span id="__span-75-2"><a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a>https://github.com/torognes/vsearch
+</span><span id="__span-75-3"><a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a>Reading input file 100%
+</span><span id="__span-75-4"><a id="__codelineno-75-4" name="__codelineno-75-4" href="#__codelineno-75-4"></a>1408755 sequences kept (of which 0 truncated), 1201725 sequences discarded.
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 32.9 s<br/>📈 <b>4.4 MiB</b> 🏆 (1.66x)</td>
+</tr>
+
+<tr>
+<td>USEARCH</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>usearch<span class="w"> </span>-fastq_filter<span class="w"> </span>input.fastq<span class="w"> </span>-fastq_maxee<span class="w"> </span><span class="m">1</span><span class="w"> </span>-fastaout<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary>🟦 output</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>usearch v11.0.667_i86linux32, 4.0Gb RAM (32.1Gb total), 16 cores
+</span><span id="__span-77-2"><a id="__codelineno-77-2" name="__codelineno-77-2" href="#__codelineno-77-2"></a>(C) Copyright 2013-18 Robert C. Edgar, all rights reserved.
+</span><span id="__span-77-3"><a id="__codelineno-77-3" name="__codelineno-77-3" href="#__codelineno-77-3"></a>https://drive5.com/usearch
+</span><span id="__span-77-4"><a id="__codelineno-77-4" name="__codelineno-77-4" href="#__codelineno-77-4"></a>License: personal use only
+</span></code></pre></div>
+
+</details>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>00:00 4.2Mb  FASTQ base 33 for file input.fastq
+</span><span id="__span-78-2"><a id="__codelineno-78-2" name="__codelineno-78-2" href="#__codelineno-78-2"></a>00:00 38Mb   CPU has 16 cores, defaulting to 10 threads
+</span><span id="__span-78-3"><a id="__codelineno-78-3" name="__codelineno-78-3" href="#__codelineno-78-3"></a>00:00 115Mb     0.1% Filtering
+</span><span id="__span-78-4"><a id="__codelineno-78-4" name="__codelineno-78-4" href="#__codelineno-78-4"></a>00:01 123Mb     1.0% Filtering, 31.4% passed
+</span><span id="__span-78-5"><a id="__codelineno-78-5" name="__codelineno-78-5" href="#__codelineno-78-5"></a>00:02 123Mb     8.7% Filtering, 31.5% passed
+</span><span id="__span-78-6"><a id="__codelineno-78-6" name="__codelineno-78-6" href="#__codelineno-78-6"></a>00:03 123Mb    16.4% Filtering, 31.8% passed
+</span><span id="__span-78-7"><a id="__codelineno-78-7" name="__codelineno-78-7" href="#__codelineno-78-7"></a>00:04 123Mb    22.1% Filtering, 40.1% passed
+</span><span id="__span-78-8"><a id="__codelineno-78-8" name="__codelineno-78-8" href="#__codelineno-78-8"></a>00:05 123Mb    26.7% Filtering, 47.6% passed
+</span><span id="__span-78-9"><a id="__codelineno-78-9" name="__codelineno-78-9" href="#__codelineno-78-9"></a>00:06 123Mb    31.5% Filtering, 52.6% passed
+</span><span id="__span-78-10"><a id="__codelineno-78-10" name="__codelineno-78-10" href="#__codelineno-78-10"></a>00:07 123Mb    36.4% Filtering, 56.2% passed
+</span><span id="__span-78-11"><a id="__codelineno-78-11" name="__codelineno-78-11" href="#__codelineno-78-11"></a>00:08 123Mb    41.3% Filtering, 59.1% passed
+</span><span id="__span-78-12"><a id="__codelineno-78-12" name="__codelineno-78-12" href="#__codelineno-78-12"></a>00:09 123Mb    47.2% Filtering, 60.1% passed
+</span><span id="__span-78-13"><a id="__codelineno-78-13" name="__codelineno-78-13" href="#__codelineno-78-13"></a>00:10 123Mb    53.5% Filtering, 60.1% passed
+</span><span id="__span-78-14"><a id="__codelineno-78-14" name="__codelineno-78-14" href="#__codelineno-78-14"></a>00:11 123Mb    61.1% Filtering, 56.6% passed
+</span><span id="__span-78-15"><a id="__codelineno-78-15" name="__codelineno-78-15" href="#__codelineno-78-15"></a>00:12 123Mb    68.7% Filtering, 53.5% passed
+</span><span id="__span-78-16"><a id="__codelineno-78-16" name="__codelineno-78-16" href="#__codelineno-78-16"></a>00:13 123Mb    75.4% Filtering, 53.7% passed
+</span><span id="__span-78-17"><a id="__codelineno-78-17" name="__codelineno-78-17" href="#__codelineno-78-17"></a>00:14 123Mb    83.4% Filtering, 51.4% passed
+</span><span id="__span-78-18"><a id="__codelineno-78-18" name="__codelineno-78-18" href="#__codelineno-78-18"></a>00:15 123Mb    89.4% Filtering, 52.2% passed
+</span><span id="__span-78-19"><a id="__codelineno-78-19" name="__codelineno-78-19" href="#__codelineno-78-19"></a>00:16 123Mb    95.1% Filtering, 53.2% passed
+</span><span id="__span-78-20"><a id="__codelineno-78-20" name="__codelineno-78-20" href="#__codelineno-78-20"></a>00:16 90Mb    100.0% Filtering, 54.0% passed
+</span><span id="__span-78-21"><a id="__codelineno-78-21" name="__codelineno-78-21" href="#__codelineno-78-21"></a>   2610480  Reads (2.6M)
+</span><span id="__span-78-22"><a id="__codelineno-78-22" name="__codelineno-78-22" href="#__codelineno-78-22"></a>   1201725  Discarded reads with expected errs &gt; 1.00
+</span><span id="__span-78-23"><a id="__codelineno-78-23" name="__codelineno-78-23" href="#__codelineno-78-23"></a>   1408755  Filtered reads (1.4M, 54.0%)
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 <b>16.0 s</b> 🏆 (1.7x) 997% CPU<br/>📈 34.9 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 27.9 s<br/>📈 7.2 MiB</td>
+</tr>
+<tr>
+<td>
+
+Select records from a large set of sequences given a list of 1000 sequence IDs
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>st<span class="w"> </span>filter<span class="w"> </span>-m<span class="w"> </span>ids_list.txt<span class="w"> </span><span class="s1">&#39;has_meta()&#39;</span><span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>VSEARCH</b> 🕓 28.1 s  ❙  <b>SeqKit</b> 🕓 <b>1.0 s</b> 🏆 (1.6x)</summary>
+
+<table class="cmd">
+<tr>
+<td>VSEARCH</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>vsearch<span class="w"> </span>--fastx_getseqs<span class="w"> </span>input.fasta<span class="w"> </span>--labels<span class="w"> </span>ids_list.txt<span class="w"> </span>--fastaout<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+</span><span id="__span-81-2"><a id="__codelineno-81-2" name="__codelineno-81-2" href="#__codelineno-81-2"></a>https://github.com/torognes/vsearch
+</span><span id="__span-81-3"><a id="__codelineno-81-3" name="__codelineno-81-3" href="#__codelineno-81-3"></a>Reading labels 100%
+</span><span id="__span-81-4"><a id="__codelineno-81-4" name="__codelineno-81-4" href="#__codelineno-81-4"></a>Extracting sequences 100%
+</span><span id="__span-81-5"><a id="__codelineno-81-5" name="__codelineno-81-5" href="#__codelineno-81-5"></a>1000 of 2610480 sequences extracted (0.0%)
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 28.1 s<br/>📈 <b>4.2 MiB</b> 🏆 (1.85x)</td>
+</tr>
+
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-82-1"><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>seqkit<span class="w"> </span>grep<span class="w"> </span>-f<span class="w"> </span>ids_list.txt<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-83-1"><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>[INFO][0m 1000 patterns loaded from file
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 <b>1.0 s</b> 🏆 (1.6x)<br/>📈 21.8 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 1.6 s<br/>📈 7.9 MiB</td>
+</tr>
+</table>
+<h2 id="sample">sample<a class="headerlink" href="#sample" title="Permanent link">&para;</a></h2>
+<table class="cmd">
+<tr>
+<td>
+
+Random subsampling to 1000 of sequences
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-84-1"><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a>st<span class="w"> </span>sample<span class="w"> </span>-n<span class="w"> </span><span class="m">1000</span><span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>VSEARCH</b> 🕓 4.3 s  ❙  <b>Seqtk</b> 🕓 0.8 s  ❙  <b>SeqKit</b> 🕓 11.5 s</summary>
+
+<table class="cmd">
+<tr>
+<td>VSEARCH</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-85-1"><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a>vsearch<span class="w"> </span>--fastx_subsample<span class="w"> </span>input.fasta<span class="w"> </span>--sample_size<span class="w"> </span><span class="m">1000</span><span class="w"> </span>--fastaout<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-86-1"><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+</span><span id="__span-86-2"><a id="__codelineno-86-2" name="__codelineno-86-2" href="#__codelineno-86-2"></a>https://github.com/torognes/vsearch
+</span><span id="__span-86-3"><a id="__codelineno-86-3" name="__codelineno-86-3" href="#__codelineno-86-3"></a>Reading file input.fasta 100%
+</span><span id="__span-86-4"><a id="__codelineno-86-4" name="__codelineno-86-4" href="#__codelineno-86-4"></a>712939424 nt in 2610480 seqs, min 35, max 301, avg 273
+</span><span id="__span-86-5"><a id="__codelineno-86-5" name="__codelineno-86-5" href="#__codelineno-86-5"></a>Got 2610480 reads from 2610480 amplicons
+</span><span id="__span-86-6"><a id="__codelineno-86-6" name="__codelineno-86-6" href="#__codelineno-86-6"></a>Subsampling 100%
+</span><span id="__span-86-7"><a id="__codelineno-86-7" name="__codelineno-86-7" href="#__codelineno-86-7"></a>Writing output 100%
+</span><span id="__span-86-8"><a id="__codelineno-86-8" name="__codelineno-86-8" href="#__codelineno-86-8"></a>Subsampled 1000 reads from 1000 amplicons
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 4.3 s<br/>📈 841.5 MiB</td>
+</tr>
+
+<tr>
+<td>Seqtk</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-87-1"><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>seqtk<span class="w"> </span>sample<span class="w"> </span>input.fasta<span class="w"> </span><span class="m">1000</span><span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 0.8 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.07x)</td>
+</tr>
+
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-88-1"><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a>seqkit<span class="w"> </span>sample<span class="w"> </span>-n<span class="w"> </span><span class="m">1000</span><span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-89-1"><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>[INFO][0m sample by number
+</span><span id="__span-89-2"><a id="__codelineno-89-2" name="__codelineno-89-2" href="#__codelineno-89-2"></a>[INFO][0m loading all sequences into memory...
+</span><span id="__span-89-3"><a id="__codelineno-89-3" name="__codelineno-89-3" href="#__codelineno-89-3"></a>[INFO][0m 1000 sequences outputted
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 11.5 s<br/>📈 3112.7 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>0.5 s</b> 🏆 (1.4x)<br/>📈 7.2 MiB</td>
+</tr>
+<tr>
+<td>
+
+Random subsampling to ~10% of sequences
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-90-1"><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>st<span class="w"> </span>sample<span class="w"> </span>-p<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>Seqtk</b> 🕓 1.7 s  ❙  <b>SeqKit</b> 🕓 2.0 s</summary>
+
+<table class="cmd">
+<tr>
+<td>Seqtk</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-91-1"><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>seqtk<span class="w"> </span>sample<span class="w"> </span>input.fastq<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 1.7 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.04x)</td>
+</tr>
+
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-92-1"><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a>seqkit<span class="w"> </span>sample<span class="w"> </span>-p<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>input.fastq<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-93-1"><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>[INFO][0m sample by proportion
+</span><span id="__span-93-2"><a id="__codelineno-93-2" name="__codelineno-93-2" href="#__codelineno-93-2"></a>[INFO][0m 260463 sequences outputted
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 2.0 s<br/>📈 27.6 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>0.8 s</b> 🏆 (2.2x)<br/>📈 7.1 MiB</td>
+</tr>
+</table>
+<h2 id="find">find<a class="headerlink" href="#find" title="Permanent link">&para;</a></h2>
+<table class="cmd">
+<tr>
+<td>
+
+Find the forward primer location in the input reads with up to 4 mismatches
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-94-1"><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a>st<span class="w"> </span>find<span class="w"> </span>-D4<span class="w"> </span>file:primers.fasta<span class="w"> </span>input.fastq<span class="w"> </span>-a<span class="w"> </span><span class="nv">primer</span><span class="o">={</span>pattern_name<span class="o">}</span><span class="w"> </span>-a<span class="w"> </span><span class="nv">rng</span><span class="o">={</span>match_range<span class="o">}</span><span class="w"> </span>&gt;<span class="w"> </span>output.fastq
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-95-1"><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a>Note: the sequence type of the pattern &#39;ITS4&#39; was determined as &#39;dna&#39;. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
+</span></code></pre></div>
+
+</details>
+
+<details>
+<summary><b>st (4 threads)</b> 🕓 <b>6.0 s</b> 🏆 (3.5x)  ❙  <b>st (max. mismatches = 2)</b> 🕓 21.1 s  ❙  <b>st (max. mismatches = 8)</b> 🕓 26.7 s</summary>
+
+<table class="cmd">
+<tr>
+<td>st (4 threads)</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-96-1"><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a>st<span class="w"> </span>find<span class="w"> </span>-t4<span class="w"> </span>-D4<span class="w"> </span>file:primers.fasta<span class="w"> </span>input.fastq<span class="w"> </span>-a<span class="w"> </span><span class="nv">primer</span><span class="o">={</span>pattern_name<span class="o">}</span><span class="w"> </span>-a<span class="w"> </span><span class="nv">rng</span><span class="o">={</span>match_range<span class="o">}</span><span class="w"> </span>&gt;<span class="w"> </span>output.fastq
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-97-1"><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a>Note: the sequence type of the pattern &#39;ITS4&#39; was determined as &#39;dna&#39;. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 <b>6.0 s</b> 🏆 (3.5x) 402% CPU<br/>📈 17.6 MiB</td>
+</tr>
+
+<tr>
+<td>st (max. mismatches = 2)</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-98-1"><a id="__codelineno-98-1" name="__codelineno-98-1" href="#__codelineno-98-1"></a>st<span class="w"> </span>find<span class="w"> </span>-D2<span class="w"> </span>file:primers.fasta<span class="w"> </span>input.fastq<span class="w"> </span>-a<span class="w"> </span><span class="nv">primer</span><span class="o">={</span>pattern_name<span class="o">}</span><span class="w"> </span>-a<span class="w"> </span><span class="nv">rng</span><span class="o">={</span>match_range<span class="o">}</span><span class="w"> </span>&gt;<span class="w"> </span>output.fastq
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-99-1"><a id="__codelineno-99-1" name="__codelineno-99-1" href="#__codelineno-99-1"></a>Note: the sequence type of the pattern &#39;ITS4&#39; was determined as &#39;dna&#39;. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 21.1 s<br/>📈 7.5 MiB</td>
+</tr>
+
+<tr>
+<td>st (max. mismatches = 8)</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-100-1"><a id="__codelineno-100-1" name="__codelineno-100-1" href="#__codelineno-100-1"></a>st<span class="w"> </span>find<span class="w"> </span>-D8<span class="w"> </span>file:primers.fasta<span class="w"> </span>input.fastq<span class="w"> </span>-a<span class="w"> </span><span class="nv">primer</span><span class="o">={</span>pattern_name<span class="o">}</span><span class="w"> </span>-a<span class="w"> </span><span class="nv">rng</span><span class="o">={</span>match_range<span class="o">}</span><span class="w"> </span>&gt;<span class="w"> </span>output.fastq
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-101-1"><a id="__codelineno-101-1" name="__codelineno-101-1" href="#__codelineno-101-1"></a>Note: the sequence type of the pattern &#39;ITS4&#39; was determined as &#39;dna&#39;. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 26.7 s<br/>📈 7.4 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 21.3 s<br/>📈 <b>7.4 MiB</b> 🏆 (1.00x)</td>
+</tr>
+<tr>
+<td>
+
+Find and trim the forward primer up to an error rate (edit distance) of 20%, discarding unmatched reads. <em>Note:</em> Unlike Cutadapt, seqtool currently does not offer ungapped alignments (<code>--no-indels</code>).
+
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-102-1"><a id="__codelineno-102-1" name="__codelineno-102-1" href="#__codelineno-102-1"></a>st<span class="w"> </span>find<span class="w"> </span>-f<span class="w"> </span>file:primers.fasta<span class="w"> </span>-R<span class="w"> </span><span class="m">0</span>.2<span class="w"> </span>input.fastq<span class="w"> </span>-a<span class="w"> </span><span class="nv">primer</span><span class="o">={</span>pattern_name<span class="o">}</span><span class="w"> </span>-a<span class="w"> </span><span class="nv">end</span><span class="o">={</span>match_end<span class="o">}</span><span class="w"> </span><span class="p">|</span>
+</span><span id="__span-102-2"><a id="__codelineno-102-2" name="__codelineno-102-2" href="#__codelineno-102-2"></a><span class="w">  </span>st<span class="w"> </span>trim<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;{attr(end)}:&#39;</span><span class="w"> </span>--fq<span class="w"> </span>&gt;<span class="w"> </span>output.fastq
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-103-1"><a id="__codelineno-103-1" name="__codelineno-103-1" href="#__codelineno-103-1"></a>Note: the sequence type of the pattern &#39;ITS4&#39; was determined as &#39;dna&#39;. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
+</span></code></pre></div>
+
+</details>
+
+<details>
+<summary><b>Cutadapt</b> 🕓 67.1 s</summary>
+
+<table class="cmd">
+<tr>
+<td>Cutadapt</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-104-1"><a id="__codelineno-104-1" name="__codelineno-104-1" href="#__codelineno-104-1"></a>cutadapt<span class="w"> </span>-g<span class="w"> </span><span class="s1">&#39;file:primers.fasta;min_overlap=15&#39;</span><span class="w"> </span>input.fastq<span class="w"> </span>-e<span class="w"> </span><span class="m">0</span>.2<span class="w"> </span>--rename<span class="w"> </span><span class="s1">&#39;{id} primer={adapter_name}&#39;</span><span class="w"> </span>--discard-untrimmed<span class="w"> </span>&gt;<span class="w"> </span>output.fastq<span class="w"> </span>
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-105-1"><a id="__codelineno-105-1" name="__codelineno-105-1" href="#__codelineno-105-1"></a>This is cutadapt 4.6 with Python 3.12.2
+</span><span id="__span-105-2"><a id="__codelineno-105-2" name="__codelineno-105-2" href="#__codelineno-105-2"></a>Command line parameters: -g file:primers.fasta;min_overlap=15 input.fastq -e 0.2 --rename {id} primer={adapter_name} --discard-untrimmed
+</span><span id="__span-105-3"><a id="__codelineno-105-3" name="__codelineno-105-3" href="#__codelineno-105-3"></a>Processing single-end reads on 1 core ...
+</span><span id="__span-105-4"><a id="__codelineno-105-4" name="__codelineno-105-4" href="#__codelineno-105-4"></a>Finished in 66.906 s (25.630 µs/read; 2.34 M reads/minute).
+</span><span id="__span-105-5"><a id="__codelineno-105-5" name="__codelineno-105-5" href="#__codelineno-105-5"></a>=== Summary ===
+</span><span id="__span-105-6"><a id="__codelineno-105-6" name="__codelineno-105-6" href="#__codelineno-105-6"></a>Total reads processed:               2,610,480
+</span><span id="__span-105-7"><a id="__codelineno-105-7" name="__codelineno-105-7" href="#__codelineno-105-7"></a>Reads with adapters:                   828,740 (31.7%)
+</span><span id="__span-105-8"><a id="__codelineno-105-8" name="__codelineno-105-8" href="#__codelineno-105-8"></a>== Read fate breakdown ==
+</span><span id="__span-105-9"><a id="__codelineno-105-9" name="__codelineno-105-9" href="#__codelineno-105-9"></a>Reads discarded as untrimmed:        1,781,740 (68.3%)
+</span><span id="__span-105-10"><a id="__codelineno-105-10" name="__codelineno-105-10" href="#__codelineno-105-10"></a>Reads written (passing filters):       828,740 (31.7%)
+</span><span id="__span-105-11"><a id="__codelineno-105-11" name="__codelineno-105-11" href="#__codelineno-105-11"></a>Total basepairs processed:   712,939,424 bp
+</span><span id="__span-105-12"><a id="__codelineno-105-12" name="__codelineno-105-12" href="#__codelineno-105-12"></a>Total written (filtered):    209,047,405 bp (29.3%)
+</span><span id="__span-105-13"><a id="__codelineno-105-13" name="__codelineno-105-13" href="#__codelineno-105-13"></a>=== Adapter ITS4 ===
+</span><span id="__span-105-14"><a id="__codelineno-105-14" name="__codelineno-105-14" href="#__codelineno-105-14"></a>Sequence: GTCCTCCGCTTATTGATATGC; Type: regular 5&#39;; Length: 21; Trimmed: 828740 times
+</span><span id="__span-105-15"><a id="__codelineno-105-15" name="__codelineno-105-15" href="#__codelineno-105-15"></a>Minimum overlap: 15
+</span><span id="__span-105-16"><a id="__codelineno-105-16" name="__codelineno-105-16" href="#__codelineno-105-16"></a>No. of allowed errors:
+</span><span id="__span-105-17"><a id="__codelineno-105-17" name="__codelineno-105-17" href="#__codelineno-105-17"></a>1-4 bp: 0; 5-9 bp: 1; 10-14 bp: 2; 15-19 bp: 3; 20-21 bp: 4
+</span><span id="__span-105-18"><a id="__codelineno-105-18" name="__codelineno-105-18" href="#__codelineno-105-18"></a>Overview of removed sequences
+</span><span id="__span-105-19"><a id="__codelineno-105-19" name="__codelineno-105-19" href="#__codelineno-105-19"></a>length  count   expect  max.err error counts
+</span><span id="__span-105-20"><a id="__codelineno-105-20" name="__codelineno-105-20" href="#__codelineno-105-20"></a>15  8   0.0 3   3 1 3 1
+</span><span id="__span-105-21"><a id="__codelineno-105-21" name="__codelineno-105-21" href="#__codelineno-105-21"></a>16  12  0.0 3   1 3 4 4
+</span><span id="__span-105-22"><a id="__codelineno-105-22" name="__codelineno-105-22" href="#__codelineno-105-22"></a>17  7   0.0 3   3 0 0 4
+</span><span id="__span-105-23"><a id="__codelineno-105-23" name="__codelineno-105-23" href="#__codelineno-105-23"></a>18  11  0.0 3   2 6 1 2
+</span><span id="__span-105-24"><a id="__codelineno-105-24" name="__codelineno-105-24" href="#__codelineno-105-24"></a>19  12  0.0 3   1 2 6 1 2
+</span><span id="__span-105-25"><a id="__codelineno-105-25" name="__codelineno-105-25" href="#__codelineno-105-25"></a>20  15  0.0 4   3 5 3 2 2
+</span><span id="__span-105-26"><a id="__codelineno-105-26" name="__codelineno-105-26" href="#__codelineno-105-26"></a>21  29  0.0 4   2 11 4 2 10
+</span><span id="__span-105-27"><a id="__codelineno-105-27" name="__codelineno-105-27" href="#__codelineno-105-27"></a>22  73  0.0 4   5 23 8 15 22
+</span><span id="__span-105-28"><a id="__codelineno-105-28" name="__codelineno-105-28" href="#__codelineno-105-28"></a>23  221 0.0 4   10 46 39 53 73
+</span><span id="__span-105-29"><a id="__codelineno-105-29" name="__codelineno-105-29" href="#__codelineno-105-29"></a>24  723 0.0 4   27 96 180 381 39
+</span><span id="__span-105-30"><a id="__codelineno-105-30" name="__codelineno-105-30" href="#__codelineno-105-30"></a>25  8858    0.0 4   439 2961 4797 468 193
+</span><span id="__span-105-31"><a id="__codelineno-105-31" name="__codelineno-105-31" href="#__codelineno-105-31"></a>26  816649  0.0 4   202089 581641 27831 3348 1740
+</span><span id="__span-105-32"><a id="__codelineno-105-32" name="__codelineno-105-32" href="#__codelineno-105-32"></a>27  1926    0.0 4   184 840 797 74 31
+</span><span id="__span-105-33"><a id="__codelineno-105-33" name="__codelineno-105-33" href="#__codelineno-105-33"></a>28  33  0.0 4   4 22 2 3 2
+</span><span id="__span-105-34"><a id="__codelineno-105-34" name="__codelineno-105-34" href="#__codelineno-105-34"></a>29  15  0.0 4   1 11 1 1 1
+</span><span id="__span-105-35"><a id="__codelineno-105-35" name="__codelineno-105-35" href="#__codelineno-105-35"></a>30  4   0.0 4   1 3
+</span><span id="__span-105-36"><a id="__codelineno-105-36" name="__codelineno-105-36" href="#__codelineno-105-36"></a>31  1   0.0 4   1
+</span><span id="__span-105-37"><a id="__codelineno-105-37" name="__codelineno-105-37" href="#__codelineno-105-37"></a>32  3   0.0 4   2 1
+</span><span id="__span-105-38"><a id="__codelineno-105-38" name="__codelineno-105-38" href="#__codelineno-105-38"></a>33  1   0.0 4   1
+</span><span id="__span-105-39"><a id="__codelineno-105-39" name="__codelineno-105-39" href="#__codelineno-105-39"></a>34  1   0.0 4   1
+</span><span id="__span-105-40"><a id="__codelineno-105-40" name="__codelineno-105-40" href="#__codelineno-105-40"></a>35  2   0.0 4   0 2
+</span><span id="__span-105-41"><a id="__codelineno-105-41" name="__codelineno-105-41" href="#__codelineno-105-41"></a>40  2   0.0 4   0 2
+</span><span id="__span-105-42"><a id="__codelineno-105-42" name="__codelineno-105-42" href="#__codelineno-105-42"></a>41  2   0.0 4   0 2
+</span><span id="__span-105-43"><a id="__codelineno-105-43" name="__codelineno-105-43" href="#__codelineno-105-43"></a>42  3   0.0 4   1 2
+</span><span id="__span-105-44"><a id="__codelineno-105-44" name="__codelineno-105-44" href="#__codelineno-105-44"></a>45  1   0.0 4   0 1
+</span><span id="__span-105-45"><a id="__codelineno-105-45" name="__codelineno-105-45" href="#__codelineno-105-45"></a>47  1   0.0 4   0 0 0 0 1
+</span><span id="__span-105-46"><a id="__codelineno-105-46" name="__codelineno-105-46" href="#__codelineno-105-46"></a>48  1   0.0 4   1
+</span><span id="__span-105-47"><a id="__codelineno-105-47" name="__codelineno-105-47" href="#__codelineno-105-47"></a>51  6   0.0 4   0 0 0 0 6
+</span><span id="__span-105-48"><a id="__codelineno-105-48" name="__codelineno-105-48" href="#__codelineno-105-48"></a>54  1   0.0 4   0 0 0 0 1
+</span><span id="__span-105-49"><a id="__codelineno-105-49" name="__codelineno-105-49" href="#__codelineno-105-49"></a>58  16  0.0 4   0 0 0 0 16
+</span><span id="__span-105-50"><a id="__codelineno-105-50" name="__codelineno-105-50" href="#__codelineno-105-50"></a>59  2   0.0 4   0 1 0 0 1
+</span><span id="__span-105-51"><a id="__codelineno-105-51" name="__codelineno-105-51" href="#__codelineno-105-51"></a>60  2   0.0 4   0 0 0 0 2
+</span><span id="__span-105-52"><a id="__codelineno-105-52" name="__codelineno-105-52" href="#__codelineno-105-52"></a>61  20  0.0 4   0 1 0 0 19
+</span><span id="__span-105-53"><a id="__codelineno-105-53" name="__codelineno-105-53" href="#__codelineno-105-53"></a>62  1   0.0 4   0 0 0 0 1
+</span><span id="__span-105-54"><a id="__codelineno-105-54" name="__codelineno-105-54" href="#__codelineno-105-54"></a>63  12  0.0 4   0 1 0 1 10
+</span><span id="__span-105-55"><a id="__codelineno-105-55" name="__codelineno-105-55" href="#__codelineno-105-55"></a>64  2   0.0 4   0 0 0 0 2
+</span><span id="__span-105-56"><a id="__codelineno-105-56" name="__codelineno-105-56" href="#__codelineno-105-56"></a>66  2   0.0 4   0 0 0 1 1
+</span><span id="__span-105-57"><a id="__codelineno-105-57" name="__codelineno-105-57" href="#__codelineno-105-57"></a>67  24  0.0 4   0 0 3 5 16
+</span><span id="__span-105-58"><a id="__codelineno-105-58" name="__codelineno-105-58" href="#__codelineno-105-58"></a>68  4   0.0 4   0 0 1 0 3
+</span><span id="__span-105-59"><a id="__codelineno-105-59" name="__codelineno-105-59" href="#__codelineno-105-59"></a>69  1   0.0 4   0 0 0 0 1
+</span><span id="__span-105-60"><a id="__codelineno-105-60" name="__codelineno-105-60" href="#__codelineno-105-60"></a>85  2   0.0 4   0 2
+</span><span id="__span-105-61"><a id="__codelineno-105-61" name="__codelineno-105-61" href="#__codelineno-105-61"></a>86  5   0.0 4   1 3 0 0 1
+</span><span id="__span-105-62"><a id="__codelineno-105-62" name="__codelineno-105-62" href="#__codelineno-105-62"></a>105 4   0.0 4   0 0 0 0 4
+</span><span id="__span-105-63"><a id="__codelineno-105-63" name="__codelineno-105-63" href="#__codelineno-105-63"></a>138 1   0.0 4   0 0 0 0 1
+</span><span id="__span-105-64"><a id="__codelineno-105-64" name="__codelineno-105-64" href="#__codelineno-105-64"></a>190 2   0.0 4   0 0 0 0 2
+</span><span id="__span-105-65"><a id="__codelineno-105-65" name="__codelineno-105-65" href="#__codelineno-105-65"></a>203 1   0.0 4   0 0 0 0 1
+</span><span id="__span-105-66"><a id="__codelineno-105-66" name="__codelineno-105-66" href="#__codelineno-105-66"></a>226 2   0.0 4   0 0 0 0 2
+</span><span id="__span-105-67"><a id="__codelineno-105-67" name="__codelineno-105-67" href="#__codelineno-105-67"></a>227 1   0.0 4   0 0 0 0 1
+</span><span id="__span-105-68"><a id="__codelineno-105-68" name="__codelineno-105-68" href="#__codelineno-105-68"></a>228 3   0.0 4   0 0 0 0 3
+</span><span id="__span-105-69"><a id="__codelineno-105-69" name="__codelineno-105-69" href="#__codelineno-105-69"></a>230 1   0.0 4   0 0 0 0 1
+</span><span id="__span-105-70"><a id="__codelineno-105-70" name="__codelineno-105-70" href="#__codelineno-105-70"></a>247 1   0.0 4   0 0 0 0 1
+</span><span id="__span-105-71"><a id="__codelineno-105-71" name="__codelineno-105-71" href="#__codelineno-105-71"></a>249 1   0.0 4   0 0 0 0 1
+</span><span id="__span-105-72"><a id="__codelineno-105-72" name="__codelineno-105-72" href="#__codelineno-105-72"></a>251 5   0.0 4   0 0 0 0 5
+</span><span id="__span-105-73"><a id="__codelineno-105-73" name="__codelineno-105-73" href="#__codelineno-105-73"></a>252 1   0.0 4   0 0 0 0 1
+</span><span id="__span-105-74"><a id="__codelineno-105-74" name="__codelineno-105-74" href="#__codelineno-105-74"></a>255 1   0.0 4   0 0 0 0 1
+</span><span id="__span-105-75"><a id="__codelineno-105-75" name="__codelineno-105-75" href="#__codelineno-105-75"></a>258 1   0.0 4   0 0 0 0 1
+</span><span id="__span-105-76"><a id="__codelineno-105-76" name="__codelineno-105-76" href="#__codelineno-105-76"></a>290 1   0.0 4   0 0 0 0 1
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 67.1 s<br/>📈 20.9 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>16.9 s</b> 🏆 (4.0x) 120% CPU<br/>📈 <b>7.4 MiB</b> 🏆 (2.83x)</td>
+</tr>
+<tr>
+<td>
+
+Find and trim the forward primer in parallel using 4 threads (cores).
+
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-106-1"><a id="__codelineno-106-1" name="__codelineno-106-1" href="#__codelineno-106-1"></a>st<span class="w"> </span>find<span class="w"> </span>-f<span class="w"> </span>file:primers.fasta<span class="w"> </span>-R<span class="w"> </span><span class="m">0</span>.2<span class="w"> </span>-t4<span class="w"> </span>input.fastq<span class="w"> </span>-a<span class="w"> </span><span class="nv">primer</span><span class="o">={</span>pattern_name<span class="o">}</span><span class="w"> </span>-a<span class="w"> </span><span class="nv">end</span><span class="o">={</span>match_end<span class="o">}</span><span class="w"> </span><span class="p">|</span>
+</span><span id="__span-106-2"><a id="__codelineno-106-2" name="__codelineno-106-2" href="#__codelineno-106-2"></a><span class="w">  </span>st<span class="w"> </span>trim<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;{attr(end)}:&#39;</span><span class="w"> </span>--fq<span class="w"> </span>&gt;<span class="w"> </span>output.fastq
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-107-1"><a id="__codelineno-107-1" name="__codelineno-107-1" href="#__codelineno-107-1"></a>Note: the sequence type of the pattern &#39;ITS4&#39; was determined as &#39;dna&#39;. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
+</span></code></pre></div>
+
+</details>
+
+<details>
+<summary><b>Cutadapt</b> 🕓 18.1 s</summary>
+
+<table class="cmd">
+<tr>
+<td>Cutadapt</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-108-1"><a id="__codelineno-108-1" name="__codelineno-108-1" href="#__codelineno-108-1"></a>cutadapt<span class="w"> </span>-j4<span class="w"> </span>-g<span class="w"> </span><span class="s1">&#39;file:primers.fasta;min_overlap=15&#39;</span><span class="w"> </span>input.fastq<span class="w"> </span>-e<span class="w"> </span><span class="m">0</span>.2<span class="w"> </span>--rename<span class="w"> </span><span class="s1">&#39;{id} primer={adapter_name}&#39;</span><span class="w"> </span>--discard-untrimmed<span class="w"> </span>&gt;<span class="w"> </span>output.fastq<span class="w"> </span>
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-109-1"><a id="__codelineno-109-1" name="__codelineno-109-1" href="#__codelineno-109-1"></a>This is cutadapt 4.6 with Python 3.12.2
+</span><span id="__span-109-2"><a id="__codelineno-109-2" name="__codelineno-109-2" href="#__codelineno-109-2"></a>Command line parameters: -j4 -g file:primers.fasta;min_overlap=15 input.fastq -e 0.2 --rename {id} primer={adapter_name} --discard-untrimmed
+</span><span id="__span-109-3"><a id="__codelineno-109-3" name="__codelineno-109-3" href="#__codelineno-109-3"></a>Processing single-end reads on 4 cores ...
+</span><span id="__span-109-4"><a id="__codelineno-109-4" name="__codelineno-109-4" href="#__codelineno-109-4"></a>Finished in 17.956 s (6.878 µs/read; 8.72 M reads/minute).
+</span><span id="__span-109-5"><a id="__codelineno-109-5" name="__codelineno-109-5" href="#__codelineno-109-5"></a>=== Summary ===
+</span><span id="__span-109-6"><a id="__codelineno-109-6" name="__codelineno-109-6" href="#__codelineno-109-6"></a>Total reads processed:               2,610,480
+</span><span id="__span-109-7"><a id="__codelineno-109-7" name="__codelineno-109-7" href="#__codelineno-109-7"></a>Reads with adapters:                   828,740 (31.7%)
+</span><span id="__span-109-8"><a id="__codelineno-109-8" name="__codelineno-109-8" href="#__codelineno-109-8"></a>== Read fate breakdown ==
+</span><span id="__span-109-9"><a id="__codelineno-109-9" name="__codelineno-109-9" href="#__codelineno-109-9"></a>Reads discarded as untrimmed:        1,781,740 (68.3%)
+</span><span id="__span-109-10"><a id="__codelineno-109-10" name="__codelineno-109-10" href="#__codelineno-109-10"></a>Reads written (passing filters):       828,740 (31.7%)
+</span><span id="__span-109-11"><a id="__codelineno-109-11" name="__codelineno-109-11" href="#__codelineno-109-11"></a>Total basepairs processed:   712,939,424 bp
+</span><span id="__span-109-12"><a id="__codelineno-109-12" name="__codelineno-109-12" href="#__codelineno-109-12"></a>Total written (filtered):    209,047,405 bp (29.3%)
+</span><span id="__span-109-13"><a id="__codelineno-109-13" name="__codelineno-109-13" href="#__codelineno-109-13"></a>=== Adapter ITS4 ===
+</span><span id="__span-109-14"><a id="__codelineno-109-14" name="__codelineno-109-14" href="#__codelineno-109-14"></a>Sequence: GTCCTCCGCTTATTGATATGC; Type: regular 5&#39;; Length: 21; Trimmed: 828740 times
+</span><span id="__span-109-15"><a id="__codelineno-109-15" name="__codelineno-109-15" href="#__codelineno-109-15"></a>Minimum overlap: 15
+</span><span id="__span-109-16"><a id="__codelineno-109-16" name="__codelineno-109-16" href="#__codelineno-109-16"></a>No. of allowed errors:
+</span><span id="__span-109-17"><a id="__codelineno-109-17" name="__codelineno-109-17" href="#__codelineno-109-17"></a>1-4 bp: 0; 5-9 bp: 1; 10-14 bp: 2; 15-19 bp: 3; 20-21 bp: 4
+</span><span id="__span-109-18"><a id="__codelineno-109-18" name="__codelineno-109-18" href="#__codelineno-109-18"></a>Overview of removed sequences
+</span><span id="__span-109-19"><a id="__codelineno-109-19" name="__codelineno-109-19" href="#__codelineno-109-19"></a>length  count   expect  max.err error counts
+</span><span id="__span-109-20"><a id="__codelineno-109-20" name="__codelineno-109-20" href="#__codelineno-109-20"></a>15  8   0.0 3   3 1 3 1
+</span><span id="__span-109-21"><a id="__codelineno-109-21" name="__codelineno-109-21" href="#__codelineno-109-21"></a>16  12  0.0 3   1 3 4 4
+</span><span id="__span-109-22"><a id="__codelineno-109-22" name="__codelineno-109-22" href="#__codelineno-109-22"></a>17  7   0.0 3   3 0 0 4
+</span><span id="__span-109-23"><a id="__codelineno-109-23" name="__codelineno-109-23" href="#__codelineno-109-23"></a>18  11  0.0 3   2 6 1 2
+</span><span id="__span-109-24"><a id="__codelineno-109-24" name="__codelineno-109-24" href="#__codelineno-109-24"></a>19  12  0.0 3   1 2 6 1 2
+</span><span id="__span-109-25"><a id="__codelineno-109-25" name="__codelineno-109-25" href="#__codelineno-109-25"></a>20  15  0.0 4   3 5 3 2 2
+</span><span id="__span-109-26"><a id="__codelineno-109-26" name="__codelineno-109-26" href="#__codelineno-109-26"></a>21  29  0.0 4   2 11 4 2 10
+</span><span id="__span-109-27"><a id="__codelineno-109-27" name="__codelineno-109-27" href="#__codelineno-109-27"></a>22  73  0.0 4   5 23 8 15 22
+</span><span id="__span-109-28"><a id="__codelineno-109-28" name="__codelineno-109-28" href="#__codelineno-109-28"></a>23  221 0.0 4   10 46 39 53 73
+</span><span id="__span-109-29"><a id="__codelineno-109-29" name="__codelineno-109-29" href="#__codelineno-109-29"></a>24  723 0.0 4   27 96 180 381 39
+</span><span id="__span-109-30"><a id="__codelineno-109-30" name="__codelineno-109-30" href="#__codelineno-109-30"></a>25  8858    0.0 4   439 2961 4797 468 193
+</span><span id="__span-109-31"><a id="__codelineno-109-31" name="__codelineno-109-31" href="#__codelineno-109-31"></a>26  816649  0.0 4   202089 581641 27831 3348 1740
+</span><span id="__span-109-32"><a id="__codelineno-109-32" name="__codelineno-109-32" href="#__codelineno-109-32"></a>27  1926    0.0 4   184 840 797 74 31
+</span><span id="__span-109-33"><a id="__codelineno-109-33" name="__codelineno-109-33" href="#__codelineno-109-33"></a>28  33  0.0 4   4 22 2 3 2
+</span><span id="__span-109-34"><a id="__codelineno-109-34" name="__codelineno-109-34" href="#__codelineno-109-34"></a>29  15  0.0 4   1 11 1 1 1
+</span><span id="__span-109-35"><a id="__codelineno-109-35" name="__codelineno-109-35" href="#__codelineno-109-35"></a>30  4   0.0 4   1 3
+</span><span id="__span-109-36"><a id="__codelineno-109-36" name="__codelineno-109-36" href="#__codelineno-109-36"></a>31  1   0.0 4   1
+</span><span id="__span-109-37"><a id="__codelineno-109-37" name="__codelineno-109-37" href="#__codelineno-109-37"></a>32  3   0.0 4   2 1
+</span><span id="__span-109-38"><a id="__codelineno-109-38" name="__codelineno-109-38" href="#__codelineno-109-38"></a>33  1   0.0 4   1
+</span><span id="__span-109-39"><a id="__codelineno-109-39" name="__codelineno-109-39" href="#__codelineno-109-39"></a>34  1   0.0 4   1
+</span><span id="__span-109-40"><a id="__codelineno-109-40" name="__codelineno-109-40" href="#__codelineno-109-40"></a>35  2   0.0 4   0 2
+</span><span id="__span-109-41"><a id="__codelineno-109-41" name="__codelineno-109-41" href="#__codelineno-109-41"></a>40  2   0.0 4   0 2
+</span><span id="__span-109-42"><a id="__codelineno-109-42" name="__codelineno-109-42" href="#__codelineno-109-42"></a>41  2   0.0 4   0 2
+</span><span id="__span-109-43"><a id="__codelineno-109-43" name="__codelineno-109-43" href="#__codelineno-109-43"></a>42  3   0.0 4   1 2
+</span><span id="__span-109-44"><a id="__codelineno-109-44" name="__codelineno-109-44" href="#__codelineno-109-44"></a>45  1   0.0 4   0 1
+</span><span id="__span-109-45"><a id="__codelineno-109-45" name="__codelineno-109-45" href="#__codelineno-109-45"></a>47  1   0.0 4   0 0 0 0 1
+</span><span id="__span-109-46"><a id="__codelineno-109-46" name="__codelineno-109-46" href="#__codelineno-109-46"></a>48  1   0.0 4   1
+</span><span id="__span-109-47"><a id="__codelineno-109-47" name="__codelineno-109-47" href="#__codelineno-109-47"></a>51  6   0.0 4   0 0 0 0 6
+</span><span id="__span-109-48"><a id="__codelineno-109-48" name="__codelineno-109-48" href="#__codelineno-109-48"></a>54  1   0.0 4   0 0 0 0 1
+</span><span id="__span-109-49"><a id="__codelineno-109-49" name="__codelineno-109-49" href="#__codelineno-109-49"></a>58  16  0.0 4   0 0 0 0 16
+</span><span id="__span-109-50"><a id="__codelineno-109-50" name="__codelineno-109-50" href="#__codelineno-109-50"></a>59  2   0.0 4   0 1 0 0 1
+</span><span id="__span-109-51"><a id="__codelineno-109-51" name="__codelineno-109-51" href="#__codelineno-109-51"></a>60  2   0.0 4   0 0 0 0 2
+</span><span id="__span-109-52"><a id="__codelineno-109-52" name="__codelineno-109-52" href="#__codelineno-109-52"></a>61  20  0.0 4   0 1 0 0 19
+</span><span id="__span-109-53"><a id="__codelineno-109-53" name="__codelineno-109-53" href="#__codelineno-109-53"></a>62  1   0.0 4   0 0 0 0 1
+</span><span id="__span-109-54"><a id="__codelineno-109-54" name="__codelineno-109-54" href="#__codelineno-109-54"></a>63  12  0.0 4   0 1 0 1 10
+</span><span id="__span-109-55"><a id="__codelineno-109-55" name="__codelineno-109-55" href="#__codelineno-109-55"></a>64  2   0.0 4   0 0 0 0 2
+</span><span id="__span-109-56"><a id="__codelineno-109-56" name="__codelineno-109-56" href="#__codelineno-109-56"></a>66  2   0.0 4   0 0 0 1 1
+</span><span id="__span-109-57"><a id="__codelineno-109-57" name="__codelineno-109-57" href="#__codelineno-109-57"></a>67  24  0.0 4   0 0 3 5 16
+</span><span id="__span-109-58"><a id="__codelineno-109-58" name="__codelineno-109-58" href="#__codelineno-109-58"></a>68  4   0.0 4   0 0 1 0 3
+</span><span id="__span-109-59"><a id="__codelineno-109-59" name="__codelineno-109-59" href="#__codelineno-109-59"></a>69  1   0.0 4   0 0 0 0 1
+</span><span id="__span-109-60"><a id="__codelineno-109-60" name="__codelineno-109-60" href="#__codelineno-109-60"></a>85  2   0.0 4   0 2
+</span><span id="__span-109-61"><a id="__codelineno-109-61" name="__codelineno-109-61" href="#__codelineno-109-61"></a>86  5   0.0 4   1 3 0 0 1
+</span><span id="__span-109-62"><a id="__codelineno-109-62" name="__codelineno-109-62" href="#__codelineno-109-62"></a>105 4   0.0 4   0 0 0 0 4
+</span><span id="__span-109-63"><a id="__codelineno-109-63" name="__codelineno-109-63" href="#__codelineno-109-63"></a>138 1   0.0 4   0 0 0 0 1
+</span><span id="__span-109-64"><a id="__codelineno-109-64" name="__codelineno-109-64" href="#__codelineno-109-64"></a>190 2   0.0 4   0 0 0 0 2
+</span><span id="__span-109-65"><a id="__codelineno-109-65" name="__codelineno-109-65" href="#__codelineno-109-65"></a>203 1   0.0 4   0 0 0 0 1
+</span><span id="__span-109-66"><a id="__codelineno-109-66" name="__codelineno-109-66" href="#__codelineno-109-66"></a>226 2   0.0 4   0 0 0 0 2
+</span><span id="__span-109-67"><a id="__codelineno-109-67" name="__codelineno-109-67" href="#__codelineno-109-67"></a>227 1   0.0 4   0 0 0 0 1
+</span><span id="__span-109-68"><a id="__codelineno-109-68" name="__codelineno-109-68" href="#__codelineno-109-68"></a>228 3   0.0 4   0 0 0 0 3
+</span><span id="__span-109-69"><a id="__codelineno-109-69" name="__codelineno-109-69" href="#__codelineno-109-69"></a>230 1   0.0 4   0 0 0 0 1
+</span><span id="__span-109-70"><a id="__codelineno-109-70" name="__codelineno-109-70" href="#__codelineno-109-70"></a>247 1   0.0 4   0 0 0 0 1
+</span><span id="__span-109-71"><a id="__codelineno-109-71" name="__codelineno-109-71" href="#__codelineno-109-71"></a>249 1   0.0 4   0 0 0 0 1
+</span><span id="__span-109-72"><a id="__codelineno-109-72" name="__codelineno-109-72" href="#__codelineno-109-72"></a>251 5   0.0 4   0 0 0 0 5
+</span><span id="__span-109-73"><a id="__codelineno-109-73" name="__codelineno-109-73" href="#__codelineno-109-73"></a>252 1   0.0 4   0 0 0 0 1
+</span><span id="__span-109-74"><a id="__codelineno-109-74" name="__codelineno-109-74" href="#__codelineno-109-74"></a>255 1   0.0 4   0 0 0 0 1
+</span><span id="__span-109-75"><a id="__codelineno-109-75" name="__codelineno-109-75" href="#__codelineno-109-75"></a>258 1   0.0 4   0 0 0 0 1
+</span><span id="__span-109-76"><a id="__codelineno-109-76" name="__codelineno-109-76" href="#__codelineno-109-76"></a>290 1   0.0 4   0 0 0 0 1
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 18.1 s 413% CPU<br/>📈 39.4 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>4.9 s</b> 🏆 (3.7x) 448% CPU<br/>📈 <b>17.8 MiB</b> 🏆 (2.22x)</td>
+</tr>
+</table>
+<h2 id="replace">replace<a class="headerlink" href="#replace" title="Permanent link">&para;</a></h2>
+<table class="cmd">
+<tr>
+<td>
+
+Convert DNA to RNA using the replace command
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-110-1"><a id="__codelineno-110-1" name="__codelineno-110-1" href="#__codelineno-110-1"></a>st<span class="w"> </span>replace<span class="w"> </span>T<span class="w"> </span>U<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>st find</b> 🕓 14.3 s  ❙  <b>SeqKit</b> 🕓 <b>4.8 s</b> 🏆 (2.1x)  ❙  <b>FASTX-Toolkit</b> 🕓 283.5 s</summary>
+
+<table class="cmd">
+<tr>
+<td>st find</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-111-1"><a id="__codelineno-111-1" name="__codelineno-111-1" href="#__codelineno-111-1"></a>st<span class="w"> </span>find<span class="w"> </span>T<span class="w"> </span>--rep<span class="w"> </span>U<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-112-1"><a id="__codelineno-112-1" name="__codelineno-112-1" href="#__codelineno-112-1"></a>Note: the sequence type of the pattern was determined as &#39;dna&#39;. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 14.3 s<br/>📈 7.2 MiB</td>
+</tr>
+
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-113-1"><a id="__codelineno-113-1" name="__codelineno-113-1" href="#__codelineno-113-1"></a>seqkit<span class="w"> </span>seq<span class="w"> </span>--dna2rna<span class="w">  </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 <b>4.8 s</b> 🏆 (2.1x)<br/>📈 27.3 MiB</td>
+</tr>
+
+<tr>
+<td>FASTX-Toolkit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-114-1"><a id="__codelineno-114-1" name="__codelineno-114-1" href="#__codelineno-114-1"></a>fasta_nucleotide_changer<span class="w"> </span>-r<span class="w"> </span>-i<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 283.5 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.07x)</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 10.1 s<br/>📈 7.2 MiB</td>
+</tr>
+<tr>
+<td>
+
+Convert DNA to RNA using 4 threads
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-115-1"><a id="__codelineno-115-1" name="__codelineno-115-1" href="#__codelineno-115-1"></a>st<span class="w"> </span>replace<span class="w"> </span>-t4<span class="w"> </span>T<span class="w"> </span>U<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>st find</b> 🕓 8.4 s</summary>
+
+<table class="cmd">
+<tr>
+<td>st find</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-116-1"><a id="__codelineno-116-1" name="__codelineno-116-1" href="#__codelineno-116-1"></a>st<span class="w"> </span>find<span class="w"> </span>-t4<span class="w"> </span>T<span class="w"> </span>--rep<span class="w"> </span>U<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-117-1"><a id="__codelineno-117-1" name="__codelineno-117-1" href="#__codelineno-117-1"></a>Note: the sequence type of the pattern was determined as &#39;dna&#39;. If incorrect, please provide the correct type with `--seqtype`. Use `-q/--quiet` to suppress this message.
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 8.4 s 282% CPU<br/>📈 24.6 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>2.7 s</b> 🏆 (3.1x) 418% CPU<br/>📈 <b>9.0 MiB</b> 🏆 (2.74x)</td>
+</tr>
+</table>
+<h2 id="trim">trim<a class="headerlink" href="#trim" title="Permanent link">&para;</a></h2>
+<table class="cmd">
+<tr>
+<td>
+
+Trim the leading 99 bp from the sequences
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-118-1"><a id="__codelineno-118-1" name="__codelineno-118-1" href="#__codelineno-118-1"></a>st<span class="w"> </span>trim<span class="w"> </span><span class="m">100</span>:<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>SeqKit (creates FASTA index)</b> 🕓 44.8 s</summary>
+
+<table class="cmd">
+<tr>
+<td>SeqKit (creates FASTA index)</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-119-1"><a id="__codelineno-119-1" name="__codelineno-119-1" href="#__codelineno-119-1"></a>seqkit<span class="w"> </span>subseq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;100:-1&#39;</span><span class="w">  </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-120-1"><a id="__codelineno-120-1" name="__codelineno-120-1" href="#__codelineno-120-1"></a>[INFO][0m create or read FASTA index ...
+</span><span id="__span-120-2"><a id="__codelineno-120-2" name="__codelineno-120-2" href="#__codelineno-120-2"></a>[INFO][0m create FASTA index for input.fasta
+</span><span id="__span-120-3"><a id="__codelineno-120-3" name="__codelineno-120-3" href="#__codelineno-120-3"></a>[INFO][0m   2610480 records loaded from input.fasta.seqkit.fai
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 44.8 s<br/>📈 1254.5 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>2.8 s</b> 🏆 (16.0x)<br/>📈 <b>7.4 MiB</b> 🏆 (170.10x)</td>
+</tr>
+</table>
+<h2 id="upper">upper<a class="headerlink" href="#upper" title="Permanent link">&para;</a></h2>
+<table class="cmd">
+<tr>
+<td>
+
+Convert sequences to uppercase
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-121-1"><a id="__codelineno-121-1" name="__codelineno-121-1" href="#__codelineno-121-1"></a>st<span class="w"> </span>upper<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>Seqtk</b> 🕓 5.2 s  ❙  <b>SeqKit</b> 🕓 4.2 s</summary>
+
+<table class="cmd">
+<tr>
+<td>Seqtk</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-122-1"><a id="__codelineno-122-1" name="__codelineno-122-1" href="#__codelineno-122-1"></a>seqtk<span class="w"> </span>seq<span class="w"> </span>-U<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 5.2 s<br/>📈 <b>3.5 MiB</b> 🏆 (2.11x)</td>
+</tr>
+
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-123-1"><a id="__codelineno-123-1" name="__codelineno-123-1" href="#__codelineno-123-1"></a>seqkit<span class="w"> </span>seq<span class="w"> </span>-u<span class="w">  </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 4.2 s<br/>📈 62.2 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>3.0 s</b> 🏆 (1.4x)<br/>📈 7.4 MiB</td>
+</tr>
+</table>
+<h2 id="revcomp">revcomp<a class="headerlink" href="#revcomp" title="Permanent link">&para;</a></h2>
+<table class="cmd">
+<tr>
+<td>
+
+Reverse complement sequences
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-124-1"><a id="__codelineno-124-1" name="__codelineno-124-1" href="#__codelineno-124-1"></a>st<span class="w"> </span>revcomp<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+
+<details>
+<summary><b>Seqtk</b> 🕓 <b>5.3 s</b> 🏆 (1.1x)  ❙  <b>VSEARCH</b> 🕓 7.7 s  ❙  <b>SeqKit</b> 🕓 7.8 s</summary>
+
+<table class="cmd">
+<tr>
+<td>Seqtk</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-125-1"><a id="__codelineno-125-1" name="__codelineno-125-1" href="#__codelineno-125-1"></a>seqtk<span class="w"> </span>seq<span class="w"> </span>-r<span class="w"> </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+</td>
+
+<td>🕓 <b>5.3 s</b> 🏆 (1.1x)<br/>📈 <b>3.5 MiB</b> 🏆 (1.21x)</td>
+</tr>
+
+<tr>
+<td>VSEARCH</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-126-1"><a id="__codelineno-126-1" name="__codelineno-126-1" href="#__codelineno-126-1"></a>vsearch<span class="w"> </span>--fastx_revcomp<span class="w"> </span>input.fasta<span class="w"> </span>--fastaout<span class="w"> </span>output.fasta<span class="w"> </span>
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-127-1"><a id="__codelineno-127-1" name="__codelineno-127-1" href="#__codelineno-127-1"></a>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+</span><span id="__span-127-2"><a id="__codelineno-127-2" name="__codelineno-127-2" href="#__codelineno-127-2"></a>https://github.com/torognes/vsearch
+</span><span id="__span-127-3"><a id="__codelineno-127-3" name="__codelineno-127-3" href="#__codelineno-127-3"></a>Reading FASTA file 100%
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 7.7 s<br/>📈 4.2 MiB</td>
+</tr>
+
+<tr>
+<td>SeqKit</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-128-1"><a id="__codelineno-128-1" name="__codelineno-128-1" href="#__codelineno-128-1"></a>seqkit<span class="w"> </span>seq<span class="w"> </span>-rp<span class="w">  </span>input.fasta<span class="w"> </span>&gt;<span class="w"> </span>output.fasta
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-129-1"><a id="__codelineno-129-1" name="__codelineno-129-1" href="#__codelineno-129-1"></a>[33m[WARN][0m flag -t (--seq-type) (DNA/RNA) is recommended for computing complement sequences
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 7.8 s<br/>📈 28.1 MiB</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 6.0 s<br/>📈 7.2 MiB</td>
+</tr>
+</table>
+<h2 id="concat">concat<a class="headerlink" href="#concat" title="Permanent link">&para;</a></h2>
+<table class="cmd">
+<tr>
+<td>
+
+Concatenate sequences, adding an <code>NNNNN</code> spacer inbetween
+
+</td>
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-130-1"><a id="__codelineno-130-1" name="__codelineno-130-1" href="#__codelineno-130-1"></a>st<span class="w"> </span>concat<span class="w"> </span>-s<span class="w"> </span><span class="m">5</span><span class="w"> </span>-c<span class="w"> </span>N<span class="w"> </span>file1.fastq<span class="w"> </span>file2.fastq<span class="w"> </span>&gt;<span class="w"> </span>output.fastq
+</span></code></pre></div>
+
+
+<details>
+<summary><b>VSEARCH</b> 🕓 20.5 s</summary>
+
+<table class="cmd">
+<tr>
+<td>VSEARCH</td>
+
+<td>
+
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-131-1"><a id="__codelineno-131-1" name="__codelineno-131-1" href="#__codelineno-131-1"></a>vsearch<span class="w"> </span>--fastq_join<span class="w"> </span>file1.fastq<span class="w"> </span>--reverse<span class="w"> </span>file2.fastq<span class="w"> </span>--join_padgap<span class="w"> </span>NNNNN<span class="w"> </span>--fastqout<span class="w"> </span>output.fastq
+</span></code></pre></div>
+
+<details>
+<summary> messages</summary>
+
+<div class="language-text highlight"><pre><span></span><code><span id="__span-132-1"><a id="__codelineno-132-1" name="__codelineno-132-1" href="#__codelineno-132-1"></a>vsearch v2.28.1_linux_x86_64, 30.6GB RAM, 16 cores
+</span><span id="__span-132-2"><a id="__codelineno-132-2" name="__codelineno-132-2" href="#__codelineno-132-2"></a>https://github.com/torognes/vsearch
+</span><span id="__span-132-3"><a id="__codelineno-132-3" name="__codelineno-132-3" href="#__codelineno-132-3"></a>Joining reads 100%
+</span><span id="__span-132-4"><a id="__codelineno-132-4" name="__codelineno-132-4" href="#__codelineno-132-4"></a>2610480 pairs joined
+</span></code></pre></div>
+
+</details>
+</td>
+
+<td>🕓 20.5 s<br/>📈 <b>4.2 MiB</b> 🏆 (1.74x)</td>
+</tr>
+</table>
+</details>
+</td>
+<td>🕓 <b>9.9 s</b> 🏆 (2.1x)<br/>📈 7.4 MiB</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "header.autohide", "content.code.copy", "search.suggest", "search.highlight", "toc.follow"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "0.4.0-beta.1"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
